@@ -1,0 +1,1622 @@
+
+             +---------------------------------------------------+
+             |                                                   |
+             |                   WANNIER90                       |
+             |                                                   |
+             +---------------------------------------------------+
+             |                                                   |
+             |        Welcome to the Maximally-Localized         |
+             |        Generalized Wannier Functions code         |
+             |            http://www.wannier.org                 |
+             |                                                   |
+             |                                                   |
+             |  Wannier90 Developer Group:                       |
+             |    Giovanni Pizzi    (EPFL)                       |
+             |    Valerio Vitale    (Cambridge)                  |
+             |    David Vanderbilt  (Rutgers University)         |
+             |    Nicola Marzari    (EPFL)                       |
+             |    Ivo Souza         (Universidad del Pais Vasco) |
+             |    Arash A. Mostofi  (Imperial College London)    |
+             |    Jonathan R. Yates (University of Oxford)       |
+             |                                                   |
+             |  For the full list of Wannier90 3.x authors,      |
+             |  please check the code documentation and the      |
+             |  README on the GitHub page of the code            |
+             |                                                   |
+             |                                                   |
+             |  Please cite                                      |
+             |                                                   |
+             |  [ref] "Wannier90 as a community code:            |
+             |        new features and applications",            |
+             |        G. Pizzi et al., J. Phys. Cond. Matt. 32,  |
+             |        165902 (2020).                             |
+             |        http://doi.org/10.1088/1361-648X/ab51ff    |
+             |                                                   |
+             |  in any publications arising from the use of      |
+             |  this code. For the method please cite            |
+             |                                                   |
+             |  [ref] "Maximally Localized Generalised Wannier   |
+             |         Functions for Composite Energy Bands"     |
+             |         N. Marzari and D. Vanderbilt              |
+             |         Phys. Rev. B 56 12847 (1997)              |
+             |                                                   |
+             |  [ref] "Maximally Localized Wannier Functions     |
+             |         for Entangled Energy Bands"               |
+             |         I. Souza, N. Marzari and D. Vanderbilt    |
+             |         Phys. Rev. B 65 035109 (2001)             |
+             |                                                   |
+             |                                                   |
+             | Copyright (c) 1996-2020                           |
+             |        The Wannier90 Developer Group and          |
+             |        individual contributors                    |
+             |                                                   |
+             |      Release: 3.1.0        5th March    2020      |
+             |                                                   |
+             | This program is free software; you can            |
+             | redistribute it and/or modify it under the terms  |
+             | of the GNU General Public License as published by |
+             | the Free Software Foundation; either version 2 of |
+             | the License, or (at your option) any later version|
+             |                                                   |
+             | This program is distributed in the hope that it   |
+             | will be useful, but WITHOUT ANY WARRANTY; without |
+             | even the implied warranty of MERCHANTABILITY or   |
+             | FITNESS FOR A PARTICULAR PURPOSE. See the GNU     |
+             | General Public License for more details.          |
+             |                                                   |
+             | You should have received a copy of the GNU General|
+             | Public License along with this program; if not,   |
+             | write to the Free Software Foundation, Inc.,      |
+             | 675 Mass Ave, Cambridge, MA 02139, USA.           |
+             |                                                   |
+             +---------------------------------------------------+
+             |    Execution started on 14Apr2021 at 15:38:50     |
+             +---------------------------------------------------+
+ 
+ ******************************************************************************
+ * -> Using CODATA 2006 constant values                                       *
+ *    (http://physics.nist.gov/cuu/Constants/index.html)                      *
+ * -> Using Bohr value from CODATA                                            *
+ ******************************************************************************
+ 
+
+ Wannier90 is running in LIBRARY MODE
+
+ Setting up k-point neighbours...
+
+ Ignoring <mp_grid> in input file
+ Ignoring <unit_cell_cart> in input file
+ Ignoring <kpoints> in input file
+ Ignoring <atoms_cart> in input file
+
+                                    ------
+                                    SYSTEM
+                                    ------
+
+                              Lattice Vectors (Ang)
+                    a_1     3.919998   0.000000   0.000000
+                    a_2     0.000000   3.919998   0.000000
+                    a_3     0.000000   0.000000   3.309998
+
+                   Unit Cell Volume:      50.86270  (Ang^3)
+
+                        Reciprocal-Space Vectors (Ang^-1)
+                    b_1     1.602854   0.000000   0.000000
+                    b_2     0.000000   1.602854   0.000000
+                    b_3     0.000000   0.000000   1.898244
+  
+ *----------------------------------------------------------------------------*
+ |   Site       Fractional Coordinate          Cartesian Coordinate (Ang)     |
+ +----------------------------------------------------------------------------+
+ | Nd   1   0.00000   0.00000   0.00000   |    0.00000   0.00000   0.00000    |
+ | Ni   1   0.50000   0.50000   0.50000   |    1.96000   1.96000   1.65500    |
+ | O    1   0.00000   0.50000   0.50000   |    0.00000   1.96000   1.65500    |
+ | O    2   0.50000   0.00000   0.50000   |    1.96000   0.00000   1.65500    |
+ *----------------------------------------------------------------------------*
+                                ------------
+                                K-POINT GRID
+                                ------------
+  
+             Grid size =  9 x  9 x  9      Total points =  729
+  
+  
+ *---------------------------------- MAIN ------------------------------------*
+ |  Number of Wannier Functions               :                13             |
+ |  Number of Objective Wannier Functions     :                13             |
+ |  Number of input Bloch states              :               384             |
+ |  Output verbosity (1=low, 5=high)          :                 1             |
+ |  Timing Level (1=low, 5=high)              :                 1             |
+ |  Optimisation (0=memory, 3=speed)          :                 3             |
+ |  Length Unit                               :               Ang             |
+ |  Post-processing setup (write *.nnkp)      :                 F             |
+ |  Using Gamma-only branch of algorithms     :                 F             |
+ *----------------------------------------------------------------------------*
+ *------------------------------- WANNIERISE ---------------------------------*
+ |  Total number of iterations                :            200000             |
+ |  Number of CG steps before reset           :                 5             |
+ |  Trial step length for line search         :             2.000             |
+ |  Convergence tolerence                     :         0.100E-09             |
+ |  Convergence window                        :                50             |
+ |  Iterations between writing output         :               100             |
+ |  Iterations between backing up to disk     :               100             |
+ |  Write r^2_nm to file                      :                 F             |
+ |  Write xyz WF centres to file              :                 F             |
+ |  Write on-site energies <0n|H|0n> to file  :                 F             |
+ |  Use guiding centre to control phases      :                 T             |
+ |  Use phases for initial projections        :                 F             |
+ |  Iterations before starting guiding centres:                 0             |
+ |  Iterations between using guiding centres  :                 1             |
+ *----------------------------------------------------------------------------*
+ *------------------------------- DISENTANGLE --------------------------------*
+ |  Using band disentanglement                :                 T             |
+ |  Total number of iterations                :            100000             |
+ |  Mixing ratio                              :             0.500             |
+ |  Convergence tolerence                     :         1.000E-14             |
+ |  Convergence window                        :                 3             |
+ *----------------------------------------------------------------------------*
+ *-------------------------------- PLOTTING ----------------------------------*
+ |  Plotting Hamiltonian in WF basis          :                 T             |
+ *----------------------------------------------------------------------------*
+ Time to read parameters        0.038 (sec)
+
+ *---------------------------------- K-MESH ----------------------------------*
+ +----------------------------------------------------------------------------+
+ |                    Distance to Nearest-Neighbour Shells                    |
+ |                    ------------------------------------                    |
+ |          Shell             Distance (Ang^-1)          Multiplicity         |
+ |          -----             -----------------          ------------         |
+ |             1                   0.178095                      4            |
+ |             2                   0.210916                      2            |
+ |             3                   0.251864                      4            |
+ |             4                   0.276050                      8            |
+ |             5                   0.328514                      8            |
+ |             6                   0.356190                      4            |
+ |             7                   0.398232                      8            |
+ |             8                   0.413953                      8            |
+ |             9                   0.421832                      2            |
+ |            10                   0.450638                     16            |
+ |            11                   0.457887                      8            |
+ |            12                   0.491302                      8            |
+ |            13                   0.503728                      4            |
+ |            14                   0.534285                      4            |
+ |            15                   0.546103                      8            |
+ |            16                   0.552099                      8            |
+ |            17                   0.563186                      8            |
+ |            18                   0.574409                      8            |
+ |            19                   0.580113                     16            |
+ |            20                   0.601385                     16            |
+ |            21                   0.632748                      2            |
+ |            22                   0.642130                      8            |
+ |            23                   0.657027                      8            |
+ |            24                   0.657334                      8            |
+ |            25                   0.675882                     16            |
+ |            26                   0.680737                      8            |
+ |            27                   0.681033                      8            |
+ |            28                   0.703648                     16            |
+ |            29                   0.712380                      4            |
+ |            30                   0.726114                      8            |
+ |            31                   0.734304                      8            |
+ |            32                   0.742947                      8            |
+ |            33                   0.747636                     16            |
+ |            34                   0.755593                      4            |
+ |            35                   0.763995                     16            |
+ |            36                   0.768293                     16            |
+ +----------------------------------------------------------------------------+
+ | The b-vectors are chosen automatically                                     |
+ | The following shells are used:   1,  2                                     |
+ +----------------------------------------------------------------------------+
+ |                        Shell   # Nearest-Neighbours                        |
+ |                        -----   --------------------                        |
+ |                          1               4                                 |
+ |                          2               2                                 |
+ +----------------------------------------------------------------------------+
+ | Completeness relation is fully satisfied [Eq. (B1), PRB 56, 12847 (1997)]  |
+ +----------------------------------------------------------------------------+
+ |                  b_k Vectors (Ang^-1) and Weights (Ang^2)                  |
+ |                  ----------------------------------------                  |
+ |            No.         b_k(x)      b_k(y)      b_k(z)        w_b           |
+ |            ---        --------------------------------     --------        |
+ |             1         0.178095    0.000000    0.000000    15.764019        |
+ |             2        -0.178095   -0.000000   -0.000000    15.764019        |
+ |             3        -0.000000    0.178095    0.000000    15.764019        |
+ |             4         0.000000   -0.178095   -0.000000    15.764019        |
+ |             5         0.000000    0.000000    0.210916    11.239597        |
+ |             6        -0.000000   -0.000000   -0.210916    11.239597        |
+ +----------------------------------------------------------------------------+
+ |                           b_k Directions (Ang^-1)                          |
+ |                           -----------------------                          |
+ |            No.           x           y           z                         |
+ |            ---        --------------------------------                     |
+ |             1         0.178095    0.000000    0.000000                     |
+ |             2        -0.000000    0.178095    0.000000                     |
+ |             3         0.000000    0.000000    0.210916                     |
+ +----------------------------------------------------------------------------+
+  
+ Time to write kmesh            3.042 (sec)
+
+ Finished setting up k-point neighbours.
+
+ Exiting wannier_setup in wannier90 15:38:53 
+
+             +---------------------------------------------------+
+             |                                                   |
+             |                   WANNIER90                       |
+             |                                                   |
+             +---------------------------------------------------+
+             |                                                   |
+             |        Welcome to the Maximally-Localized         |
+             |        Generalized Wannier Functions code         |
+             |            http://www.wannier.org                 |
+             |                                                   |
+             |                                                   |
+             |  Wannier90 Developer Group:                       |
+             |    Giovanni Pizzi    (EPFL)                       |
+             |    Valerio Vitale    (Cambridge)                  |
+             |    David Vanderbilt  (Rutgers University)         |
+             |    Nicola Marzari    (EPFL)                       |
+             |    Ivo Souza         (Universidad del Pais Vasco) |
+             |    Arash A. Mostofi  (Imperial College London)    |
+             |    Jonathan R. Yates (University of Oxford)       |
+             |                                                   |
+             |  For the full list of Wannier90 3.x authors,      |
+             |  please check the code documentation and the      |
+             |  README on the GitHub page of the code            |
+             |                                                   |
+             |                                                   |
+             |  Please cite                                      |
+             |                                                   |
+             |  [ref] "Wannier90 as a community code:            |
+             |        new features and applications",            |
+             |        G. Pizzi et al., J. Phys. Cond. Matt. 32,  |
+             |        165902 (2020).                             |
+             |        http://doi.org/10.1088/1361-648X/ab51ff    |
+             |                                                   |
+             |  in any publications arising from the use of      |
+             |  this code. For the method please cite            |
+             |                                                   |
+             |  [ref] "Maximally Localized Generalised Wannier   |
+             |         Functions for Composite Energy Bands"     |
+             |         N. Marzari and D. Vanderbilt              |
+             |         Phys. Rev. B 56 12847 (1997)              |
+             |                                                   |
+             |  [ref] "Maximally Localized Wannier Functions     |
+             |         for Entangled Energy Bands"               |
+             |         I. Souza, N. Marzari and D. Vanderbilt    |
+             |         Phys. Rev. B 65 035109 (2001)             |
+             |                                                   |
+             |                                                   |
+             | Copyright (c) 1996-2020                           |
+             |        The Wannier90 Developer Group and          |
+             |        individual contributors                    |
+             |                                                   |
+             |      Release: 3.1.0        5th March    2020      |
+             |                                                   |
+             | This program is free software; you can            |
+             | redistribute it and/or modify it under the terms  |
+             | of the GNU General Public License as published by |
+             | the Free Software Foundation; either version 2 of |
+             | the License, or (at your option) any later version|
+             |                                                   |
+             | This program is distributed in the hope that it   |
+             | will be useful, but WITHOUT ANY WARRANTY; without |
+             | even the implied warranty of MERCHANTABILITY or   |
+             | FITNESS FOR A PARTICULAR PURPOSE. See the GNU     |
+             | General Public License for more details.          |
+             |                                                   |
+             | You should have received a copy of the GNU General|
+             | Public License along with this program; if not,   |
+             | write to the Free Software Foundation, Inc.,      |
+             | 675 Mass Ave, Cambridge, MA 02139, USA.           |
+             |                                                   |
+             +---------------------------------------------------+
+             |    Execution started on 14Apr2021 at 15:43:45     |
+             +---------------------------------------------------+
+ 
+ ******************************************************************************
+ * -> Using CODATA 2006 constant values                                       *
+ *    (http://physics.nist.gov/cuu/Constants/index.html)                      *
+ * -> Using Bohr value from CODATA                                            *
+ ******************************************************************************
+ 
+
+ Wannier90 is running in LIBRARY MODE
+
+ Setting up k-point neighbours...
+
+ Ignoring <mp_grid> in input file
+ Ignoring <unit_cell_cart> in input file
+ Ignoring <kpoints> in input file
+ Ignoring <atoms_cart> in input file
+
+                                    ------
+                                    SYSTEM
+                                    ------
+
+                              Lattice Vectors (Ang)
+                    a_1     3.919998   0.000000   0.000000
+                    a_2     0.000000   3.919998   0.000000
+                    a_3     0.000000   0.000000   3.309998
+
+                   Unit Cell Volume:      50.86270  (Ang^3)
+
+                        Reciprocal-Space Vectors (Ang^-1)
+                    b_1     1.602854   0.000000   0.000000
+                    b_2     0.000000   1.602854   0.000000
+                    b_3     0.000000   0.000000   1.898244
+  
+ *----------------------------------------------------------------------------*
+ |   Site       Fractional Coordinate          Cartesian Coordinate (Ang)     |
+ +----------------------------------------------------------------------------+
+ | Nd   1   0.00000   0.00000   0.00000   |    0.00000   0.00000   0.00000    |
+ | Ni   1   0.50000   0.50000   0.50000   |    1.96000   1.96000   1.65500    |
+ | O    1   0.00000   0.50000   0.50000   |    0.00000   1.96000   1.65500    |
+ | O    2   0.50000   0.00000   0.50000   |    1.96000   0.00000   1.65500    |
+ *----------------------------------------------------------------------------*
+                                ------------
+                                K-POINT GRID
+                                ------------
+  
+             Grid size =  9 x  9 x  9      Total points =  729
+  
+  
+ *---------------------------------- MAIN ------------------------------------*
+ |  Number of Wannier Functions               :                16             |
+ |  Number of Objective Wannier Functions     :                16             |
+ |  Number of input Bloch states              :               384             |
+ |  Output verbosity (1=low, 5=high)          :                 1             |
+ |  Timing Level (1=low, 5=high)              :                 1             |
+ |  Optimisation (0=memory, 3=speed)          :                 3             |
+ |  Length Unit                               :               Ang             |
+ |  Post-processing setup (write *.nnkp)      :                 F             |
+ |  Using Gamma-only branch of algorithms     :                 F             |
+ *----------------------------------------------------------------------------*
+ *------------------------------- WANNIERISE ---------------------------------*
+ |  Total number of iterations                :            200000             |
+ |  Number of CG steps before reset           :                 5             |
+ |  Trial step length for line search         :             2.000             |
+ |  Convergence tolerence                     :         0.100E-09             |
+ |  Convergence window                        :                50             |
+ |  Iterations between writing output         :               100             |
+ |  Iterations between backing up to disk     :               100             |
+ |  Write r^2_nm to file                      :                 F             |
+ |  Write xyz WF centres to file              :                 F             |
+ |  Write on-site energies <0n|H|0n> to file  :                 F             |
+ |  Use guiding centre to control phases      :                 T             |
+ |  Use phases for initial projections        :                 F             |
+ |  Iterations before starting guiding centres:                 0             |
+ |  Iterations between using guiding centres  :                 1             |
+ *----------------------------------------------------------------------------*
+ *------------------------------- DISENTANGLE --------------------------------*
+ |  Using band disentanglement                :                 T             |
+ |  Total number of iterations                :            100000             |
+ |  Mixing ratio                              :             0.500             |
+ |  Convergence tolerence                     :         1.000E-14             |
+ |  Convergence window                        :                 3             |
+ *----------------------------------------------------------------------------*
+ *-------------------------------- PLOTTING ----------------------------------*
+ |  Plotting Hamiltonian in WF basis          :                 T             |
+ *----------------------------------------------------------------------------*
+ Time to read parameters        0.037 (sec)
+
+ *---------------------------------- K-MESH ----------------------------------*
+ +----------------------------------------------------------------------------+
+ |                    Distance to Nearest-Neighbour Shells                    |
+ |                    ------------------------------------                    |
+ |          Shell             Distance (Ang^-1)          Multiplicity         |
+ |          -----             -----------------          ------------         |
+ |             1                   0.178095                      4            |
+ |             2                   0.210916                      2            |
+ |             3                   0.251864                      4            |
+ |             4                   0.276050                      8            |
+ |             5                   0.328514                      8            |
+ |             6                   0.356190                      4            |
+ |             7                   0.398232                      8            |
+ |             8                   0.413953                      8            |
+ |             9                   0.421832                      2            |
+ |            10                   0.450638                     16            |
+ |            11                   0.457887                      8            |
+ |            12                   0.491302                      8            |
+ |            13                   0.503728                      4            |
+ |            14                   0.534285                      4            |
+ |            15                   0.546103                      8            |
+ |            16                   0.552099                      8            |
+ |            17                   0.563186                      8            |
+ |            18                   0.574409                      8            |
+ |            19                   0.580113                     16            |
+ |            20                   0.601385                     16            |
+ |            21                   0.632748                      2            |
+ |            22                   0.642130                      8            |
+ |            23                   0.657027                      8            |
+ |            24                   0.657334                      8            |
+ |            25                   0.675882                     16            |
+ |            26                   0.680737                      8            |
+ |            27                   0.681033                      8            |
+ |            28                   0.703648                     16            |
+ |            29                   0.712380                      4            |
+ |            30                   0.726114                      8            |
+ |            31                   0.734304                      8            |
+ |            32                   0.742947                      8            |
+ |            33                   0.747636                     16            |
+ |            34                   0.755593                      4            |
+ |            35                   0.763995                     16            |
+ |            36                   0.768293                     16            |
+ +----------------------------------------------------------------------------+
+ | The b-vectors are chosen automatically                                     |
+ | The following shells are used:   1,  2                                     |
+ +----------------------------------------------------------------------------+
+ |                        Shell   # Nearest-Neighbours                        |
+ |                        -----   --------------------                        |
+ |                          1               4                                 |
+ |                          2               2                                 |
+ +----------------------------------------------------------------------------+
+ | Completeness relation is fully satisfied [Eq. (B1), PRB 56, 12847 (1997)]  |
+ +----------------------------------------------------------------------------+
+ |                  b_k Vectors (Ang^-1) and Weights (Ang^2)                  |
+ |                  ----------------------------------------                  |
+ |            No.         b_k(x)      b_k(y)      b_k(z)        w_b           |
+ |            ---        --------------------------------     --------        |
+ |             1         0.178095    0.000000    0.000000    15.764019        |
+ |             2        -0.178095   -0.000000   -0.000000    15.764019        |
+ |             3        -0.000000    0.178095    0.000000    15.764019        |
+ |             4         0.000000   -0.178095   -0.000000    15.764019        |
+ |             5         0.000000    0.000000    0.210916    11.239597        |
+ |             6        -0.000000   -0.000000   -0.210916    11.239597        |
+ +----------------------------------------------------------------------------+
+ |                           b_k Directions (Ang^-1)                          |
+ |                           -----------------------                          |
+ |            No.           x           y           z                         |
+ |            ---        --------------------------------                     |
+ |             1         0.178095    0.000000    0.000000                     |
+ |             2        -0.000000    0.178095    0.000000                     |
+ |             3         0.000000    0.000000    0.210916                     |
+ +----------------------------------------------------------------------------+
+  
+ Time to write kmesh            3.024 (sec)
+
+ Finished setting up k-point neighbours.
+
+ Exiting wannier_setup in wannier90 15:43:48 
+
+ Resuming Wannier90 at 15:46:20 
+
+ Ignoring <mp_grid> in input file
+ Ignoring <unit_cell_cart> in input file
+ Ignoring <kpoints> in input file
+ Ignoring <atoms_cart> in input file
+
+                                    ------
+                                    SYSTEM
+                                    ------
+
+                              Lattice Vectors (Ang)
+                    a_1     3.919998   0.000000   0.000000
+                    a_2     0.000000   3.919998   0.000000
+                    a_3     0.000000   0.000000   3.309998
+
+                   Unit Cell Volume:      50.86270  (Ang^3)
+
+                        Reciprocal-Space Vectors (Ang^-1)
+                    b_1     1.602854   0.000000   0.000000
+                    b_2     0.000000   1.602854   0.000000
+                    b_3     0.000000   0.000000   1.898244
+  
+ *----------------------------------------------------------------------------*
+ |   Site       Fractional Coordinate          Cartesian Coordinate (Ang)     |
+ +----------------------------------------------------------------------------+
+ | Nd   1   0.00000   0.00000   0.00000   |    0.00000   0.00000   0.00000    |
+ | Ni   1   0.50000   0.50000   0.50000   |    1.96000   1.96000   1.65500    |
+ | O    1   0.00000   0.50000   0.50000   |    0.00000   1.96000   1.65500    |
+ | O    2   0.50000   0.00000   0.50000   |    1.96000   0.00000   1.65500    |
+ *----------------------------------------------------------------------------*
+                                ------------
+                                K-POINT GRID
+                                ------------
+  
+             Grid size =  9 x  9 x  9      Total points =  729
+  
+  
+ *---------------------------------- MAIN ------------------------------------*
+ |  Number of Wannier Functions               :                16             |
+ |  Number of Objective Wannier Functions     :                16             |
+ |  Number of input Bloch states              :               384             |
+ |  Output verbosity (1=low, 5=high)          :                 1             |
+ |  Timing Level (1=low, 5=high)              :                 1             |
+ |  Optimisation (0=memory, 3=speed)          :                 3             |
+ |  Length Unit                               :               Ang             |
+ |  Post-processing setup (write *.nnkp)      :                 F             |
+ |  Using Gamma-only branch of algorithms     :                 F             |
+ *----------------------------------------------------------------------------*
+ *------------------------------- WANNIERISE ---------------------------------*
+ |  Total number of iterations                :            200000             |
+ |  Number of CG steps before reset           :                 5             |
+ |  Trial step length for line search         :             2.000             |
+ |  Convergence tolerence                     :         0.100E-09             |
+ |  Convergence window                        :                50             |
+ |  Iterations between writing output         :               100             |
+ |  Iterations between backing up to disk     :               100             |
+ |  Write r^2_nm to file                      :                 F             |
+ |  Write xyz WF centres to file              :                 F             |
+ |  Write on-site energies <0n|H|0n> to file  :                 F             |
+ |  Use guiding centre to control phases      :                 T             |
+ |  Use phases for initial projections        :                 F             |
+ |  Iterations before starting guiding centres:                 0             |
+ |  Iterations between using guiding centres  :                 1             |
+ *----------------------------------------------------------------------------*
+ *------------------------------- DISENTANGLE --------------------------------*
+ |  Using band disentanglement                :                 T             |
+ |  Total number of iterations                :            100000             |
+ |  Mixing ratio                              :             0.500             |
+ |  Convergence tolerence                     :         1.000E-14             |
+ |  Convergence window                        :                 3             |
+ *----------------------------------------------------------------------------*
+ *-------------------------------- PLOTTING ----------------------------------*
+ |  Plotting Hamiltonian in WF basis          :                 T             |
+ *----------------------------------------------------------------------------*
+ Time to read parameters        0.039 (sec)
+
+ *---------------------------------- K-MESH ----------------------------------*
+ +----------------------------------------------------------------------------+
+ |                    Distance to Nearest-Neighbour Shells                    |
+ |                    ------------------------------------                    |
+ |          Shell             Distance (Ang^-1)          Multiplicity         |
+ |          -----             -----------------          ------------         |
+ |             1                   0.178095                      4            |
+ |             2                   0.210916                      2            |
+ |             3                   0.251864                      4            |
+ |             4                   0.276050                      8            |
+ |             5                   0.328514                      8            |
+ |             6                   0.356190                      4            |
+ |             7                   0.398232                      8            |
+ |             8                   0.413953                      8            |
+ |             9                   0.421832                      2            |
+ |            10                   0.450638                     16            |
+ |            11                   0.457887                      8            |
+ |            12                   0.491302                      8            |
+ |            13                   0.503728                      4            |
+ |            14                   0.534285                      4            |
+ |            15                   0.546103                      8            |
+ |            16                   0.552099                      8            |
+ |            17                   0.563186                      8            |
+ |            18                   0.574409                      8            |
+ |            19                   0.580113                     16            |
+ |            20                   0.601385                     16            |
+ |            21                   0.632748                      2            |
+ |            22                   0.642130                      8            |
+ |            23                   0.657027                      8            |
+ |            24                   0.657334                      8            |
+ |            25                   0.675882                     16            |
+ |            26                   0.680737                      8            |
+ |            27                   0.681033                      8            |
+ |            28                   0.703648                     16            |
+ |            29                   0.712380                      4            |
+ |            30                   0.726114                      8            |
+ |            31                   0.734304                      8            |
+ |            32                   0.742947                      8            |
+ |            33                   0.747636                     16            |
+ |            34                   0.755593                      4            |
+ |            35                   0.763995                     16            |
+ |            36                   0.768293                     16            |
+ +----------------------------------------------------------------------------+
+ | The b-vectors are chosen automatically                                     |
+ | The following shells are used:   1,  2                                     |
+ +----------------------------------------------------------------------------+
+ |                        Shell   # Nearest-Neighbours                        |
+ |                        -----   --------------------                        |
+ |                          1               4                                 |
+ |                          2               2                                 |
+ +----------------------------------------------------------------------------+
+ | Completeness relation is fully satisfied [Eq. (B1), PRB 56, 12847 (1997)]  |
+ +----------------------------------------------------------------------------+
+ |                  b_k Vectors (Ang^-1) and Weights (Ang^2)                  |
+ |                  ----------------------------------------                  |
+ |            No.         b_k(x)      b_k(y)      b_k(z)        w_b           |
+ |            ---        --------------------------------     --------        |
+ |             1         0.178095    0.000000    0.000000    15.764019        |
+ |             2        -0.178095   -0.000000   -0.000000    15.764019        |
+ |             3        -0.000000    0.178095    0.000000    15.764019        |
+ |             4         0.000000   -0.178095   -0.000000    15.764019        |
+ |             5         0.000000    0.000000    0.210916    11.239597        |
+ |             6        -0.000000   -0.000000   -0.210916    11.239597        |
+ +----------------------------------------------------------------------------+
+ |                           b_k Directions (Ang^-1)                          |
+ |                           -----------------------                          |
+ |            No.           x           y           z                         |
+ |            ---        --------------------------------                     |
+ |             1         0.178095    0.000000    0.000000                     |
+ |             2        -0.000000    0.178095    0.000000                     |
+ |             3         0.000000    0.000000    0.210916                     |
+ +----------------------------------------------------------------------------+
+  
+ Time to get kmesh              3.021 (sec)
+
+ *------------------------------- DISENTANGLE --------------------------------*
+ +----------------------------------------------------------------------------+
+ |                              Energy  Windows                               |
+ |                              ---------------                               |
+ |                   Outer:   -3.50000  to   12.50000  (eV)                   |
+ |                   Inner:   -3.50000  to    7.90000  (eV)                   |
+ +----------------------------------------------------------------------------+
+ Error at k-point   15 ndimwin 14 num_wann 16
+ Exiting.......
+ dis_windows: Energy window contains fewer states than number of target WFs
+
+             +---------------------------------------------------+
+             |                                                   |
+             |                   WANNIER90                       |
+             |                                                   |
+             +---------------------------------------------------+
+             |                                                   |
+             |        Welcome to the Maximally-Localized         |
+             |        Generalized Wannier Functions code         |
+             |            http://www.wannier.org                 |
+             |                                                   |
+             |                                                   |
+             |  Wannier90 Developer Group:                       |
+             |    Giovanni Pizzi    (EPFL)                       |
+             |    Valerio Vitale    (Cambridge)                  |
+             |    David Vanderbilt  (Rutgers University)         |
+             |    Nicola Marzari    (EPFL)                       |
+             |    Ivo Souza         (Universidad del Pais Vasco) |
+             |    Arash A. Mostofi  (Imperial College London)    |
+             |    Jonathan R. Yates (University of Oxford)       |
+             |                                                   |
+             |  For the full list of Wannier90 3.x authors,      |
+             |  please check the code documentation and the      |
+             |  README on the GitHub page of the code            |
+             |                                                   |
+             |                                                   |
+             |  Please cite                                      |
+             |                                                   |
+             |  [ref] "Wannier90 as a community code:            |
+             |        new features and applications",            |
+             |        G. Pizzi et al., J. Phys. Cond. Matt. 32,  |
+             |        165902 (2020).                             |
+             |        http://doi.org/10.1088/1361-648X/ab51ff    |
+             |                                                   |
+             |  in any publications arising from the use of      |
+             |  this code. For the method please cite            |
+             |                                                   |
+             |  [ref] "Maximally Localized Generalised Wannier   |
+             |         Functions for Composite Energy Bands"     |
+             |         N. Marzari and D. Vanderbilt              |
+             |         Phys. Rev. B 56 12847 (1997)              |
+             |                                                   |
+             |  [ref] "Maximally Localized Wannier Functions     |
+             |         for Entangled Energy Bands"               |
+             |         I. Souza, N. Marzari and D. Vanderbilt    |
+             |         Phys. Rev. B 65 035109 (2001)             |
+             |                                                   |
+             |                                                   |
+             | Copyright (c) 1996-2020                           |
+             |        The Wannier90 Developer Group and          |
+             |        individual contributors                    |
+             |                                                   |
+             |      Release: 3.1.0        5th March    2020      |
+             |                                                   |
+             | This program is free software; you can            |
+             | redistribute it and/or modify it under the terms  |
+             | of the GNU General Public License as published by |
+             | the Free Software Foundation; either version 2 of |
+             | the License, or (at your option) any later version|
+             |                                                   |
+             | This program is distributed in the hope that it   |
+             | will be useful, but WITHOUT ANY WARRANTY; without |
+             | even the implied warranty of MERCHANTABILITY or   |
+             | FITNESS FOR A PARTICULAR PURPOSE. See the GNU     |
+             | General Public License for more details.          |
+             |                                                   |
+             | You should have received a copy of the GNU General|
+             | Public License along with this program; if not,   |
+             | write to the Free Software Foundation, Inc.,      |
+             | 675 Mass Ave, Cambridge, MA 02139, USA.           |
+             |                                                   |
+             +---------------------------------------------------+
+             |    Execution started on 14Apr2021 at 15:49:16     |
+             +---------------------------------------------------+
+ 
+ ******************************************************************************
+ * -> Using CODATA 2006 constant values                                       *
+ *    (http://physics.nist.gov/cuu/Constants/index.html)                      *
+ * -> Using Bohr value from CODATA                                            *
+ ******************************************************************************
+ 
+
+ Wannier90 is running in LIBRARY MODE
+
+ Setting up k-point neighbours...
+
+ Ignoring <mp_grid> in input file
+ Ignoring <unit_cell_cart> in input file
+ Ignoring <kpoints> in input file
+ Ignoring <atoms_cart> in input file
+
+                                    ------
+                                    SYSTEM
+                                    ------
+
+                              Lattice Vectors (Ang)
+                    a_1     3.919998   0.000000   0.000000
+                    a_2     0.000000   3.919998   0.000000
+                    a_3     0.000000   0.000000   3.309998
+
+                   Unit Cell Volume:      50.86270  (Ang^3)
+
+                        Reciprocal-Space Vectors (Ang^-1)
+                    b_1     1.602854   0.000000   0.000000
+                    b_2     0.000000   1.602854   0.000000
+                    b_3     0.000000   0.000000   1.898244
+  
+ *----------------------------------------------------------------------------*
+ |   Site       Fractional Coordinate          Cartesian Coordinate (Ang)     |
+ +----------------------------------------------------------------------------+
+ | Nd   1   0.00000   0.00000   0.00000   |    0.00000   0.00000   0.00000    |
+ | Ni   1   0.50000   0.50000   0.50000   |    1.96000   1.96000   1.65500    |
+ | O    1   0.00000   0.50000   0.50000   |    0.00000   1.96000   1.65500    |
+ | O    2   0.50000   0.00000   0.50000   |    1.96000   0.00000   1.65500    |
+ *----------------------------------------------------------------------------*
+                                ------------
+                                K-POINT GRID
+                                ------------
+  
+             Grid size =  9 x  9 x  9      Total points =  729
+  
+  
+ *---------------------------------- MAIN ------------------------------------*
+ |  Number of Wannier Functions               :                16             |
+ |  Number of Objective Wannier Functions     :                16             |
+ |  Number of input Bloch states              :               384             |
+ |  Output verbosity (1=low, 5=high)          :                 1             |
+ |  Timing Level (1=low, 5=high)              :                 1             |
+ |  Optimisation (0=memory, 3=speed)          :                 3             |
+ |  Length Unit                               :               Ang             |
+ |  Post-processing setup (write *.nnkp)      :                 F             |
+ |  Using Gamma-only branch of algorithms     :                 F             |
+ *----------------------------------------------------------------------------*
+ *------------------------------- WANNIERISE ---------------------------------*
+ |  Total number of iterations                :            200000             |
+ |  Number of CG steps before reset           :                 5             |
+ |  Trial step length for line search         :             2.000             |
+ |  Convergence tolerence                     :         0.100E-09             |
+ |  Convergence window                        :                50             |
+ |  Iterations between writing output         :               100             |
+ |  Iterations between backing up to disk     :               100             |
+ |  Write r^2_nm to file                      :                 F             |
+ |  Write xyz WF centres to file              :                 F             |
+ |  Write on-site energies <0n|H|0n> to file  :                 F             |
+ |  Use guiding centre to control phases      :                 T             |
+ |  Use phases for initial projections        :                 F             |
+ |  Iterations before starting guiding centres:                 0             |
+ |  Iterations between using guiding centres  :                 1             |
+ *----------------------------------------------------------------------------*
+ *------------------------------- DISENTANGLE --------------------------------*
+ |  Using band disentanglement                :                 T             |
+ |  Total number of iterations                :            100000             |
+ |  Mixing ratio                              :             0.500             |
+ |  Convergence tolerence                     :         1.000E-14             |
+ |  Convergence window                        :                 3             |
+ *----------------------------------------------------------------------------*
+ *-------------------------------- PLOTTING ----------------------------------*
+ |  Plotting Hamiltonian in WF basis          :                 T             |
+ *----------------------------------------------------------------------------*
+ Time to read parameters        0.037 (sec)
+
+ *---------------------------------- K-MESH ----------------------------------*
+ +----------------------------------------------------------------------------+
+ |                    Distance to Nearest-Neighbour Shells                    |
+ |                    ------------------------------------                    |
+ |          Shell             Distance (Ang^-1)          Multiplicity         |
+ |          -----             -----------------          ------------         |
+ |             1                   0.178095                      4            |
+ |             2                   0.210916                      2            |
+ |             3                   0.251864                      4            |
+ |             4                   0.276050                      8            |
+ |             5                   0.328514                      8            |
+ |             6                   0.356190                      4            |
+ |             7                   0.398232                      8            |
+ |             8                   0.413953                      8            |
+ |             9                   0.421832                      2            |
+ |            10                   0.450638                     16            |
+ |            11                   0.457887                      8            |
+ |            12                   0.491302                      8            |
+ |            13                   0.503728                      4            |
+ |            14                   0.534285                      4            |
+ |            15                   0.546103                      8            |
+ |            16                   0.552099                      8            |
+ |            17                   0.563186                      8            |
+ |            18                   0.574409                      8            |
+ |            19                   0.580113                     16            |
+ |            20                   0.601385                     16            |
+ |            21                   0.632748                      2            |
+ |            22                   0.642130                      8            |
+ |            23                   0.657027                      8            |
+ |            24                   0.657334                      8            |
+ |            25                   0.675882                     16            |
+ |            26                   0.680737                      8            |
+ |            27                   0.681033                      8            |
+ |            28                   0.703648                     16            |
+ |            29                   0.712380                      4            |
+ |            30                   0.726114                      8            |
+ |            31                   0.734304                      8            |
+ |            32                   0.742947                      8            |
+ |            33                   0.747636                     16            |
+ |            34                   0.755593                      4            |
+ |            35                   0.763995                     16            |
+ |            36                   0.768293                     16            |
+ +----------------------------------------------------------------------------+
+ | The b-vectors are chosen automatically                                     |
+ | The following shells are used:   1,  2                                     |
+ +----------------------------------------------------------------------------+
+ |                        Shell   # Nearest-Neighbours                        |
+ |                        -----   --------------------                        |
+ |                          1               4                                 |
+ |                          2               2                                 |
+ +----------------------------------------------------------------------------+
+ | Completeness relation is fully satisfied [Eq. (B1), PRB 56, 12847 (1997)]  |
+ +----------------------------------------------------------------------------+
+ |                  b_k Vectors (Ang^-1) and Weights (Ang^2)                  |
+ |                  ----------------------------------------                  |
+ |            No.         b_k(x)      b_k(y)      b_k(z)        w_b           |
+ |            ---        --------------------------------     --------        |
+ |             1         0.178095    0.000000    0.000000    15.764019        |
+ |             2        -0.178095   -0.000000   -0.000000    15.764019        |
+ |             3        -0.000000    0.178095    0.000000    15.764019        |
+ |             4         0.000000   -0.178095   -0.000000    15.764019        |
+ |             5         0.000000    0.000000    0.210916    11.239597        |
+ |             6        -0.000000   -0.000000   -0.210916    11.239597        |
+ +----------------------------------------------------------------------------+
+ |                           b_k Directions (Ang^-1)                          |
+ |                           -----------------------                          |
+ |            No.           x           y           z                         |
+ |            ---        --------------------------------                     |
+ |             1         0.178095    0.000000    0.000000                     |
+ |             2        -0.000000    0.178095    0.000000                     |
+ |             3         0.000000    0.000000    0.210916                     |
+ +----------------------------------------------------------------------------+
+  
+ Time to write kmesh            3.025 (sec)
+
+ Finished setting up k-point neighbours.
+
+ Exiting wannier_setup in wannier90 15:49:19 
+
+ Resuming Wannier90 at 15:51:52 
+
+ Ignoring <mp_grid> in input file
+ Ignoring <unit_cell_cart> in input file
+ Ignoring <kpoints> in input file
+ Ignoring <atoms_cart> in input file
+
+                                    ------
+                                    SYSTEM
+                                    ------
+
+                              Lattice Vectors (Ang)
+                    a_1     3.919998   0.000000   0.000000
+                    a_2     0.000000   3.919998   0.000000
+                    a_3     0.000000   0.000000   3.309998
+
+                   Unit Cell Volume:      50.86270  (Ang^3)
+
+                        Reciprocal-Space Vectors (Ang^-1)
+                    b_1     1.602854   0.000000   0.000000
+                    b_2     0.000000   1.602854   0.000000
+                    b_3     0.000000   0.000000   1.898244
+  
+ *----------------------------------------------------------------------------*
+ |   Site       Fractional Coordinate          Cartesian Coordinate (Ang)     |
+ +----------------------------------------------------------------------------+
+ | Nd   1   0.00000   0.00000   0.00000   |    0.00000   0.00000   0.00000    |
+ | Ni   1   0.50000   0.50000   0.50000   |    1.96000   1.96000   1.65500    |
+ | O    1   0.00000   0.50000   0.50000   |    0.00000   1.96000   1.65500    |
+ | O    2   0.50000   0.00000   0.50000   |    1.96000   0.00000   1.65500    |
+ *----------------------------------------------------------------------------*
+                                ------------
+                                K-POINT GRID
+                                ------------
+  
+             Grid size =  9 x  9 x  9      Total points =  729
+  
+  
+ *---------------------------------- MAIN ------------------------------------*
+ |  Number of Wannier Functions               :                16             |
+ |  Number of Objective Wannier Functions     :                16             |
+ |  Number of input Bloch states              :               384             |
+ |  Output verbosity (1=low, 5=high)          :                 1             |
+ |  Timing Level (1=low, 5=high)              :                 1             |
+ |  Optimisation (0=memory, 3=speed)          :                 3             |
+ |  Length Unit                               :               Ang             |
+ |  Post-processing setup (write *.nnkp)      :                 F             |
+ |  Using Gamma-only branch of algorithms     :                 F             |
+ *----------------------------------------------------------------------------*
+ *------------------------------- WANNIERISE ---------------------------------*
+ |  Total number of iterations                :            200000             |
+ |  Number of CG steps before reset           :                 5             |
+ |  Trial step length for line search         :             2.000             |
+ |  Convergence tolerence                     :         0.100E-09             |
+ |  Convergence window                        :                50             |
+ |  Iterations between writing output         :               100             |
+ |  Iterations between backing up to disk     :               100             |
+ |  Write r^2_nm to file                      :                 F             |
+ |  Write xyz WF centres to file              :                 F             |
+ |  Write on-site energies <0n|H|0n> to file  :                 F             |
+ |  Use guiding centre to control phases      :                 T             |
+ |  Use phases for initial projections        :                 F             |
+ |  Iterations before starting guiding centres:                 0             |
+ |  Iterations between using guiding centres  :                 1             |
+ *----------------------------------------------------------------------------*
+ *------------------------------- DISENTANGLE --------------------------------*
+ |  Using band disentanglement                :                 T             |
+ |  Total number of iterations                :            100000             |
+ |  Mixing ratio                              :             0.500             |
+ |  Convergence tolerence                     :         1.000E-14             |
+ |  Convergence window                        :                 3             |
+ *----------------------------------------------------------------------------*
+ *-------------------------------- PLOTTING ----------------------------------*
+ |  Plotting Hamiltonian in WF basis          :                 T             |
+ *----------------------------------------------------------------------------*
+ Time to read parameters        0.039 (sec)
+
+ *---------------------------------- K-MESH ----------------------------------*
+ +----------------------------------------------------------------------------+
+ |                    Distance to Nearest-Neighbour Shells                    |
+ |                    ------------------------------------                    |
+ |          Shell             Distance (Ang^-1)          Multiplicity         |
+ |          -----             -----------------          ------------         |
+ |             1                   0.178095                      4            |
+ |             2                   0.210916                      2            |
+ |             3                   0.251864                      4            |
+ |             4                   0.276050                      8            |
+ |             5                   0.328514                      8            |
+ |             6                   0.356190                      4            |
+ |             7                   0.398232                      8            |
+ |             8                   0.413953                      8            |
+ |             9                   0.421832                      2            |
+ |            10                   0.450638                     16            |
+ |            11                   0.457887                      8            |
+ |            12                   0.491302                      8            |
+ |            13                   0.503728                      4            |
+ |            14                   0.534285                      4            |
+ |            15                   0.546103                      8            |
+ |            16                   0.552099                      8            |
+ |            17                   0.563186                      8            |
+ |            18                   0.574409                      8            |
+ |            19                   0.580113                     16            |
+ |            20                   0.601385                     16            |
+ |            21                   0.632748                      2            |
+ |            22                   0.642130                      8            |
+ |            23                   0.657027                      8            |
+ |            24                   0.657334                      8            |
+ |            25                   0.675882                     16            |
+ |            26                   0.680737                      8            |
+ |            27                   0.681033                      8            |
+ |            28                   0.703648                     16            |
+ |            29                   0.712380                      4            |
+ |            30                   0.726114                      8            |
+ |            31                   0.734304                      8            |
+ |            32                   0.742947                      8            |
+ |            33                   0.747636                     16            |
+ |            34                   0.755593                      4            |
+ |            35                   0.763995                     16            |
+ |            36                   0.768293                     16            |
+ +----------------------------------------------------------------------------+
+ | The b-vectors are chosen automatically                                     |
+ | The following shells are used:   1,  2                                     |
+ +----------------------------------------------------------------------------+
+ |                        Shell   # Nearest-Neighbours                        |
+ |                        -----   --------------------                        |
+ |                          1               4                                 |
+ |                          2               2                                 |
+ +----------------------------------------------------------------------------+
+ | Completeness relation is fully satisfied [Eq. (B1), PRB 56, 12847 (1997)]  |
+ +----------------------------------------------------------------------------+
+ |                  b_k Vectors (Ang^-1) and Weights (Ang^2)                  |
+ |                  ----------------------------------------                  |
+ |            No.         b_k(x)      b_k(y)      b_k(z)        w_b           |
+ |            ---        --------------------------------     --------        |
+ |             1         0.178095    0.000000    0.000000    15.764019        |
+ |             2        -0.178095   -0.000000   -0.000000    15.764019        |
+ |             3        -0.000000    0.178095    0.000000    15.764019        |
+ |             4         0.000000   -0.178095   -0.000000    15.764019        |
+ |             5         0.000000    0.000000    0.210916    11.239597        |
+ |             6        -0.000000   -0.000000   -0.210916    11.239597        |
+ +----------------------------------------------------------------------------+
+ |                           b_k Directions (Ang^-1)                          |
+ |                           -----------------------                          |
+ |            No.           x           y           z                         |
+ |            ---        --------------------------------                     |
+ |             1         0.178095    0.000000    0.000000                     |
+ |             2        -0.000000    0.178095    0.000000                     |
+ |             3         0.000000    0.000000    0.210916                     |
+ +----------------------------------------------------------------------------+
+  
+ Time to get kmesh              3.051 (sec)
+
+ *------------------------------- DISENTANGLE --------------------------------*
+ +----------------------------------------------------------------------------+
+ |                              Energy  Windows                               |
+ |                              ---------------                               |
+ |                   Outer:   -3.50000  to   14.00000  (eV)                   |
+ |                   Inner:   -3.50000  to    7.90000  (eV)                   |
+ +----------------------------------------------------------------------------+
+   Number of target bands to extract:   16
+
+                   Unitarised projection of Wannier functions                  
+                   ------------------------------------------                  
+   A_mn = <psi_m|g_n> --> S = A.A^+ --> U = S^-1/2.A
+   In dis_project... done
+   Using an inner window (linner = T)
+   In dis_proj_froz... done
+
+                   Extraction of optimally-connected subspace                  
+                   ------------------------------------------                  
+ +---------------------------------------------------------------------+<-- DIS
+ |  Iter     Omega_I(i-1)      Omega_I(i)      Delta (frac.)    Time   |<-- DIS
+ +---------------------------------------------------------------------+<-- DIS
+       1      23.10500793      22.33562967       3.445E-02      0.00    <-- DIS
+       2      22.37493464      22.10537095       1.219E-02      1.07    <-- DIS
+       3      22.16566330      21.94649519       9.986E-03      1.82    <-- DIS
+       4      21.99379223      21.82766223       7.611E-03      2.57    <-- DIS
+       5      21.85979775      21.73600315       5.695E-03      3.32    <-- DIS
+       6      21.75612578      21.66365458       4.268E-03      4.07    <-- DIS
+       7      21.67529874      21.60540798       3.235E-03      4.81    <-- DIS
+       8      21.61140808      21.55769484       2.492E-03      5.56    <-- DIS
+       9      21.56008683      21.51801296       1.955E-03      6.31    <-- DIS
+      10      21.51818175      21.48457379       1.564E-03      7.06    <-- DIS
+      11      21.48342937      21.45607651       1.275E-03      7.81    <-- DIS
+      12      21.45420038      21.43155918       1.056E-03      8.55    <-- DIS
+      13      21.42931271      21.41029864       8.881E-04      9.30    <-- DIS
+      14      21.40789901      21.39174215       7.553E-04     10.05    <-- DIS
+      15      21.38931405      21.37546017       6.481E-04     10.79    <-- DIS
+      16      21.37307024      21.36111323       5.598E-04     11.54    <-- DIS
+      17      21.35879278      21.34842873       4.855E-04     12.29    <-- DIS
+      18      21.34618833      21.33718427       4.220E-04     13.04    <-- DIS
+      19      21.33502310      21.32719578       3.670E-04     13.78    <-- DIS
+      20      21.32510745      21.31830885       3.189E-04     14.53    <-- DIS
+      21      21.31628486      21.31039247       2.765E-04     15.28    <-- DIS
+      22      21.30842422      21.30333427       2.389E-04     16.02    <-- DIS
+      23      21.30141412      21.29703706       2.055E-04     16.77    <-- DIS
+      24      21.29515880      21.29141617       1.758E-04     17.52    <-- DIS
+      25      21.28957513      21.28639736       1.493E-04     18.26    <-- DIS
+      26      21.28459035      21.28191523       1.257E-04     19.01    <-- DIS
+      27      21.28014033      21.27791196       1.047E-04     19.75    <-- DIS
+      28      21.27616833      21.27433623       8.612E-05     20.50    <-- DIS
+      29      21.27262386      21.27114243       6.964E-05     21.25    <-- DIS
+      30      21.26946192      21.26828992       5.511E-05     21.99    <-- DIS
+      31      21.26664230      21.26574245       4.231E-05     22.74    <-- DIS
+      32      21.26412901      21.26346762       3.110E-05     23.49    <-- DIS
+      33      21.26188980      21.26143650       2.132E-05     24.23    <-- DIS
+      34      21.25989576      21.25962323       1.282E-05     24.98    <-- DIS
+      35      21.25812096      21.25800465       5.472E-06     25.73    <-- DIS
+      36      21.25654216      21.25656007      -8.428E-07     26.48    <-- DIS
+      37      21.25513848      21.25527096      -6.233E-06     27.22    <-- DIS
+      38      21.25389122      21.25412075      -1.080E-05     27.97    <-- DIS
+      39      21.25278362      21.25309462      -1.463E-05     28.71    <-- DIS
+      40      21.25180064      21.25217931      -1.782E-05     29.46    <-- DIS
+      41      21.25092882      21.25136294      -2.043E-05     30.20    <-- DIS
+      42      21.25015610      21.25063492      -2.253E-05     30.95    <-- DIS
+      43      21.24947169      21.24998577      -2.419E-05     31.69    <-- DIS
+      44      21.24886592      21.24940701      -2.546E-05     32.43    <-- DIS
+      45      21.24833018      21.24889105      -2.640E-05     33.18    <-- DIS
+      46      21.24785673      21.24843115      -2.703E-05     33.93    <-- DIS
+      47      21.24743867      21.24802123      -2.742E-05     34.67    <-- DIS
+      48      21.24706986      21.24765592      -2.758E-05     35.42    <-- DIS
+      49      21.24674479      21.24733038      -2.756E-05     36.16    <-- DIS
+      50      21.24645856      21.24704030      -2.738E-05     36.90    <-- DIS
+      51      21.24620679      21.24678185      -2.707E-05     37.65    <-- DIS
+      52      21.24598559      21.24655160      -2.664E-05     38.39    <-- DIS
+      53      21.24579148      21.24634647      -2.612E-05     39.14    <-- DIS
+      54      21.24562136      21.24616375      -2.553E-05     39.88    <-- DIS
+      55      21.24547249      21.24600099      -2.488E-05     40.62    <-- DIS
+      56      21.24534241      21.24585602      -2.417E-05     41.36    <-- DIS
+      57      21.24522894      21.24572691      -2.344E-05     42.11    <-- DIS
+      58      21.24513015      21.24561192      -2.268E-05     42.86    <-- DIS
+      59      21.24504431      21.24550952      -2.190E-05     43.60    <-- DIS
+      60      21.24496990      21.24541833      -2.111E-05     44.34    <-- DIS
+      61      21.24490555      21.24533713      -2.031E-05     45.09    <-- DIS
+      62      21.24485007      21.24526482      -1.952E-05     45.83    <-- DIS
+      63      21.24480238      21.24520044      -1.874E-05     46.58    <-- DIS
+      64      21.24476154      21.24514311      -1.796E-05     47.32    <-- DIS
+      65      21.24472671      21.24509207      -1.720E-05     48.06    <-- DIS
+      66      21.24469715      21.24504663      -1.645E-05     48.80    <-- DIS
+      67      21.24467220      21.24500617      -1.572E-05     49.55    <-- DIS
+      68      21.24465127      21.24497015      -1.501E-05     50.29    <-- DIS
+      69      21.24463387      21.24493808      -1.432E-05     51.03    <-- DIS
+      70      21.24461952      21.24490953      -1.365E-05     51.77    <-- DIS
+      71      21.24460784      21.24488412      -1.300E-05     52.52    <-- DIS
+      72      21.24459846      21.24486149      -1.238E-05     53.26    <-- DIS
+      73      21.24459109      21.24484135      -1.178E-05     54.00    <-- DIS
+      74      21.24458544      21.24482342      -1.120E-05     54.75    <-- DIS
+      75      21.24458127      21.24480746      -1.065E-05     55.49    <-- DIS
+      76      21.24457837      21.24479325      -1.011E-05     56.24    <-- DIS
+      77      21.24457656      21.24478061      -9.604E-06     56.98    <-- DIS
+      78      21.24457568      21.24476935      -9.116E-06     57.72    <-- DIS
+      79      21.24457557      21.24475932      -8.649E-06     58.46    <-- DIS
+      80      21.24457613      21.24475040      -8.203E-06     59.20    <-- DIS
+      81      21.24457723      21.24474246      -7.778E-06     59.95    <-- DIS
+      82      21.24457878      21.24473539      -7.372E-06     60.69    <-- DIS
+      83      21.24458071      21.24472910      -6.985E-06     61.44    <-- DIS
+      84      21.24458293      21.24472349      -6.616E-06     62.18    <-- DIS
+      85      21.24458539      21.24471851      -6.266E-06     62.92    <-- DIS
+      86      21.24458804      21.24471407      -5.932E-06     63.67    <-- DIS
+      87      21.24459082      21.24471012      -5.615E-06     64.41    <-- DIS
+      88      21.24459371      21.24470660      -5.314E-06     65.15    <-- DIS
+      89      21.24459666      21.24470347      -5.028E-06     65.89    <-- DIS
+      90      21.24459964      21.24470068      -4.756E-06     66.64    <-- DIS
+      91      21.24460263      21.24469820      -4.498E-06     67.38    <-- DIS
+      92      21.24460562      21.24469599      -4.254E-06     68.12    <-- DIS
+      93      21.24460858      21.24469402      -4.022E-06     68.86    <-- DIS
+      94      21.24461150      21.24469227      -3.802E-06     69.60    <-- DIS
+      95      21.24461437      21.24469071      -3.594E-06     70.35    <-- DIS
+      96      21.24461717      21.24468932      -3.396E-06     71.09    <-- DIS
+      97      21.24461991      21.24468809      -3.209E-06     71.83    <-- DIS
+      98      21.24462257      21.24468699      -3.032E-06     72.57    <-- DIS
+      99      21.24462515      21.24468601      -2.865E-06     73.31    <-- DIS
+     100      21.24462765      21.24468514      -2.706E-06     74.05    <-- DIS
+     101      21.24463006      21.24468436      -2.556E-06     74.79    <-- DIS
+     102      21.24463238      21.24468367      -2.414E-06     75.53    <-- DIS
+     103      21.24463462      21.24468306      -2.280E-06     76.28    <-- DIS
+     104      21.24463677      21.24468251      -2.153E-06     77.02    <-- DIS
+     105      21.24463883      21.24468202      -2.033E-06     77.76    <-- DIS
+     106      21.24464081      21.24468159      -1.919E-06     78.50    <-- DIS
+     107      21.24464270      21.24468120      -1.812E-06     79.25    <-- DIS
+     108      21.24464451      21.24468085      -1.711E-06     79.99    <-- DIS
+     109      21.24464624      21.24468055      -1.615E-06     80.73    <-- DIS
+     110      21.24464789      21.24468028      -1.524E-06     81.47    <-- DIS
+     111      21.24464947      21.24468003      -1.439E-06     82.22    <-- DIS
+     112      21.24465097      21.24467982      -1.358E-06     82.96    <-- DIS
+     113      21.24465240      21.24467962      -1.281E-06     83.70    <-- DIS
+     114      21.24465376      21.24467945      -1.209E-06     84.44    <-- DIS
+     115      21.24465505      21.24467930      -1.141E-06     85.18    <-- DIS
+     116      21.24465628      21.24467916      -1.077E-06     85.92    <-- DIS
+     117      21.24465745      21.24467904      -1.016E-06     86.67    <-- DIS
+     118      21.24465856      21.24467893      -9.589E-07     87.41    <-- DIS
+     119      21.24465961      21.24467884      -9.048E-07     88.15    <-- DIS
+     120      21.24466061      21.24467875      -8.537E-07     88.89    <-- DIS
+     121      21.24466156      21.24467867      -8.054E-07     89.64    <-- DIS
+     122      21.24466246      21.24467861      -7.599E-07     90.38    <-- DIS
+     123      21.24466332      21.24467855      -7.169E-07     91.12    <-- DIS
+     124      21.24466412      21.24467849      -6.763E-07     91.86    <-- DIS
+     125      21.24466489      21.24467844      -6.380E-07     92.61    <-- DIS
+     126      21.24466561      21.24467840      -6.019E-07     93.35    <-- DIS
+     127      21.24466630      21.24467836      -5.678E-07     94.09    <-- DIS
+     128      21.24466695      21.24467833      -5.356E-07     94.83    <-- DIS
+     129      21.24466756      21.24467830      -5.052E-07     95.58    <-- DIS
+     130      21.24466815      21.24467827      -4.766E-07     96.32    <-- DIS
+     131      21.24466870      21.24467825      -4.495E-07     97.07    <-- DIS
+     132      21.24466922      21.24467823      -4.240E-07     97.81    <-- DIS
+     133      21.24466971      21.24467821      -3.999E-07     98.56    <-- DIS
+     134      21.24467018      21.24467819      -3.772E-07     99.30    <-- DIS
+     135      21.24467062      21.24467817      -3.558E-07    100.04    <-- DIS
+     136      21.24467103      21.24467816      -3.356E-07    100.79    <-- DIS
+     137      21.24467142      21.24467815      -3.165E-07    101.53    <-- DIS
+     138      21.24467180      21.24467814      -2.985E-07    102.27    <-- DIS
+     139      21.24467215      21.24467813      -2.816E-07    103.02    <-- DIS
+     140      21.24467248      21.24467812      -2.656E-07    103.76    <-- DIS
+     141      21.24467279      21.24467811      -2.504E-07    104.50    <-- DIS
+     142      21.24467309      21.24467811      -2.362E-07    105.24    <-- DIS
+     143      21.24467337      21.24467810      -2.228E-07    105.99    <-- DIS
+     144      21.24467363      21.24467809      -2.101E-07    106.73    <-- DIS
+     145      21.24467388      21.24467809      -1.981E-07    107.51    <-- DIS
+     146      21.24467412      21.24467809      -1.869E-07    108.39    <-- DIS
+     147      21.24467434      21.24467808      -1.762E-07    109.27    <-- DIS
+     148      21.24467455      21.24467808      -1.662E-07    110.07    <-- DIS
+     149      21.24467475      21.24467807      -1.567E-07    110.81    <-- DIS
+     150      21.24467493      21.24467807      -1.478E-07    111.56    <-- DIS
+     151      21.24467511      21.24467807      -1.394E-07    112.31    <-- DIS
+     152      21.24467528      21.24467807      -1.314E-07    113.07    <-- DIS
+     153      21.24467543      21.24467807      -1.240E-07    113.81    <-- DIS
+     154      21.24467558      21.24467806      -1.169E-07    114.56    <-- DIS
+     155      21.24467572      21.24467806      -1.102E-07    115.31    <-- DIS
+     156      21.24467585      21.24467806      -1.039E-07    116.06    <-- DIS
+     157      21.24467598      21.24467806      -9.802E-08    116.80    <-- DIS
+     158      21.24467609      21.24467806      -9.243E-08    117.55    <-- DIS
+     159      21.24467621      21.24467806      -8.716E-08    118.30    <-- DIS
+     160      21.24467631      21.24467806      -8.219E-08    119.04    <-- DIS
+     161      21.24467641      21.24467806      -7.751E-08    119.79    <-- DIS
+     162      21.24467650      21.24467806      -7.309E-08    120.54    <-- DIS
+     163      21.24467659      21.24467805      -6.892E-08    121.28    <-- DIS
+     164      21.24467667      21.24467805      -6.499E-08    122.03    <-- DIS
+     165      21.24467675      21.24467805      -6.128E-08    122.77    <-- DIS
+     166      21.24467683      21.24467805      -5.779E-08    123.52    <-- DIS
+     167      21.24467690      21.24467805      -5.449E-08    124.27    <-- DIS
+     168      21.24467696      21.24467805      -5.138E-08    125.02    <-- DIS
+     169      21.24467702      21.24467805      -4.845E-08    125.76    <-- DIS
+     170      21.24467708      21.24467805      -4.569E-08    126.51    <-- DIS
+     171      21.24467714      21.24467805      -4.308E-08    127.26    <-- DIS
+     172      21.24467719      21.24467805      -4.062E-08    128.00    <-- DIS
+     173      21.24467724      21.24467805      -3.830E-08    128.75    <-- DIS
+     174      21.24467728      21.24467805      -3.612E-08    129.49    <-- DIS
+     175      21.24467733      21.24467805      -3.405E-08    130.24    <-- DIS
+     176      21.24467737      21.24467805      -3.211E-08    130.99    <-- DIS
+     177      21.24467741      21.24467805      -3.028E-08    131.73    <-- DIS
+     178      21.24467744      21.24467805      -2.855E-08    132.48    <-- DIS
+     179      21.24467748      21.24467805      -2.692E-08    133.23    <-- DIS
+     180      21.24467751      21.24467805      -2.538E-08    133.97    <-- DIS
+     181      21.24467754      21.24467805      -2.393E-08    134.72    <-- DIS
+     182      21.24467757      21.24467805      -2.256E-08    135.47    <-- DIS
+     183      21.24467760      21.24467805      -2.128E-08    136.22    <-- DIS
+     184      21.24467762      21.24467805      -2.006E-08    136.96    <-- DIS
+     185      21.24467765      21.24467805      -1.891E-08    137.70    <-- DIS
+     186      21.24467767      21.24467805      -1.783E-08    138.45    <-- DIS
+     187      21.24467769      21.24467805      -1.682E-08    139.37    <-- DIS
+     188      21.24467771      21.24467805      -1.585E-08    140.23    <-- DIS
+     189      21.24467773      21.24467805      -1.495E-08    141.04    <-- DIS
+     190      21.24467775      21.24467805      -1.409E-08    141.78    <-- DIS
+     191      21.24467777      21.24467805      -1.329E-08    142.53    <-- DIS
+     192      21.24467778      21.24467805      -1.253E-08    143.27    <-- DIS
+     193      21.24467780      21.24467805      -1.181E-08    144.05    <-- DIS
+     194      21.24467781      21.24467805      -1.114E-08    144.79    <-- DIS
+     195      21.24467783      21.24467805      -1.050E-08    145.54    <-- DIS
+     196      21.24467784      21.24467805      -9.901E-09    146.29    <-- DIS
+     197      21.24467785      21.24467805      -9.334E-09    147.04    <-- DIS
+     198      21.24467786      21.24467805      -8.801E-09    147.78    <-- DIS
+     199      21.24467787      21.24467805      -8.297E-09    148.53    <-- DIS
+     200      21.24467788      21.24467805      -7.823E-09    149.28    <-- DIS
+     201      21.24467789      21.24467805      -7.375E-09    150.02    <-- DIS
+     202      21.24467790      21.24467805      -6.954E-09    150.77    <-- DIS
+     203      21.24467791      21.24467805      -6.556E-09    151.52    <-- DIS
+     204      21.24467792      21.24467805      -6.181E-09    152.27    <-- DIS
+     205      21.24467793      21.24467805      -5.827E-09    153.02    <-- DIS
+     206      21.24467793      21.24467805      -5.494E-09    153.76    <-- DIS
+     207      21.24467794      21.24467805      -5.179E-09    154.51    <-- DIS
+     208      21.24467795      21.24467805      -4.883E-09    155.26    <-- DIS
+     209      21.24467795      21.24467805      -4.603E-09    156.00    <-- DIS
+     210      21.24467796      21.24467805      -4.340E-09    156.75    <-- DIS
+     211      21.24467796      21.24467805      -4.092E-09    157.49    <-- DIS
+     212      21.24467797      21.24467805      -3.857E-09    158.24    <-- DIS
+     213      21.24467797      21.24467805      -3.636E-09    158.99    <-- DIS
+     214      21.24467798      21.24467805      -3.428E-09    159.74    <-- DIS
+     215      21.24467798      21.24467805      -3.232E-09    160.48    <-- DIS
+     216      21.24467798      21.24467805      -3.047E-09    161.23    <-- DIS
+     217      21.24467799      21.24467805      -2.872E-09    161.98    <-- DIS
+     218      21.24467799      21.24467805      -2.708E-09    162.73    <-- DIS
+     219      21.24467800      21.24467805      -2.553E-09    163.48    <-- DIS
+     220      21.24467800      21.24467805      -2.406E-09    164.23    <-- DIS
+     221      21.24467800      21.24467805      -2.269E-09    164.96    <-- DIS
+     222      21.24467800      21.24467805      -2.139E-09    165.70    <-- DIS
+     223      21.24467801      21.24467805      -2.016E-09    166.45    <-- DIS
+     224      21.24467801      21.24467805      -1.900E-09    167.20    <-- DIS
+     225      21.24467801      21.24467805      -1.791E-09    167.94    <-- DIS
+     226      21.24467801      21.24467805      -1.689E-09    168.69    <-- DIS
+     227      21.24467802      21.24467805      -1.592E-09    169.44    <-- DIS
+     228      21.24467802      21.24467805      -1.501E-09    170.33    <-- DIS
+     229      21.24467802      21.24467805      -1.415E-09    171.21    <-- DIS
+     230      21.24467802      21.24467805      -1.333E-09    172.03    <-- DIS
+     231      21.24467802      21.24467805      -1.257E-09    172.78    <-- DIS
+     232      21.24467802      21.24467805      -1.185E-09    173.52    <-- DIS
+     233      21.24467803      21.24467805      -1.117E-09    174.26    <-- DIS
+     234      21.24467803      21.24467805      -1.053E-09    175.03    <-- DIS
+     235      21.24467803      21.24467805      -9.924E-10    175.78    <-- DIS
+     236      21.24467803      21.24467805      -9.354E-10    176.52    <-- DIS
+     237      21.24467803      21.24467805      -8.817E-10    177.27    <-- DIS
+     238      21.24467803      21.24467805      -8.311E-10    178.02    <-- DIS
+     239      21.24467803      21.24467805      -7.834E-10    178.77    <-- DIS
+     240      21.24467803      21.24467805      -7.384E-10    179.51    <-- DIS
+     241      21.24467803      21.24467805      -6.960E-10    180.26    <-- DIS
+     242      21.24467804      21.24467805      -6.560E-10    181.00    <-- DIS
+     243      21.24467804      21.24467805      -6.183E-10    181.75    <-- DIS
+     244      21.24467804      21.24467805      -5.828E-10    182.49    <-- DIS
+     245      21.24467804      21.24467805      -5.493E-10    183.24    <-- DIS
+     246      21.24467804      21.24467805      -5.178E-10    183.99    <-- DIS
+     247      21.24467804      21.24467805      -4.880E-10    184.73    <-- DIS
+     248      21.24467804      21.24467805      -4.599E-10    185.48    <-- DIS
+     249      21.24467804      21.24467805      -4.335E-10    186.23    <-- DIS
+     250      21.24467804      21.24467805      -4.086E-10    186.97    <-- DIS
+     251      21.24467804      21.24467805      -3.851E-10    187.72    <-- DIS
+     252      21.24467804      21.24467805      -3.629E-10    188.46    <-- DIS
+     253      21.24467804      21.24467805      -3.420E-10    189.21    <-- DIS
+     254      21.24467804      21.24467805      -3.224E-10    189.96    <-- DIS
+     255      21.24467804      21.24467805      -3.038E-10    190.71    <-- DIS
+     256      21.24467804      21.24467805      -2.863E-10    191.45    <-- DIS
+     257      21.24467804      21.24467805      -2.698E-10    192.20    <-- DIS
+     258      21.24467804      21.24467805      -2.543E-10    192.94    <-- DIS
+     259      21.24467804      21.24467805      -2.397E-10    193.69    <-- DIS
+     260      21.24467804      21.24467805      -2.259E-10    194.45    <-- DIS
+     261      21.24467805      21.24467805      -2.128E-10    195.20    <-- DIS
+     262      21.24467805      21.24467805      -2.006E-10    195.94    <-- DIS
+     263      21.24467805      21.24467805      -1.890E-10    196.68    <-- DIS
+     264      21.24467805      21.24467805      -1.781E-10    197.43    <-- DIS
+     265      21.24467805      21.24467805      -1.679E-10    198.18    <-- DIS
+     266      21.24467805      21.24467805      -1.582E-10    198.92    <-- DIS
+     267      21.24467805      21.24467805      -1.491E-10    199.67    <-- DIS
+     268      21.24467805      21.24467805      -1.405E-10    200.41    <-- DIS
+     269      21.24467805      21.24467805      -1.324E-10    201.22    <-- DIS
+     270      21.24467805      21.24467805      -1.247E-10    202.08    <-- DIS
+     271      21.24467805      21.24467805      -1.175E-10    203.00    <-- DIS
+     272      21.24467805      21.24467805      -1.107E-10    203.76    <-- DIS
+     273      21.24467805      21.24467805      -1.044E-10    204.51    <-- DIS
+     274      21.24467805      21.24467805      -9.832E-11    205.25    <-- DIS
+     275      21.24467805      21.24467805      -9.264E-11    206.01    <-- DIS
+     276      21.24467805      21.24467805      -8.729E-11    206.77    <-- DIS
+     277      21.24467805      21.24467805      -8.225E-11    207.51    <-- DIS
+     278      21.24467805      21.24467805      -7.749E-11    208.26    <-- DIS
+     279      21.24467805      21.24467805      -7.301E-11    209.00    <-- DIS
+     280      21.24467805      21.24467805      -6.879E-11    209.75    <-- DIS
+     281      21.24467805      21.24467805      -6.481E-11    210.49    <-- DIS
+     282      21.24467805      21.24467805      -6.106E-11    211.24    <-- DIS
+     283      21.24467805      21.24467805      -5.753E-11    211.99    <-- DIS
+     284      21.24467805      21.24467805      -5.420E-11    212.74    <-- DIS
+     285      21.24467805      21.24467805      -5.106E-11    213.49    <-- DIS
+     286      21.24467805      21.24467805      -4.811E-11    214.23    <-- DIS
+     287      21.24467805      21.24467805      -4.532E-11    214.98    <-- DIS
+     288      21.24467805      21.24467805      -4.269E-11    215.72    <-- DIS
+     289      21.24467805      21.24467805      -4.022E-11    216.47    <-- DIS
+     290      21.24467805      21.24467805      -3.789E-11    217.21    <-- DIS
+     291      21.24467805      21.24467805      -3.570E-11    217.96    <-- DIS
+     292      21.24467805      21.24467805      -3.362E-11    218.71    <-- DIS
+     293      21.24467805      21.24467805      -3.167E-11    219.45    <-- DIS
+     294      21.24467805      21.24467805      -2.983E-11    220.20    <-- DIS
+     295      21.24467805      21.24467805      -2.810E-11    220.95    <-- DIS
+     296      21.24467805      21.24467805      -2.647E-11    221.69    <-- DIS
+     297      21.24467805      21.24467805      -2.494E-11    222.44    <-- DIS
+     298      21.24467805      21.24467805      -2.348E-11    223.19    <-- DIS
+     299      21.24467805      21.24467805      -2.212E-11    223.93    <-- DIS
+     300      21.24467805      21.24467805      -2.083E-11    224.69    <-- DIS
+     301      21.24467805      21.24467805      -1.962E-11    225.43    <-- DIS
+     302      21.24467805      21.24467805      -1.848E-11    226.18    <-- DIS
+     303      21.24467805      21.24467805      -1.741E-11    226.93    <-- DIS
+     304      21.24467805      21.24467805      -1.639E-11    227.67    <-- DIS
+     305      21.24467805      21.24467805      -1.544E-11    228.42    <-- DIS
+     306      21.24467805      21.24467805      -1.454E-11    229.17    <-- DIS
+     307      21.24467805      21.24467805      -1.369E-11    229.91    <-- DIS
+     308      21.24467805      21.24467805      -1.290E-11    230.65    <-- DIS
+     309      21.24467805      21.24467805      -1.215E-11    231.40    <-- DIS
+     310      21.24467805      21.24467805      -1.144E-11    232.19    <-- DIS
+     311      21.24467805      21.24467805      -1.077E-11    233.07    <-- DIS
+     312      21.24467805      21.24467805      -1.014E-11    233.96    <-- DIS
+     313      21.24467805      21.24467805      -9.546E-12    234.74    <-- DIS
+     314      21.24467805      21.24467805      -8.991E-12    235.48    <-- DIS
+     315      21.24467805      21.24467805      -8.464E-12    236.23    <-- DIS
+     316      21.24467805      21.24467805      -7.969E-12    236.97    <-- DIS
+     317      21.24467805      21.24467805      -7.506E-12    237.74    <-- DIS
+     318      21.24467805      21.24467805      -7.065E-12    238.49    <-- DIS
+     319      21.24467805      21.24467805      -6.652E-12    239.24    <-- DIS
+     320      21.24467805      21.24467805      -6.265E-12    239.99    <-- DIS
+     321      21.24467805      21.24467805      -5.897E-12    240.73    <-- DIS
+     322      21.24467805      21.24467805      -5.552E-12    241.48    <-- DIS
+     323      21.24467805      21.24467805      -5.225E-12    242.23    <-- DIS
+     324      21.24467805      21.24467805      -4.921E-12    242.98    <-- DIS
+     325      21.24467805      21.24467805      -4.631E-12    243.72    <-- DIS
+     326      21.24467805      21.24467805      -4.357E-12    244.47    <-- DIS
+     327      21.24467805      21.24467805      -4.106E-12    245.22    <-- DIS
+     328      21.24467805      21.24467805      -3.860E-12    245.96    <-- DIS
+     329      21.24467805      21.24467805      -3.634E-12    246.71    <-- DIS
+     330      21.24467805      21.24467805      -3.424E-12    247.46    <-- DIS
+     331      21.24467805      21.24467805      -3.224E-12    248.20    <-- DIS
+     332      21.24467805      21.24467805      -3.033E-12    248.95    <-- DIS
+     333      21.24467805      21.24467805      -2.852E-12    249.70    <-- DIS
+     334      21.24467805      21.24467805      -2.683E-12    250.44    <-- DIS
+     335      21.24467805      21.24467805      -2.527E-12    251.19    <-- DIS
+     336      21.24467805      21.24467805      -2.377E-12    251.93    <-- DIS
+     337      21.24467805      21.24467805      -2.237E-12    252.68    <-- DIS
+     338      21.24467805      21.24467805      -2.106E-12    253.42    <-- DIS
+     339      21.24467805      21.24467805      -1.981E-12    254.17    <-- DIS
+     340      21.24467805      21.24467805      -1.864E-12    254.91    <-- DIS
+     341      21.24467805      21.24467805      -1.755E-12    255.66    <-- DIS
+     342      21.24467805      21.24467805      -1.647E-12    256.41    <-- DIS
+     343      21.24467805      21.24467805      -1.554E-12    257.16    <-- DIS
+     344      21.24467805      21.24467805      -1.459E-12    257.91    <-- DIS
+     345      21.24467805      21.24467805      -1.374E-12    258.65    <-- DIS
+     346      21.24467805      21.24467805      -1.294E-12    259.39    <-- DIS
+     347      21.24467805      21.24467805      -1.216E-12    260.15    <-- DIS
+     348      21.24467805      21.24467805      -1.144E-12    260.89    <-- DIS
+     349      21.24467805      21.24467805      -1.079E-12    261.63    <-- DIS
+     350      21.24467805      21.24467805      -1.011E-12    262.37    <-- DIS
+     351      21.24467805      21.24467805      -9.509E-13    263.12    <-- DIS
+     352      21.24467805      21.24467805      -8.926E-13    264.04    <-- DIS
+     353      21.24467805      21.24467805      -8.411E-13    264.89    <-- DIS
+     354      21.24467805      21.24467805      -7.901E-13    265.71    <-- DIS
+     355      21.24467805      21.24467805      -7.406E-13    266.46    <-- DIS
+     356      21.24467805      21.24467805      -7.027E-13    267.20    <-- DIS
+     357      21.24467805      21.24467805      -6.564E-13    267.94    <-- DIS
+     358      21.24467805      21.24467805      -6.176E-13    268.72    <-- DIS
+     359      21.24467805      21.24467805      -5.820E-13    269.46    <-- DIS
+     360      21.24467805      21.24467805      -5.486E-13    270.21    <-- DIS
+     361      21.24467805      21.24467805      -5.126E-13    270.96    <-- DIS
+     362      21.24467805      21.24467805      -4.835E-13    271.70    <-- DIS
+     363      21.24467805      21.24467805      -4.535E-13    272.45    <-- DIS
+     364      21.24467805      21.24467805      -4.284E-13    273.19    <-- DIS
+     365      21.24467805      21.24467805      -4.000E-13    273.94    <-- DIS
+     366      21.24467805      21.24467805      -3.796E-13    274.69    <-- DIS
+     367      21.24467805      21.24467805      -3.518E-13    275.44    <-- DIS
+     368      21.24467805      21.24467805      -3.327E-13    276.18    <-- DIS
+     369      21.24467805      21.24467805      -3.137E-13    276.93    <-- DIS
+     370      21.24467805      21.24467805      -2.955E-13    277.68    <-- DIS
+     371      21.24467805      21.24467805      -2.798E-13    278.42    <-- DIS
+     372      21.24467805      21.24467805      -2.597E-13    279.17    <-- DIS
+     373      21.24467805      21.24467805      -2.465E-13    279.91    <-- DIS
+     374      21.24467805      21.24467805      -2.326E-13    280.66    <-- DIS
+     375      21.24467805      21.24467805      -2.159E-13    281.40    <-- DIS
+     376      21.24467805      21.24467805      -2.034E-13    282.15    <-- DIS
+     377      21.24467805      21.24467805      -1.840E-13    282.90    <-- DIS
+     378      21.24467805      21.24467805      -1.771E-13    283.64    <-- DIS
+     379      21.24467805      21.24467805      -1.672E-13    284.39    <-- DIS
+     380      21.24467805      21.24467805      -1.563E-13    285.14    <-- DIS
+     381      21.24467805      21.24467805      -1.479E-13    285.89    <-- DIS
+     382      21.24467805      21.24467805      -1.420E-13    286.63    <-- DIS
+     383      21.24467805      21.24467805      -1.291E-13    287.38    <-- DIS
+     384      21.24467805      21.24467805      -1.199E-13    288.13    <-- DIS
+     385      21.24467805      21.24467805      -1.144E-13    288.88    <-- DIS
+     386      21.24467805      21.24467805      -1.100E-13    289.61    <-- DIS
+     387      21.24467805      21.24467805      -1.017E-13    290.35    <-- DIS
+     388      21.24467805      21.24467805      -9.437E-14    291.10    <-- DIS
+     389      21.24467805      21.24467805      -9.015E-14    291.85    <-- DIS
+     390      21.24467805      21.24467805      -8.327E-14    292.59    <-- DIS
+     391      21.24467805      21.24467805      -8.060E-14    293.33    <-- DIS
+     392      21.24467805      21.24467805      -7.139E-14    294.08    <-- DIS
+     393      21.24467805      21.24467805      -7.205E-14    294.95    <-- DIS
+     394      21.24467805      21.24467805      -6.672E-14    295.85    <-- DIS
+     395      21.24467805      21.24467805      -6.140E-14    296.67    <-- DIS
+     396      21.24467805      21.24467805      -5.740E-14    297.41    <-- DIS
+     397      21.24467805      21.24467805      -5.518E-14    298.15    <-- DIS
+     398      21.24467805      21.24467805      -5.052E-14    298.89    <-- DIS
+     399      21.24467805      21.24467805      -4.818E-14    299.66    <-- DIS
+     400      21.24467805      21.24467805      -4.219E-14    300.41    <-- DIS
+     401      21.24467805      21.24467805      -4.219E-14    301.16    <-- DIS
+     402      21.24467805      21.24467805      -3.797E-14    301.91    <-- DIS
+     403      21.24467805      21.24467805      -3.808E-14    302.65    <-- DIS
+     404      21.24467805      21.24467805      -3.642E-14    303.40    <-- DIS
+     405      21.24467805      21.24467805      -3.408E-14    304.14    <-- DIS
+     406      21.24467805      21.24467805      -2.898E-14    304.89    <-- DIS
+     407      21.24467805      21.24467805      -2.798E-14    305.64    <-- DIS
+     408      21.24467805      21.24467805      -2.442E-14    306.38    <-- DIS
+     409      21.24467805      21.24467805      -2.320E-14    307.12    <-- DIS
+     410      21.24467805      21.24467805      -2.487E-14    307.87    <-- DIS
+     411      21.24467805      21.24467805      -1.776E-14    308.61    <-- DIS
+     412      21.24467805      21.24467805      -2.087E-14    309.36    <-- DIS
+     413      21.24467805      21.24467805      -1.654E-14    310.11    <-- DIS
+     414      21.24467805      21.24467805      -1.921E-14    310.85    <-- DIS
+     415      21.24467805      21.24467805      -1.588E-14    311.60    <-- DIS
+     416      21.24467805      21.24467805      -1.443E-14    312.35    <-- DIS
+     417      21.24467805      21.24467805      -1.510E-14    313.10    <-- DIS
+     418      21.24467805      21.24467805      -1.710E-14    313.84    <-- DIS
+     419      21.24467805      21.24467805      -1.266E-14    314.59    <-- DIS
+     420      21.24467805      21.24467805      -1.188E-14    315.33    <-- DIS
+     421      21.24467805      21.24467805      -1.388E-14    316.08    <-- DIS
+     422      21.24467805      21.24467805      -1.088E-14    316.82    <-- DIS
+     423      21.24467805      21.24467805      -1.021E-14    317.57    <-- DIS
+     424      21.24467805      21.24467805      -8.216E-15    318.32    <-- DIS
+     425      21.24467805      21.24467805      -8.327E-15    319.07    <-- DIS
+     426      21.24467805      21.24467805      -5.329E-15    319.82    <-- DIS
+
+             <<<      Delta < 1.000E-14  over  3 iterations     >>>
+             <<< Disentanglement convergence criteria satisfied >>>
+
+        Final Omega_I    21.24467805 (Ang^2)
+
+ +----------------------------------------------------------------------------+
+
+
+ Writing checkpoint file wannier90.chk... done
+
+ Time to disentangle          333.218 (sec)
+
+ *------------------------------- WANNIERISE ---------------------------------*
+ +--------------------------------------------------------------------+<-- CONV
+ | Iter  Delta Spread     RMS Gradient      Spread (Ang^2)      Time  |<-- CONV
+ +--------------------------------------------------------------------+<-- CONV
+
+ ------------------------------------------------------------------------------
+ Initial State
+  WF centre and spread    1  (  1.959999,  1.959999,  1.654999 )     0.62500788
+  WF centre and spread    2  (  1.959999,  1.959999,  1.654999 )     0.86573270
+  WF centre and spread    3  (  1.959999,  1.959999,  1.654999 )     0.51249944
+  WF centre and spread    4  (  1.959999,  1.959999,  1.654999 )     0.51249944
+  WF centre and spread    5  (  1.959999,  1.959999,  1.654999 )     0.48372052
+  WF centre and spread    6  ( -0.000000, -0.000000, -0.000000 )     3.15254138
+  WF centre and spread    7  ( -0.000000, -0.000000, -0.000000 )     3.30779864
+  WF centre and spread    8  ( -0.000000, -0.000000, -0.000000 )     2.32234319
+  WF centre and spread    9  ( -0.000000, -0.000000, -0.000000 )     2.32234319
+  WF centre and spread   10  ( -0.000000, -0.000000, -0.000000 )     2.74566354
+  WF centre and spread   11  ( -0.000000,  1.959999,  1.654999 )     0.88569847
+  WF centre and spread   12  ( -0.000000,  1.959999,  1.654999 )     0.99602805
+  WF centre and spread   13  ( -0.000000,  1.959999,  1.654999 )     0.99620197
+  WF centre and spread   14  (  1.959999, -0.000000,  1.654999 )     0.88569847
+  WF centre and spread   15  (  1.959999, -0.000000,  1.654999 )     0.99620197
+  WF centre and spread   16  (  1.959999, -0.000000,  1.654999 )     0.99602805
+  Sum of centres and spreads ( 15.679992, 15.679992, 18.204989 )    22.60600689
+
+      0     0.226E+02     0.0000000000       22.6060068934     321.31  <-- CONV
+        O_D=      0.0000000 O_OD=      1.3613288 O_TOT=     22.6060069 <-- SPRD
+ ------------------------------------------------------------------------------
+ Cycle:      1
+  WF centre and spread    1  (  1.959999,  1.959999,  1.654999 )     0.62229717
+  WF centre and spread    2  (  1.959999,  1.959999,  1.654999 )     0.85064872
+  WF centre and spread    3  (  1.959999,  1.959999,  1.654999 )     0.51156068
+  WF centre and spread    4  (  1.959999,  1.959999,  1.654999 )     0.51156068
+  WF centre and spread    5  (  1.959999,  1.959999,  1.654999 )     0.48228073
+  WF centre and spread    6  ( -0.000000, -0.000000, -0.000000 )     3.13767304
+  WF centre and spread    7  ( -0.000000, -0.000000, -0.000000 )     3.30665629
+  WF centre and spread    8  ( -0.000000, -0.000000, -0.000000 )     2.31630572
+  WF centre and spread    9  ( -0.000000, -0.000000, -0.000000 )     2.31630572
+  WF centre and spread   10  ( -0.000000, -0.000000, -0.000000 )     2.73835917
+  WF centre and spread   11  ( -0.000000,  1.959999,  1.654999 )     0.88499706
+  WF centre and spread   12  ( -0.000000,  1.959999,  1.654999 )     0.99358503
+  WF centre and spread   13  ( -0.000000,  1.959999,  1.654999 )     0.99404156
+  WF centre and spread   14  (  1.959999, -0.000000,  1.654999 )     0.88499706
+  WF centre and spread   15  (  1.959999, -0.000000,  1.654999 )     0.99404156
+  WF centre and spread   16  (  1.959999, -0.000000,  1.654999 )     0.99358503
+  Sum of centres and spreads ( 15.679992, 15.679992, 18.204989 )    22.53889523
+
+      1    -0.671E-01     0.1824324866       22.5388952302     321.52  <-- CONV
+        O_D=      0.0000000 O_OD=      1.2942172 O_TOT=     22.5388952 <-- SPRD
+ Delta: O_D=  0.8439522E-15 O_OD= -0.6711166E-01 O_TOT= -0.6711166E-01 <-- DLTA
+ ------------------------------------------------------------------------------
+ Cycle:    100
+  WF centre and spread    1  (  1.959999,  1.959999,  1.654999 )     0.62216189
+  WF centre and spread    2  (  1.959999,  1.959999,  1.654999 )     0.81868584
+  WF centre and spread    3  (  1.959999,  1.959999,  1.654999 )     0.51225845
+  WF centre and spread    4  (  1.959999,  1.959999,  1.654999 )     0.51225845
+  WF centre and spread    5  (  1.959999,  1.959999,  1.654999 )     0.47743182
+  WF centre and spread    6  (  0.000000,  0.000000,  0.000000 )     3.11863071
+  WF centre and spread    7  (  0.000000,  0.000000,  0.000000 )     3.32542355
+  WF centre and spread    8  ( -0.000000, -0.000000, -0.000000 )     2.28851648
+  WF centre and spread    9  ( -0.000000, -0.000000, -0.000000 )     2.28851648
+  WF centre and spread   10  (  0.000000,  0.000000,  0.000000 )     2.72190324
+  WF centre and spread   11  ( -0.000000,  1.959999,  1.654999 )     0.89073056
+  WF centre and spread   12  ( -0.000000,  1.959999,  1.654999 )     0.96647518
+  WF centre and spread   13  ( -0.000000,  1.959999,  1.654999 )     0.99704940
+  WF centre and spread   14  (  1.959999, -0.000000,  1.654999 )     0.89073056
+  WF centre and spread   15  (  1.959999, -0.000000,  1.654999 )     0.99704940
+  WF centre and spread   16  (  1.959999, -0.000000,  1.654999 )     0.96647518
+  Sum of centres and spreads ( 15.679992, 15.679992, 18.204989 )    22.39429718
+
+    100    -0.149E-10     0.0000115065       22.3942971761     340.35  <-- CONV
+        O_D=      0.0000000 O_OD=      1.1496191 O_TOT=     22.3942972 <-- SPRD
+ Delta: O_D=  0.8971011E-25 O_OD= -0.1488298E-10 O_TOT= -0.1488232E-10 <-- DLTA
+ ------------------------------------------------------------------------------
+
+ Writing checkpoint file wannier90.chk... done
+
+
+             <<<     Delta < 1.000E-10  over 50 iterations     >>>
+             <<< Wannierisation convergence criteria satisfied >>>
+
+ Final State
+  WF centre and spread    1  (  1.959999,  1.959999,  1.654999 )     0.62216214
+  WF centre and spread    2  (  1.959999,  1.959999,  1.654999 )     0.81868777
+  WF centre and spread    3  (  1.959999,  1.959999,  1.654999 )     0.51225844
+  WF centre and spread    4  (  1.959999,  1.959999,  1.654999 )     0.51225844
+  WF centre and spread    5  (  1.959999,  1.959999,  1.654999 )     0.47743181
+  WF centre and spread    6  (  0.000000,  0.000000,  0.000000 )     3.11863089
+  WF centre and spread    7  (  0.000000,  0.000000,  0.000000 )     3.32542373
+  WF centre and spread    8  ( -0.000000, -0.000000, -0.000000 )     2.28851650
+  WF centre and spread    9  ( -0.000000, -0.000000, -0.000000 )     2.28851650
+  WF centre and spread   10  (  0.000000,  0.000000,  0.000000 )     2.72190323
+  WF centre and spread   11  ( -0.000000,  1.959999,  1.654999 )     0.89073055
+  WF centre and spread   12  ( -0.000000,  1.959999,  1.654999 )     0.96647392
+  WF centre and spread   13  ( -0.000000,  1.959999,  1.654999 )     0.99704938
+  WF centre and spread   14  (  1.959999, -0.000000,  1.654999 )     0.89073055
+  WF centre and spread   15  (  1.959999, -0.000000,  1.654999 )     0.99704938
+  WF centre and spread   16  (  1.959999, -0.000000,  1.654999 )     0.96647392
+  Sum of centres and spreads ( 15.679992, 15.679992, 18.204989 )    22.39429717
+
+         Spreads (Ang^2)       Omega I      =    21.244678050
+        ================       Omega D      =     0.000000000
+                               Omega OD     =     1.149619125
+    Final Spread (Ang^2)       Omega Total  =    22.394297175
+ ------------------------------------------------------------------------------
+
+ Writing checkpoint file wannier90.chk... done
+
+ Time for wannierise           35.131 (sec)
+ *---------------------------------------------------------------------------*
+ |                               PLOTTING                                    |
+ *---------------------------------------------------------------------------*
+
+ Time for plotting              1.846 (sec)
+ Total Execution Time         373.563 (sec)
+
+ *===========================================================================*
+ |                             TIMING INFORMATION                            |
+ *===========================================================================*
+ |    Tag                                                Ncalls      Time (s)|
+ |---------------------------------------------------------------------------|
+ |kmesh: get                                        :         2         6.039|
+ |overlap: allocate                                 :         1         0.001|
+ |dis: main                                         :         1       324.054|
+ |wann: main                                        :         1        34.915|
+ |plot: main                                        :         1         1.846|
+ *---------------------------------------------------------------------------*
+
+ All done: wannier90 exiting

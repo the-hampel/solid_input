@@ -1,0 +1,96 @@
+SYSTEM=NdNiO2
+
+#Startup
+#ICHARG=1
+#ISTART=0
+
+# w90
+LWANNIER90 = TRUE
+LWANNIER90_RUN = TRUE
+NUM_WANN = 16
+#LWRITE_UNK = True
+
+WANNIER90_WIN = "
+! VASP Fermi 6.3152
+dis_win_min = -5.01
+dis_win_max = 12.61
+dis_froz_min = 5.89
+dis_froz_max = 7.76
+
+!!! Iterations &c. !!!
+ iprint                = 1
+ num_iter              = 200000
+ num_print_cycles      = 100
+ conv_window           = 50
+ conv_tol              = 1e-10
+ dis_num_iter          = 100000
+!dis_conv_window       = 3
+dis_conv_tol          = 1e-14
+
+guiding_centres = T
+begin projections
+Ni:l=2,mr=4
+Nd:l=2,mr=1,5
+Ni:l=2,mr=1,2,3,5
+O:p
+Nd:l=2,mr=2,3,4
+end projections
+
+!!! BZ-Path for band structure !!!
+bands_plot = T
+bands_num_points  = 100
+bands_plot_format = gnuplot xmgrace
+begin kpoint_path
+  G   0.00000   0.00000   0.00000    X   0.50000   0.00000   0.00000
+  X   0.50000   0.00000   0.00000    M   0.50000  -0.50000   0.00000
+  M   0.50000  -0.50000   0.00000    G   0.00000   0.00000   0.00000
+  G   0.00000   0.00000   0.00000    Z   0.00000   0.00000   0.50000
+  Z   0.00000   0.00000   0.50000    R   0.50000   0.00000   0.50000
+  R   0.50000   0.00000   0.50000    A   0.50000  -0.50000   0.50000
+  A   0.50000  -0.50000   0.50000    Z   0.00000   0.00000   0.50000
+end kpoint_path
+
+write_hr= true
+!wannier_plot = true
+"
+
+# parameters that determine general accuracy
+PREC = Accurate
+EDIFF = 1e-8
+ENCUT = 550
+LMAXMIX=6
+LORBIT = 14
+
+ISMEAR = 2
+SIGMA = 0.005
+
+# relaxation
+EDIFFG = -0.001
+ISIF = 3
+NSW = 0
+IBRION = 1
+
+NEDOS = 101
+EMIN = -5.0
+EMAX = 15
+
+# spin polarization
+ISPIN = 1
+# MAGMOM =  4*0  4 4 4 4  12*0
+
+# parallelization
+NCORE   = 1
+NSIM   = 4
+KPAR = 1
+NBANDS = 60
+
+# LSDA+U
+LDAU = .FALSE.
+LDAUTYPE= 1
+LDAUL= -1 2 -1
+LDAUU= 0 5 0
+LDAUJ= 0 1 0
+
+# write WAVECAR, CHGCAR
+LWAVE = .TRUE.
+LCHARG = .TRUE.
