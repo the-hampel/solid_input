@@ -7,6 +7,9 @@ SYSTEM=NdNiO2
 # w90
 LWANNIER90 = TRUE
 LWANNIER90_RUN = TRUE
+# suppress mmn amn files (slow writing speed)
+LWRITE_MMN_AMN = FALSE
+
 NUM_WANN = 16
 #LWRITE_UNK = True
 
