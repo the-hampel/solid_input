@@ -1,0 +1,56 @@
+SYSTEM = NdNiO3-pdd
+ISMEAR =  2
+SIGMA =  0.005
+EDIFF = 1E-10
+NBANDS=512
+ENCUT=450
+LMAXMIX=6
+LORBIT=11
+LWAVE = True
+LCHARG = True
+
+
+LWRITE_WANPROJ = FALSE # turning this on breaks cRPA
+LWANNIER90 = TRUE
+LWRITE_MMN_AMN = .FALSE.
+LWANNIER90_RUN = TRUE
+
+NUM_WANN = 1
+
+WANNIER90_WIN = "
+
+dis_win_min = 5.0
+dis_win_max = 9.0
+
+
+!!! Iterations &c. !!!
+ iprint                = 1
+ num_iter              = 200000
+ num_print_cycles      = 100
+ conv_window           = 50
+ conv_tol              = 1e-10
+ dis_num_iter          = 100000
+dis_conv_tol          = 1e-14
+
+translate_home_cell    = .true.
+write_hr               = .true.
+
+begin unit_cell_cart
+     3.9199979     0.0000000     0.0000000
+     0.0000000     3.9199979     0.0000000
+     0.0000000     0.0000000     3.3099980
+end unit_cell_cart
+
+begin atoms_cart
+Nd       0.0000000     0.0000000     0.0000000
+Ni       1.9599990     1.9599990     1.6549990
+O        0.0000000     1.9599990     1.6549990
+O        1.9599990     0.0000000     1.6549990
+end atoms_cart
+
+ 
+guiding_centres = T
+begin projections
+Ni:l=2,mr=4
+end projections
+"

@@ -1,0 +1,58 @@
+SYSTEM = NdNiO3-pdd
+ISMEAR =  2
+VCUTOFF=800
+ENCUT=450
+SIGMA =  0.005
+EDIFF = 1E-8
+NBANDS =512
+ALGO = CRPA
+LWAVE = .FALSE.
+NCSHMEM=1 
+
+PRECFOCK = Normal           # fast mode for FFTs
+NTARGET_STATES = 1    # exclude wannier states 1 - 3 in screening
+LPROJECTED = True
+LWEIGHTED = False
+
+OMEGAMAX = 0
+
+NUM_WANN = 1
+LWRITE_MMN_AMN = .FALSE.
+
+WANNIER90_WIN = "
+
+dis_win_min = 5.0
+dis_win_max = 9.0
+
+
+!!! Iterations &c. !!!
+ iprint                = 1
+ num_iter              = 200000
+ num_print_cycles      = 100
+ conv_window           = 50
+ conv_tol              = 1e-10
+ dis_num_iter          = 100000
+dis_conv_tol          = 1e-14
+
+translate_home_cell    = .true.
+write_hr               = .true.
+
+begin unit_cell_cart
+     3.9199979     0.0000000     0.0000000
+     0.0000000     3.9199979     0.0000000
+     0.0000000     0.0000000     3.3099980
+end unit_cell_cart
+
+begin atoms_cart
+Nd       0.0000000     0.0000000     0.0000000
+Ni       1.9599990     1.9599990     1.6549990
+O        0.0000000     1.9599990     1.6549990
+O        1.9599990     0.0000000     1.6549990
+end atoms_cart
+
+ 
+guiding_centres = T
+begin projections
+Ni:l=2,mr=4
+end projections
+"
