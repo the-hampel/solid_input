@@ -1,0 +1,54 @@
+SYSTEM = NdNiO3-pdd
+ISMEAR =  0
+VCUTOFF=800
+ENCUT=450
+SIGMA =  0.01
+EDIFF = 1E-8
+NBANDS =512
+ALGO = CRPA
+LWAVE = .FALSE.
+NCSHMEM=1 
+
+PRECFOCK = Normal           # fast mode for FFTs
+NTARGET_STATES = 1 2 3
+LPROJECTED = FALSE
+LWEIGHTED = TRUE
+
+OMEGAMAX = 0
+
+LWRITE_MMN_AMN = .FALSE.
+
+NUM_WANN = 3
+
+WANNIER90_WIN = "
+
+dis_win_min = 3.9
+dis_win_max = 7.1
+dis_froz_min =  4.3
+dis_froz_max = 6.2
+
+guiding_centres = T
+begin projections
+V:dxy;dxz;dyz
+end projections
+
+iprint                = 1
+num_iter              = 200000
+num_print_cycles      = 100
+conv_window           = 50
+conv_tol              = 1e-10
+dis_num_iter          = 1000
+dis_conv_tol          = 1e-14
+
+write_hr               = T
+translate_home_cell = T
+
+bands_plot      =  True
+begin kpoint_path
+G  .0  .0  .0   X  .0  .5  .0
+X  .0  .5  .0   M  .5  .5  .0
+M  .5  .5  .0   G  .0  .0  .0
+end kpoint_path
+bands_num_points 50
+
+"
