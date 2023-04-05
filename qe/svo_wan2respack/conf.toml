@@ -1,0 +1,12 @@
+
+[base]
+QE_output_dir = 'tmp/svo_crpa.save'
+seedname = 'svo'
+
+[pre.ref]
+nscf = 'svo.nscf.in'
+win = 'svo.win.ref'
+
+[pre.output]
+nscf = 'svo.nscf_wannier.in'
+win = 'svo.win'

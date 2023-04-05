@@ -1,0 +1,9 @@
+&inputpp 
+   prefix       = 'svo_crpa'
+   outdir       = 'tmp/'
+   seedname     = 'svo'
+   write_mmn    = .true.
+   write_amn    = .true.
+   write_unk    = .false.
+   write_dmn    = .true.
+/

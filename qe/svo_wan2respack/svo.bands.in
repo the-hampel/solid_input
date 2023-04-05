@@ -1,0 +1,5 @@
+&BANDS
+   prefix  = 'svo_crpa',
+   outdir  = 'tmp/',
+   filband = 'svo_bands.dat'
+/

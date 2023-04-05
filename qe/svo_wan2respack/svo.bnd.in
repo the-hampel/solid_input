@@ -1,0 +1,54 @@
+&control
+   calculation        = 'bands',
+   restart_mode       = 'from_scratch',
+   wf_collect         = .false.,
+   prefix             = 'svo_crpa', 
+   tstress            = .true., 
+   tprnfor            = .true., 
+   pseudo_dir         = 'pp/',
+   outdir             = 'tmp/',
+/ 
+&system 
+   ibrav              = 0,
+   celldm(1)          = 7.2612,
+   nat                = 5,
+   ntyp               = 3,
+   ecutwfc            = 90.0,
+   ecutrho            = 360.0,
+   occupations        = 'smearing',
+   degauss            = 0.01,
+   smearing           = 'm-v',
+/ 
+&electrons 
+   diagonalization    = 'cg',
+   conv_thr           = 1.0d-10,
+   mixing_beta        = 0.7,
+   mixing_mode        = 'local-TF'
+   startingpot        = 'file',
+   diago_full_acc     = .true.,
+/
+
+ATOMIC_SPECIES 
+  Sr   87.62       Sr.upf 
+  V    50.9415     V.upf  
+  O    15.9994     O.upf  
+
+CELL_PARAMETERS (alat=  7.26120000)
+   1.004189551   0.000000000   0.000000000
+   0.000000000   1.004189551   0.000000000
+   0.000000000   0.000000000   1.004189551
+
+ATOMIC_POSITIONS (crystal)
+Sr       0.000000000   0.000000000   0.000000000
+V        0.500000000   0.500000000   0.500000000
+O        0.500000000   0.500000000   0.000000000
+O        0.500000000   0.000000000   0.500000000
+O        0.000000000   0.500000000   0.500000000
+
+K_POINTS crystal_b
+ 5                
+   0.5 0.5 0.5  35
+   0.0 0.0 0.0  20
+   0.5 0.0 0.0  20
+   0.5 0.5 0.0  28
+   0.0 0.0 0.0   1
