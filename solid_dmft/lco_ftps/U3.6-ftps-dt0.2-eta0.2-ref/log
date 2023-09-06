@@ -1,0 +1,4512 @@
+Reading the config file dmft_config.ini
+-------------------------
+General parameters:
+seedname             lco 
+h_int_type           ['kanamori']
+U                    [3.6]
+J                    [0.0]
+n_iter_dmft          10  
+dc_type              0   
+prec_mu              0.001
+dc_dmft              False
+solver_type          ftps
+n_w                  3001
+w_range              (-10.0, 10.0)
+eta                  0.2 
+diag_delta           True
+jobname              U3.6-ftps-dt0.2-eta0.2
+h5_save_freq         1   
+mu_initial_guess     12.8
+U_prime              ['U-2J']
+ratio_F4_F2          ['none']
+dc                   True
+csc                  False
+magnetic             False
+h_field              0.0 
+h_field_it           0   
+sigma_mix            1.0 
+g0_mix               1.0 
+g0_mix_type          linear
+calc_energies        False
+block_threshold      1e-05
+block_suppress_orbital_symm False
+enforce_off_diag     False
+load_sigma           False
+noise_level_initial_sigma 0.0 
+occ_conv_crit        -1  
+gimp_conv_crit       -1  
+g0_conv_crit         -1  
+sigma_conv_crit      -1  
+fixed_mu_value       none
+calc_mu_method       dichotomy
+mu_update_freq       1   
+mu_mix_const         1.0 
+mu_mix_per_occupation_offset 0.0 
+set_rot              none
+measure_chi          none
+measure_chi_insertions 100 
+h_int_basis          triqs
+store_solver         True
+config_file          dmft_config.ini
+-------------------------
+Solver parameters:
+bath_fit             True
+calc_me              True
+ignore_weight        0.1 
+dt                   0.2 
+state_storage        /tmp/
+sweeps               12  
+maxmI                200 
+maxmIB               200 
+maxmB                200 
+tw                   1e-10
+dmrg_maxmI           200 
+dmrg_maxmIB          200 
+dmrg_maxmB           200 
+dmrg_tw              1e-13
+n_bath               0   
+refine_factor        1   
+ph_symm              False
+enforce_gap          none
+path_to_gs           none
+maxm                 100 
+dmrg_maxm            100 
+-------------------------
+DFT parameters:
+-------------------------
+Advanced parameters, don't change them unless you know what you are doing:
+dc_factor            none
+dc_fixed_value       none
+dc_fixed_occ         none
+dc_nominal           False
+dc_U                 [3.6]
+dc_J                 [0.0]
+map_solver_struct    none
+pick_solver_struct   none
+
+################################################################################
+Using input file lco.h5 and running in folder U3.6-ftps-dt0.2-eta0.2
+INITIAL DMFT RUN
+################################################################################ 
+
+
+initial chemical potential set to 12.800 eV
+
+
+sumk calc_mu: Using dichtomy adjustment to find chemical potential
+
+Dichotomy adjustment of Chemical Potential to obtain Total Density = 1.000000 +/- 0.001000
+    Chemical Potential = 13.300000  
+    Total Density = 1.287060
+    12.800000 < Chemical Potential < 13.300000
+    0.946793 < Total Density < 1.287060
+    12.800000 < Chemical Potential < 12.878184
+    0.946793 < Total Density < 1.005403
+    12.800000 < Chemical Potential < 12.870977
+    0.946793 < Total Density < 1.000055
+    Chemical Potential found in 3 iterations : 
+    Total Density = 1.000055;Chemical Potential = 12.870977
+
+ *** determination of block structure ***
+Block structure written to "solver_struct_ftps":
+[[['up_0', 'down_0']]]
+enforcing off-diagonal elements in block structure finder
+using 1-particle density matrix and Hloc (atomic levels) to determine the block structure
+
+ number of ineq. correlated shells: 1
+
+ block structure summary
+ -- Shell type #  0: [0]
+  | shell multiplicity 1
+  | block struct. sum_k : [('up', 1), ('down', 1)]
+  | block struct. solver: {'up_0': 1, 'down_0': 1}
+  | deg. orbitals : [['up_0', 'down_0']]
+
+Rotation matrices
+rot_mat[ 0] real part  imaginary part
+             1.00000    0.00000
+
+
+
+Effective atomic levels
+H_loc[ 0]       up       down  
+             0.02464    0.02464
+
+
+
+DFT density matrix
+rho[ 0]         up       down  
+             0.51219    0.51219
+
+
+total density for imp 0 from DFT:   1.024389
+*** interaction parameters ***
+Assuming h_int_type = kanamori for all correlated shells
+Assuming U = 3.6 for all correlated shells
+Assuming J = 0.0 for all correlated shells
+Assuming U_prime = U-2J for all correlated shells
+Assuming dc_U = 3.6 for all correlated shells
+Assuming dc_J = 0.0 for all correlated shells
+
+Constructing the interaction Hamiltonians
+
+Impurity 0: constructing a kanamori type interaction Hamiltonian
+warning: are you sure you want to use the kanamori hamiltonian outside the t2g or eg manifold?
+
+*** DC determination ***
+Detected use_dc_formula=0, changing to sFLL
+DC potential computed using the sFLL method, V_DC = 1.887802 eV
+E_DC using the sFLL method, E_DC = 0.044972 eV
+DC potential computed using the sFLL method, V_DC = 1.887802 eV
+E_DC using the sFLL method, E_DC = 0.044972 eV
+
+sumk calc_mu: Using dichtomy adjustment to find chemical potential
+
+Dichotomy adjustment of Chemical Potential to obtain Total Density = 1.000000 +/- 0.001000
+    12.870977 < Chemical Potential < 12.870977
+    1.000055 < Total Density < 1.000055
+    Chemical Potential found in 0 iterations : 
+    Total Density = 1.000055;Chemical Potential = 12.870977
+
+ 10 DMFT cycles requested. Starting with iteration  1.
+
+################################################################################
+Running iteration: 1 / 10
+
+ *** Correlated Shell type #  0 : Estimated total charge of impurity problem = 1.024389
+Estimated density matrix:
+down_0, real part
+[[0.51219473]]
+up_0, real part
+[[0.51219473]]
+
+Solving the impurity problem for shell 0 ...
+
+
+Optimizing block dn index 0
+--------------------------------
+  Rough guess found 1 interval(s):
+  Interval of length 4.10: [-2.144, +1.957] 
+
+  Optimizing lower boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 10 steps with size 0.020 in [-2.124, -1.960]
+  Found lower boundary: -2.033
+
+  Optimizing upper boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 10 steps with size 0.020 in [1.877, 2.036]
+  Found upper boundary: 1.912
+Finishing orbital, auto detect optimal bath size: 23
+
+
+Optimizing block up index 0
+--------------------------------
+  Rough guess found 1 interval(s):
+  Interval of length 4.10: [-2.144, +1.957] 
+
+  Optimizing lower boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 10 steps with size 0.020 in [-2.124, -1.960]
+  Found lower boundary: -2.033
+
+  Optimizing upper boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 10 steps with size 0.020 in [1.877, 2.036]
+  Found upper boundary: 1.912
+Finishing orbital, auto detect optimal bath size: 23
+TimeStepEstimation returned 70 with given bath, "eta" = 0.2 and "dt" = 0.2
+
+
+Starting FTPS solver
+
+Solve Parameters: 
+  ------------------------------------------------------------------------------------------------------------------------------ 
+    Interaction parameters: U = 3.6 J = 0 Up = 0 including SF and PH.
+
+    GS-search is performed using 12 sweeps with method SSImp and parameters:
+      tw_I:  1e-13 maxmI:  200
+      tw_IB: 1e-13 maxmIB: 200
+      tw_B:  1e-13 maxmB:  200
+
+    Time evolution method: TDVP to perform real time evolution
+    Number of time steps: 70 with step size: 0.2
+    Use the following approximation paramters:
+      tw_I:  1e-10 maxmI:  200
+      tw_IB: 1e-10 maxmIB: 200
+      tw_B:  1e-10 maxmB:  200
+    Calcule Green's function on the following blocks/indices:
+       up 0
+    Calculate single-particle Green's function
+  ------------------------------------------------------------------------------------------------------------------------------ 
+  ------------------------------------------------------------------------------------------------------------------------------ 
+
+
+Bath Bandwidths of Block dn:
+   Orbital 0: [-1.94, 1.83]
+Bath Bandwidths of Block up:
+   Orbital 0: [-1.94, 1.83]
+
+
+Non-Interacting Impurity Hamiltonian: 
+
+Matrix of Block dn:
+[[(-1.9,0)]]
+
+Matrix of Block up:
+[[(-1.9,0)]]
+
+Component: Bra,  *c('up',0),  Time Evolution direction: 1
+Component: Ket,  *c('up',0),  Time Evolution direction: -1
+Component: Ket,  *c_dag('up',0),  Time Evolution direction: 1
+Component: Bra,  *c_dag('up',0),  Time Evolution direction: -1
+Storing states to /tmp/MPS676518290/
+Finding GS sector by doing DMRG without QNs.
+    Preparing for DMRG: 
+      Apply MPO 3 times.
+    Preparation done.
+
+    --------------------------------------------------------------------------------------------
+                                   DMRG (using subspace expansion)
+    --------------------------------------------------------------------------------------------
+    Sweep 1/5
+    Impurity Occupation:              0.55249   0.46636   
+    Dim of Impurity-Bath Links:          20        38   
+    Dim of Impurity-Impurity Links:      22   
+    Energy: -25.59133011
+    TruncErr: 1.49124803e-06
+
+
+    Sweep 2/5
+    Impurity Occupation:              0.50462   0.51157   
+    Dim of Impurity-Bath Links:          41        50   
+    Dim of Impurity-Impurity Links:      42   
+    Energy: -25.61211487
+    TruncErr: 1.991651042e-08
+
+
+    Sweep 3/5
+    Impurity Occupation:              0.50809   0.50812   
+    Dim of Impurity-Bath Links:          36        33   
+    Dim of Impurity-Impurity Links:      43   
+    Energy: -25.61305375
+    TruncErr: 9.034028836e-10
+
+
+    Sweep 4/5
+    Impurity Occupation:              0.50811   0.50811   
+    Dim of Impurity-Bath Links:          24        21   
+    Dim of Impurity-Impurity Links:      31   
+    Energy: -25.61308015
+    TruncErr: 9.616998931e-11
+
+
+    Sweep 5/5
+    Impurity Occupation:              0.50811   0.50811   
+    Dim of Impurity-Bath Links:          21        21   
+    Dim of Impurity-Impurity Links:      21   
+    Energy: -25.6130803
+    TruncErr: 9.490059589e-11
+
+
+Variance of total N: -6.842810762e-10
+Particle Sector found: 12 12
+
+
+
+--------------------------------------------------------------------------
+---------------------- Ground State Sector Found -------------------------
+--------------------------------------------------------------------------
+
+
+Start DMRG for total ground state.
+    Preparing for DMRG: 
+      Apply MPO 3 times.
+      Imaginary time evolution. Perform 5 steps using TEBD algorithm.
+    Preparation done.
+
+    --------------------------------------------------------------------------------------------
+                                   DMRG (using subspace expansion)
+    --------------------------------------------------------------------------------------------
+    Sweep 1/22
+    Impurity Occupation:              0.65788   0.34513   
+    Dim of Impurity-Bath Links:          18        34   
+    Dim of Impurity-Impurity Links:      18   
+    Energy: -25.58583192
+    TruncErr: 9.453620181e-14
+
+
+    Sweep 2/22
+    Impurity Occupation:              0.58163   0.42897   
+    Dim of Impurity-Bath Links:          36        49   
+    Dim of Impurity-Impurity Links:      35   
+    Energy: -25.60622945
+    TruncErr: 8.7371744e-14
+
+
+    Sweep 3/22
+    Impurity Occupation:              0.54285   0.47131   
+    Dim of Impurity-Bath Links:          58        60   
+    Dim of Impurity-Impurity Links:      50   
+    Energy: -25.61196886
+    TruncErr: 1.445112334e-13
+
+
+    Sweep 4/22
+    Impurity Occupation:              0.52901   0.48625   
+    Dim of Impurity-Bath Links:          52        48   
+    Dim of Impurity-Impurity Links:      42   
+    Energy: -25.61277638
+    TruncErr: 1.257261325e-13
+
+
+    Sweep 5/22
+    Impurity Occupation:              0.52152   0.49420   
+    Dim of Impurity-Bath Links:          47        44   
+    Dim of Impurity-Impurity Links:      39   
+    Energy: -25.61297653
+    TruncErr: 1.180157374e-13
+
+
+    Sweep 6/22
+    Impurity Occupation:              0.51684   0.49912   
+    Dim of Impurity-Bath Links:          44        43   
+    Dim of Impurity-Impurity Links:      38   
+    Energy: -25.61304271
+    TruncErr: 1.524299224e-13
+
+
+    Sweep 7/22
+    Impurity Occupation:              0.51328   0.50282   
+    Dim of Impurity-Bath Links:          42        41   
+    Dim of Impurity-Impurity Links:      36   
+    Energy: -25.61306876
+    TruncErr: 1.079226542e-13
+
+
+    Sweep 8/22
+    Impurity Occupation:              0.51031   0.50588   
+    Dim of Impurity-Bath Links:          44        42   
+    Dim of Impurity-Impurity Links:      36   
+    Energy: -25.61307845
+    TruncErr: 9.218652388e-14
+
+
+    Sweep 9/22
+    Impurity Occupation:              0.50903   0.50718   
+    Dim of Impurity-Bath Links:          44        42   
+    Dim of Impurity-Impurity Links:      36   
+    Energy: -25.61307999
+    TruncErr: 9.454685656e-14
+
+
+    Sweep 10/22
+    Impurity Occupation:              0.50843   0.50778   
+    Dim of Impurity-Bath Links:          42        45   
+    Dim of Impurity-Impurity Links:      34   
+    Energy: -25.61308027
+    TruncErr: 9.456653421e-14
+
+
+    Sweep 11/22
+    Impurity Occupation:              0.50819   0.50803   
+    Dim of Impurity-Bath Links:          41        45   
+    Dim of Impurity-Impurity Links:      34   
+    Energy: -25.61308031
+    TruncErr: 9.822913572e-14
+
+
+    Sweep 12/22
+    Impurity Occupation:              0.50813   0.50809   
+    Dim of Impurity-Bath Links:          42        47   
+    Dim of Impurity-Impurity Links:      34   
+    Energy: -25.61308031
+    TruncErr: 9.81452158e-14
+
+
+    Sweep 13/22
+    Impurity Occupation:              0.50811   0.50810   
+    Dim of Impurity-Bath Links:          44        42   
+    Dim of Impurity-Impurity Links:      34   
+    Energy: -25.61308031
+    TruncErr: 9.567124525e-14
+
+
+    Sweep 14/22
+    Impurity Occupation:              0.50811   0.50811   
+    Dim of Impurity-Bath Links:          41        41   
+    Dim of Impurity-Impurity Links:      34   
+    Energy: -25.61308031
+    TruncErr: 9.459548193e-14
+
+
+    Sweep 15/22
+    Impurity Occupation:              0.50811   0.50811   
+    Dim of Impurity-Bath Links:          41        41   
+    Dim of Impurity-Impurity Links:      34   
+    Energy: -25.61308031
+    TruncErr: 9.460276866e-14
+
+
+    Sweep 16/22
+    Impurity Occupation:              0.50811   0.50811   
+    Dim of Impurity-Bath Links:          41        41   
+    Dim of Impurity-Impurity Links:      34   
+    Energy: -25.61308031
+    TruncErr: 9.460206959e-14
+
+
+    Sweep 17/22
+    Impurity Occupation:              0.50811   0.50811   
+    Dim of Impurity-Bath Links:          41        41   
+    Dim of Impurity-Impurity Links:      34   
+    Energy: -25.61308031
+    TruncErr: 9.460185462e-14
+
+
+    Sweep 18/22
+    Impurity Occupation:              0.50811   0.50811   
+    Dim of Impurity-Bath Links:          41        41   
+    Dim of Impurity-Impurity Links:      35   
+    Energy: -25.61308031
+    TruncErr: 9.561219674e-14
+
+
+    Sweep 19/22
+    Impurity Occupation:              0.50811   0.50811   
+    Dim of Impurity-Bath Links:          41        41   
+    Dim of Impurity-Impurity Links:      35   
+    Energy: -25.61308031
+    TruncErr: 9.460097263e-14
+
+
+    Sweep 20/22
+    Impurity Occupation:              0.50811   0.50811   
+    Dim of Impurity-Bath Links:          41        41   
+    Dim of Impurity-Impurity Links:      35   
+    Energy: -25.61308031
+    TruncErr: 9.460221059e-14
+
+
+    Sweep 21/22
+    Impurity Occupation:              0.50811   0.50811   
+    Dim of Impurity-Bath Links:          41        41   
+    Dim of Impurity-Impurity Links:      35   
+    Energy: -25.61308031
+    TruncErr: 9.460200724e-14
+
+
+    Sweep 22/22
+    Impurity Occupation:              0.50811   0.50811   
+    Dim of Impurity-Bath Links:          41        41   
+    Dim of Impurity-Impurity Links:      35   
+    Energy: -25.61308031
+    TruncErr: 9.460193597e-14
+
+
+
+
+
+--------------------------------------------------------------------------
+------------------------- Ground State Calculated ------------------------
+--------------------------------------------------------------------------
+
+Energy: -25.61308031
+Orbital resolved impurity occupation: 0.5081076783 0.5081076779
+Total impurity occupation: 1.016215356
+Ground-state convergence: 
+   <GS| H |GS> = -25.61308031
+   <GS|H^2|GS> = 656.029883
+   <GS|H^2|GS> - <GS|H|GS>^2 = 1.079969195e-10
+
+
+
+
+--------------------------------------------------------------------------
+-------------------------- Start Time Evolution --------------------------
+--------------------------------------------------------------------------
+
+Rank 1 time evolves GF component Ket *c('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 0 time evolves GF component Bra *c('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 2 time evolves GF component Ket *c_dag('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 3 time evolves GF component Bra *c_dag('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 3 finished time evolution.
+Rank 1 finished time evolution.
+Rank 2 finished time evolution.
+Rank 0 finished time evolution.
+
+
+
+--------------------------------------------------------------------------
+-------------------------- Post Processing ...  --------------------------
+--------------------------------------------------------------------------
+
+Rank 1 calculates Green's function of type single particle lesser:
+    Component: Bra,  *c('up',0),  Time Evolution direction: 1
+    Component: Ket,  *c('up',0),  Time Evolution direction: -1
+
+Rank 0 calculates Green's function of type single particle greater:
+    Component: Bra,  *c_dag('up',0),  Time Evolution direction: -1
+    Component: Ket,  *c_dag('up',0),  Time Evolution direction: 1
+
+Collecting GFs
+mapping up-0 to down-0...
+mapping up-0 to down-0...
+mapping up-0 to down-0...
+Actual time for solver: 179.63 s
+
+Total charge of impurity problem: 0.99441
+Total charge convergency of impurity problem: -0.02998
+
+Density matrix:
+down_0, real part
+[[0.49720666]]
+eigenvalues: [0.49720666]
+up_0, real part
+[[0.49720666]]
+eigenvalues: [0.49720666]
+
+ *** Post-processing the solver output ***
+Total charge of all correlated shells : 0.994413
+
+
+sumk calc_mu: Using dichtomy adjustment to find chemical potential
+
+Dichotomy adjustment of Chemical Potential to obtain Total Density = 1.000000 +/- 0.001000
+    Chemical Potential = 13.370977  
+    Total Density = 1.180334
+    12.870977 < Chemical Potential < 13.370977
+    0.981333 < Total Density < 1.180334
+    12.870977 < Chemical Potential < 12.917878
+    0.981333 < Total Density < 1.000695
+    Chemical Potential found in 2 iterations : 
+    Total Density = 1.000695;Chemical Potential = 12.917878
+Mixing dichotomy mu with previous iteration by factor 1.000
+New chemical potential: 12.918
+
+ *** calculation of observables ***
+*** iteration finished ***
+============================================================
+summary of impurity observables:
+total occupany of impurity 0:  0.9944
+G(beta/2) occ of impurity 0:  -1.7373
+Z (simple estimate) of impurity 0 per orb:
+   up:  1.000
+ down:  1.000
+============================================================
+
+============================================================
+convergence:
+δμ:      0.0000e+00
+Impurity 0:
+δn imp : 2.9976e-02
+δn orb : 2.9976e-02
+δ Gimp : 6.1585e-01
+δ G0   : 1.3115e+00
+δ Σ    : 3.6570e+00
+============================================================
+
+
+################################################################################
+Running iteration: 2 / 10
+
+ *** Correlated Shell type #  0 : Estimated total charge of impurity problem = 1.000372
+Estimated density matrix:
+down_0, real part
+[[0.50018606]]
+up_0, real part
+[[0.50018606]]
+
+Solving the impurity problem for shell 0 ...
+
+
+Optimizing block dn index 0
+--------------------------------
+  Rough guess found 1 interval(s):
+  Interval of length 10.14: [-5.080, +5.060] 
+
+  Optimizing lower boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 26 steps with size 0.020 in [-4.807, -4.339]
+  Found lower boundary: -4.669
+
+  Optimizing upper boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 24 steps with size 0.020 in [4.350, 4.796]
+  Found upper boundary: 4.656
+Finishing orbital, auto detect optimal bath size: 55
+Ignoring site with ε = 4.402 and V = 0.0. V is too small.
+
+
+Optimizing block up index 0
+--------------------------------
+  Rough guess found 1 interval(s):
+  Interval of length 10.14: [-5.080, +5.060] 
+
+  Optimizing lower boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 26 steps with size 0.020 in [-4.807, -4.339]
+  Found lower boundary: -4.669
+
+  Optimizing upper boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 24 steps with size 0.020 in [4.350, 4.796]
+  Found upper boundary: 4.656
+Finishing orbital, auto detect optimal bath size: 55
+Ignoring site with ε = 4.402 and V = 0.0. V is too small.
+TimeStepEstimation returned 70 with given bath, "eta" = 0.2 and "dt" = 0.2
+
+
+Starting FTPS solver
+
+Solve Parameters: 
+  ------------------------------------------------------------------------------------------------------------------------------ 
+    Interaction parameters: U = 3.6 J = 0 Up = 0 including SF and PH.
+
+    GS-search is performed using 12 sweeps with method SSImp and parameters:
+      tw_I:  1e-13 maxmI:  200
+      tw_IB: 1e-13 maxmIB: 200
+      tw_B:  1e-13 maxmB:  200
+
+    Time evolution method: TDVP to perform real time evolution
+    Number of time steps: 70 with step size: 0.2
+    Use the following approximation paramters:
+      tw_I:  1e-10 maxmI:  200
+      tw_IB: 1e-10 maxmIB: 200
+      tw_B:  1e-10 maxmB:  200
+    Calcule Green's function on the following blocks/indices:
+       up 0
+    Calculate single-particle Green's function
+  ------------------------------------------------------------------------------------------------------------------------------ 
+  ------------------------------------------------------------------------------------------------------------------------------ 
+
+
+Bath Bandwidths of Block dn:
+   Orbital 0: [-4.58, 4.57]
+Bath Bandwidths of Block up:
+   Orbital 0: [-4.58, 4.57]
+
+
+Non-Interacting Impurity Hamiltonian: 
+
+Matrix of Block dn:
+[[(-1.9,0)]]
+
+Matrix of Block up:
+[[(-1.9,0)]]
+
+Component: Bra,  *c('up',0),  Time Evolution direction: 1
+Component: Ket,  *c('up',0),  Time Evolution direction: -1
+Component: Ket,  *c_dag('up',0),  Time Evolution direction: 1
+Component: Bra,  *c_dag('up',0),  Time Evolution direction: -1
+Storing states to /tmp/MPS415206746/
+Finding GS sector by doing DMRG without QNs.
+    Preparing for DMRG: 
+      Apply MPO 3 times.
+    Preparation done.
+
+    --------------------------------------------------------------------------------------------
+                                   DMRG (using subspace expansion)
+    --------------------------------------------------------------------------------------------
+    Sweep 1/5
+    Impurity Occupation:              0.59934   0.41734   
+    Dim of Impurity-Bath Links:          21        35   
+    Dim of Impurity-Impurity Links:      23   
+    Energy: -130.4616516
+    TruncErr: 1.687380046e-07
+
+
+    Sweep 2/5
+    Impurity Occupation:              0.51234   0.50441   
+    Dim of Impurity-Bath Links:          39        43   
+    Dim of Impurity-Impurity Links:      34   
+    Energy: -130.609319
+    TruncErr: 1.332651173e-07
+
+
+    Sweep 3/5
+    Impurity Occupation:              0.50391   0.51254   
+    Dim of Impurity-Bath Links:          46        47   
+    Dim of Impurity-Impurity Links:      46   
+    Energy: -130.6286464
+    TruncErr: 9.6813369e-09
+
+
+    Sweep 4/5
+    Impurity Occupation:              0.50715   0.50918   
+    Dim of Impurity-Bath Links:          44        42   
+    Dim of Impurity-Impurity Links:      46   
+    Energy: -130.6313617
+    TruncErr: 1.615543634e-09
+
+
+    Sweep 5/5
+    Impurity Occupation:              0.50814   0.50818   
+    Dim of Impurity-Bath Links:          29        27   
+    Dim of Impurity-Impurity Links:      46   
+    Energy: -130.6316524
+    TruncErr: 3.174308783e-10
+
+
+Variance of total N: -6.697270919e-05
+Particle Sector found: 28 28
+
+
+
+--------------------------------------------------------------------------
+---------------------- Ground State Sector Found -------------------------
+--------------------------------------------------------------------------
+
+
+Start DMRG for total ground state.
+    Preparing for DMRG: 
+      Apply MPO 3 times.
+      Imaginary time evolution. Perform 5 steps using TEBD algorithm.
+    Preparation done.
+
+    --------------------------------------------------------------------------------------------
+                                   DMRG (using subspace expansion)
+    --------------------------------------------------------------------------------------------
+    Sweep 1/22
+    Impurity Occupation:              0.67427   0.32948   
+    Dim of Impurity-Bath Links:          22        24   
+    Dim of Impurity-Impurity Links:      21   
+    Energy: -130.5939009
+    TruncErr: 9.686671178e-14
+
+
+    Sweep 2/22
+    Impurity Occupation:              0.60652   0.40331   
+    Dim of Impurity-Bath Links:          29        27   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -130.6166284
+    TruncErr: 9.929448604e-14
+
+
+    Sweep 3/22
+    Impurity Occupation:              0.56919   0.44350   
+    Dim of Impurity-Bath Links:          31        28   
+    Dim of Impurity-Impurity Links:      26   
+    Energy: -130.6251675
+    TruncErr: 9.693367322e-14
+
+
+    Sweep 4/22
+    Impurity Occupation:              0.54609   0.46817   
+    Dim of Impurity-Bath Links:          29        29   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -130.6287518
+    TruncErr: 9.968039195e-14
+
+
+    Sweep 5/22
+    Impurity Occupation:              0.53086   0.48433   
+    Dim of Impurity-Bath Links:          29        29   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -130.6303968
+    TruncErr: 9.258188751e-14
+
+
+    Sweep 6/22
+    Impurity Occupation:              0.52229   0.49337   
+    Dim of Impurity-Bath Links:          29        28   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -130.6310966
+    TruncErr: 9.893555276e-14
+
+
+    Sweep 7/22
+    Impurity Occupation:              0.51679   0.49916   
+    Dim of Impurity-Bath Links:          29        28   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -130.631417
+    TruncErr: 9.393373862e-14
+
+
+    Sweep 8/22
+    Impurity Occupation:              0.51288   0.50326   
+    Dim of Impurity-Bath Links:          29        28   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -130.6315706
+    TruncErr: 8.490337433e-14
+
+
+    Sweep 9/22
+    Impurity Occupation:              0.51063   0.50561   
+    Dim of Impurity-Bath Links:          31        28   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -130.6316322
+    TruncErr: 9.856774368e-14
+
+
+    Sweep 10/22
+    Impurity Occupation:              0.50951   0.50677   
+    Dim of Impurity-Bath Links:          30        28   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -130.631649
+    TruncErr: 9.681777177e-14
+
+
+    Sweep 11/22
+    Impurity Occupation:              0.50902   0.50728   
+    Dim of Impurity-Bath Links:          30        29   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -130.6316551
+    TruncErr: 9.825451051e-14
+
+
+    Sweep 12/22
+    Impurity Occupation:              0.50869   0.50762   
+    Dim of Impurity-Bath Links:          31        29   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -130.6316583
+    TruncErr: 9.810015746e-14
+
+
+    Sweep 13/22
+    Impurity Occupation:              0.50845   0.50786   
+    Dim of Impurity-Bath Links:          33        32   
+    Dim of Impurity-Impurity Links:      26   
+    Energy: -130.6316598
+    TruncErr: 8.213644579e-14
+
+
+    Sweep 14/22
+    Impurity Occupation:              0.50834   0.50798   
+    Dim of Impurity-Bath Links:          33        32   
+    Dim of Impurity-Impurity Links:      26   
+    Energy: -130.6316603
+    TruncErr: 9.453801753e-14
+
+
+    Sweep 15/22
+    Impurity Occupation:              0.50827   0.50805   
+    Dim of Impurity-Bath Links:          33        32   
+    Dim of Impurity-Impurity Links:      26   
+    Energy: -130.6316605
+    TruncErr: 9.716705731e-14
+
+
+    Sweep 16/22
+    Impurity Occupation:              0.50819   0.50813   
+    Dim of Impurity-Bath Links:          33        36   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -130.6316607
+    TruncErr: 9.019825414e-14
+
+
+    Sweep 17/22
+    Impurity Occupation:              0.50816   0.50816   
+    Dim of Impurity-Bath Links:          34        35   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -130.6316607
+    TruncErr: 8.93424399e-14
+
+
+    Sweep 18/22
+    Impurity Occupation:              0.50816   0.50816   
+    Dim of Impurity-Bath Links:          35        36   
+    Dim of Impurity-Impurity Links:      26   
+    Energy: -130.6316607
+    TruncErr: 8.463281984e-14
+
+
+    Sweep 19/22
+    Impurity Occupation:              0.50816   0.50816   
+    Dim of Impurity-Bath Links:          35        34   
+    Dim of Impurity-Impurity Links:      26   
+    Energy: -130.6316607
+    TruncErr: 9.797995329e-14
+
+
+    Sweep 20/22
+    Impurity Occupation:              0.50816   0.50816   
+    Dim of Impurity-Bath Links:          35        34   
+    Dim of Impurity-Impurity Links:      26   
+    Energy: -130.6316607
+    TruncErr: 8.013903978e-14
+
+
+    Sweep 21/22
+    Impurity Occupation:              0.50816   0.50816   
+    Dim of Impurity-Bath Links:          35        34   
+    Dim of Impurity-Impurity Links:      26   
+    Energy: -130.6316607
+    TruncErr: 7.90423973e-14
+
+
+    Sweep 22/22
+    Impurity Occupation:              0.50816   0.50816   
+    Dim of Impurity-Bath Links:          35        34   
+    Dim of Impurity-Impurity Links:      26   
+    Energy: -130.6316607
+    TruncErr: 7.904794606e-14
+
+
+
+
+
+--------------------------------------------------------------------------
+------------------------- Ground State Calculated ------------------------
+--------------------------------------------------------------------------
+
+Energy: -130.6316607
+Orbital resolved impurity occupation: 0.5081604808 0.5081604774
+Total impurity occupation: 1.016320958
+Ground-state convergence: 
+   <GS| H |GS> = -130.6316607
+   <GS|H^2|GS> = 17064.63078
+   <GS|H^2|GS> - <GS|H|GS>^2 = 1.984374644e-09
+
+
+
+
+--------------------------------------------------------------------------
+-------------------------- Start Time Evolution --------------------------
+--------------------------------------------------------------------------
+
+Rank 1 time evolves GF component Ket *c('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 3 time evolves GF component Bra *c_dag('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 0 time evolves GF component Bra *c('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 2 time evolves GF component Ket *c_dag('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 1 finished time evolution.
+Rank 0 finished time evolution.
+Rank 3 finished time evolution.
+Rank 2 finished time evolution.
+
+
+
+--------------------------------------------------------------------------
+-------------------------- Post Processing ...  --------------------------
+--------------------------------------------------------------------------
+
+Rank 1 calculates Green's function of type single particle lesser:
+    Component: Bra,  *c('up',0),  Time Evolution direction: 1
+    Component: Ket,  *c('up',0),  Time Evolution direction: -1
+
+Rank 0 calculates Green's function of type single particle greater:
+    Component: Bra,  *c_dag('up',0),  Time Evolution direction: -1
+    Component: Ket,  *c_dag('up',0),  Time Evolution direction: 1
+
+Collecting GFs
+mapping up-0 to down-0...
+mapping up-0 to down-0...
+mapping up-0 to down-0...
+Actual time for solver: 411.34 s
+
+Total charge of impurity problem: 1.00097
+Total charge convergency of impurity problem: 0.00060
+
+Density matrix:
+down_0, real part
+[[0.50048448]]
+eigenvalues: [0.50048448]
+up_0, real part
+[[0.50048448]]
+eigenvalues: [0.50048448]
+
+ *** Post-processing the solver output ***
+Total charge of all correlated shells : 1.000969
+
+
+sumk calc_mu: Using dichtomy adjustment to find chemical potential
+
+Dichotomy adjustment of Chemical Potential to obtain Total Density = 1.000000 +/- 0.001000
+    Chemical Potential = 13.417878  
+    Total Density = 1.179742
+    12.917878 < Chemical Potential < 13.417878
+    0.997103 < Total Density < 1.179742
+    12.917878 < Chemical Potential < 12.925808
+    0.997103 < Total Density < 1.000109
+    Chemical Potential found in 2 iterations : 
+    Total Density = 1.000109;Chemical Potential = 12.925808
+Mixing dichotomy mu with previous iteration by factor 1.000
+New chemical potential: 12.926
+
+ *** calculation of observables ***
+*** iteration finished ***
+============================================================
+summary of impurity observables:
+total occupany of impurity 0:  1.0010
+G(beta/2) occ of impurity 0:  -1.6259
+Z (simple estimate) of impurity 0 per orb:
+   up:  1.000
+ down:  1.000
+============================================================
+
+============================================================
+convergence:
+δμ:      4.6901e-02
+Impurity 0:
+δn imp : 6.5556e-03
+δn orb : 6.5556e-03
+δ Gimp : 2.3681e-01
+δ G0   : 7.8661e-01
+δ Σ    : 1.3305e+00
+============================================================
+
+
+################################################################################
+Running iteration: 3 / 10
+
+ *** Correlated Shell type #  0 : Estimated total charge of impurity problem = 1.000356
+Estimated density matrix:
+down_0, real part
+[[0.50017784]]
+up_0, real part
+[[0.50017784]]
+
+Solving the impurity problem for shell 0 ...
+
+
+Optimizing block dn index 0
+--------------------------------
+  Rough guess found 1 interval(s):
+  Interval of length 10.42: [-5.343, +5.076] 
+
+  Optimizing lower boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 26 steps with size 0.020 in [-4.802, -4.321]
+  Found lower boundary: -4.637
+
+  Optimizing upper boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 24 steps with size 0.020 in [4.367, 4.813]
+  Found upper boundary: 4.525
+Finishing orbital, auto detect optimal bath size: 55
+Ignoring site with ε = -4.384 and V = 0.0. V is too small.
+Ignoring site with ε = 4.278 and V = 0.0. V is too small.
+
+
+Optimizing block up index 0
+--------------------------------
+  Rough guess found 1 interval(s):
+  Interval of length 10.42: [-5.343, +5.076] 
+
+  Optimizing lower boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 26 steps with size 0.020 in [-4.802, -4.321]
+  Found lower boundary: -4.637
+
+  Optimizing upper boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 24 steps with size 0.020 in [4.367, 4.813]
+  Found upper boundary: 4.525
+Finishing orbital, auto detect optimal bath size: 55
+Ignoring site with ε = -4.384 and V = 0.0. V is too small.
+Ignoring site with ε = 4.278 and V = 0.0. V is too small.
+TimeStepEstimation returned 70 with given bath, "eta" = 0.2 and "dt" = 0.2
+
+
+Starting FTPS solver
+
+Solve Parameters: 
+  ------------------------------------------------------------------------------------------------------------------------------ 
+    Interaction parameters: U = 3.6 J = 0 Up = 0 including SF and PH.
+
+    GS-search is performed using 12 sweeps with method SSImp and parameters:
+      tw_I:  1e-13 maxmI:  200
+      tw_IB: 1e-13 maxmIB: 200
+      tw_B:  1e-13 maxmB:  200
+
+    Time evolution method: TDVP to perform real time evolution
+    Number of time steps: 70 with step size: 0.2
+    Use the following approximation paramters:
+      tw_I:  1e-10 maxmI:  200
+      tw_IB: 1e-10 maxmIB: 200
+      tw_B:  1e-10 maxmB:  200
+    Calcule Green's function on the following blocks/indices:
+       up 0
+    Calculate single-particle Green's function
+  ------------------------------------------------------------------------------------------------------------------------------ 
+  ------------------------------------------------------------------------------------------------------------------------------ 
+
+
+Bath Bandwidths of Block dn:
+   Orbital 0: [-4.55, 4.44]
+Bath Bandwidths of Block up:
+   Orbital 0: [-4.55, 4.44]
+
+
+Non-Interacting Impurity Hamiltonian: 
+
+Matrix of Block dn:
+[[(-1.9,0)]]
+
+Matrix of Block up:
+[[(-1.9,0)]]
+
+Component: Bra,  *c('up',0),  Time Evolution direction: 1
+Component: Ket,  *c('up',0),  Time Evolution direction: -1
+Component: Ket,  *c_dag('up',0),  Time Evolution direction: 1
+Component: Bra,  *c_dag('up',0),  Time Evolution direction: -1
+Storing states to /tmp/MPS1313577152/
+Finding GS sector by doing DMRG without QNs.
+    Preparing for DMRG: 
+      Apply MPO 3 times.
+    Preparation done.
+
+    --------------------------------------------------------------------------------------------
+                                   DMRG (using subspace expansion)
+    --------------------------------------------------------------------------------------------
+    Sweep 1/5
+    Impurity Occupation:              0.81226   0.19771   
+    Dim of Impurity-Bath Links:          21        33   
+    Dim of Impurity-Impurity Links:      19   
+    Energy: -120.8282635
+    TruncErr: 8.54454368e-08
+
+
+    Sweep 2/5
+    Impurity Occupation:              0.53774   0.47930   
+    Dim of Impurity-Bath Links:          37        45   
+    Dim of Impurity-Impurity Links:      35   
+    Energy: -120.9501155
+    TruncErr: 2.085827081e-08
+
+
+    Sweep 3/5
+    Impurity Occupation:              0.50340   0.51294   
+    Dim of Impurity-Bath Links:          42        42   
+    Dim of Impurity-Impurity Links:      41   
+    Energy: -120.9654853
+    TruncErr: 8.846174791e-09
+
+
+    Sweep 4/5
+    Impurity Occupation:              0.50753   0.50874   
+    Dim of Impurity-Bath Links:          32        38   
+    Dim of Impurity-Impurity Links:      41   
+    Energy: -120.9674553
+    TruncErr: 2.619578243e-09
+
+
+    Sweep 5/5
+    Impurity Occupation:              0.50813   0.50813   
+    Dim of Impurity-Bath Links:          23        19   
+    Dim of Impurity-Impurity Links:      38   
+    Energy: -120.9676478
+    TruncErr: 3.948991645e-10
+
+
+Variance of total N: -2.044425401e-05
+Particle Sector found: 27 27
+
+
+
+--------------------------------------------------------------------------
+---------------------- Ground State Sector Found -------------------------
+--------------------------------------------------------------------------
+
+
+Start DMRG for total ground state.
+    Preparing for DMRG: 
+      Apply MPO 3 times.
+      Imaginary time evolution. Perform 5 steps using TEBD algorithm.
+    Preparation done.
+
+    --------------------------------------------------------------------------------------------
+                                   DMRG (using subspace expansion)
+    --------------------------------------------------------------------------------------------
+    Sweep 1/22
+    Impurity Occupation:              0.66106   0.34335   
+    Dim of Impurity-Bath Links:          22        21   
+    Dim of Impurity-Impurity Links:      20   
+    Energy: -120.9318275
+    TruncErr: 9.74836075e-14
+
+
+    Sweep 2/22
+    Impurity Occupation:              0.59011   0.42103   
+    Dim of Impurity-Bath Links:          26        23   
+    Dim of Impurity-Impurity Links:      21   
+    Energy: -120.95632
+    TruncErr: 9.662285767e-14
+
+
+    Sweep 3/22
+    Impurity Occupation:              0.55477   0.45897   
+    Dim of Impurity-Bath Links:          26        25   
+    Dim of Impurity-Impurity Links:      23   
+    Energy: -120.9634849
+    TruncErr: 1.60512542e-13
+
+
+    Sweep 4/22
+    Impurity Occupation:              0.53380   0.48129   
+    Dim of Impurity-Bath Links:          28        27   
+    Dim of Impurity-Impurity Links:      23   
+    Energy: -120.9662275
+    TruncErr: 1.360264687e-13
+
+
+    Sweep 5/22
+    Impurity Occupation:              0.52462   0.49098   
+    Dim of Impurity-Bath Links:          28        28   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -120.967063
+    TruncErr: 9.687460255e-14
+
+
+    Sweep 6/22
+    Impurity Occupation:              0.51866   0.49724   
+    Dim of Impurity-Bath Links:          28        28   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -120.9673991
+    TruncErr: 9.671342717e-14
+
+
+    Sweep 7/22
+    Impurity Occupation:              0.51471   0.50135   
+    Dim of Impurity-Bath Links:          28        29   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -120.9675455
+    TruncErr: 9.471426377e-14
+
+
+    Sweep 8/22
+    Impurity Occupation:              0.51186   0.50431   
+    Dim of Impurity-Bath Links:          28        30   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -120.9676119
+    TruncErr: 9.329564527e-14
+
+
+    Sweep 9/22
+    Impurity Occupation:              0.51027   0.50595   
+    Dim of Impurity-Bath Links:          29        29   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -120.9676351
+    TruncErr: 8.550906527e-14
+
+
+    Sweep 10/22
+    Impurity Occupation:              0.50937   0.50688   
+    Dim of Impurity-Bath Links:          30        29   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -120.967644
+    TruncErr: 9.779058316e-14
+
+
+    Sweep 11/22
+    Impurity Occupation:              0.50882   0.50743   
+    Dim of Impurity-Bath Links:          31        29   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -120.9676475
+    TruncErr: 8.818686349e-14
+
+
+    Sweep 12/22
+    Impurity Occupation:              0.50854   0.50772   
+    Dim of Impurity-Bath Links:          32        30   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -120.9676489
+    TruncErr: 8.308737337e-14
+
+
+    Sweep 13/22
+    Impurity Occupation:              0.50835   0.50791   
+    Dim of Impurity-Bath Links:          32        32   
+    Dim of Impurity-Impurity Links:      26   
+    Energy: -120.9676495
+    TruncErr: 9.281785078e-14
+
+
+    Sweep 14/22
+    Impurity Occupation:              0.50818   0.50808   
+    Dim of Impurity-Bath Links:          34        35   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -120.96765
+    TruncErr: 9.066597584e-14
+
+
+    Sweep 15/22
+    Impurity Occupation:              0.50814   0.50813   
+    Dim of Impurity-Bath Links:          33        34   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -120.96765
+    TruncErr: 9.246322369e-14
+
+
+    Sweep 16/22
+    Impurity Occupation:              0.50813   0.50813   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -120.96765
+    TruncErr: 9.501937198e-14
+
+
+    Sweep 17/22
+    Impurity Occupation:              0.50813   0.50813   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -120.96765
+    TruncErr: 9.161740002e-14
+
+
+    Sweep 18/22
+    Impurity Occupation:              0.50813   0.50813   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      27   
+    Energy: -120.96765
+    TruncErr: 9.160083351e-14
+
+
+    Sweep 19/22
+    Impurity Occupation:              0.50813   0.50813   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      27   
+    Energy: -120.96765
+    TruncErr: 8.964748186e-14
+
+
+    Sweep 20/22
+    Impurity Occupation:              0.50813   0.50813   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      27   
+    Energy: -120.96765
+    TruncErr: 8.963341372e-14
+
+
+    Sweep 21/22
+    Impurity Occupation:              0.50813   0.50813   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      27   
+    Energy: -120.96765
+    TruncErr: 8.962605593e-14
+
+
+    Sweep 22/22
+    Impurity Occupation:              0.50813   0.50813   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      27   
+    Energy: -120.96765
+    TruncErr: 8.962197573e-14
+
+
+
+
+
+--------------------------------------------------------------------------
+------------------------- Ground State Calculated ------------------------
+--------------------------------------------------------------------------
+
+Energy: -120.96765
+Orbital resolved impurity occupation: 0.5081316141 0.508131614
+Total impurity occupation: 1.016263228
+Ground-state convergence: 
+   <GS| H |GS> = -120.96765
+   <GS|H^2|GS> = 14633.17236
+   <GS|H^2|GS> - <GS|H|GS>^2 = 1.740130121e-09
+
+
+
+
+--------------------------------------------------------------------------
+-------------------------- Start Time Evolution --------------------------
+--------------------------------------------------------------------------
+
+Rank 2 time evolves GF component Ket *c_dag('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 3 time evolves GF component Bra *c_dag('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 0 time evolves GF component Bra *c('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 1 time evolves GF component Ket *c('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 0 finished time evolution.
+Rank 1 finished time evolution.
+Rank 2 finished time evolution.
+Rank 3 finished time evolution.
+
+
+
+--------------------------------------------------------------------------
+-------------------------- Post Processing ...  --------------------------
+--------------------------------------------------------------------------
+
+Rank 0 calculates Green's function of type single particle greater:
+    Component: Bra,  *c_dag('up',0),  Time Evolution direction: -1
+    Component: Ket,  *c_dag('up',0),  Time Evolution direction: 1
+
+Rank 1 calculates Green's function of type single particle lesser:
+    Component: Bra,  *c('up',0),  Time Evolution direction: 1
+    Component: Ket,  *c('up',0),  Time Evolution direction: -1
+
+Collecting GFs
+mapping up-0 to down-0...
+mapping up-0 to down-0...
+mapping up-0 to down-0...
+Actual time for solver: 393.62 s
+
+Total charge of impurity problem: 1.00195
+Total charge convergency of impurity problem: 0.00159
+
+Density matrix:
+down_0, real part
+[[0.50097262]]
+eigenvalues: [0.50097262]
+up_0, real part
+[[0.50097262]]
+eigenvalues: [0.50097262]
+
+ *** Post-processing the solver output ***
+Total charge of all correlated shells : 1.001945
+
+
+sumk calc_mu: Using dichtomy adjustment to find chemical potential
+
+Dichotomy adjustment of Chemical Potential to obtain Total Density = 1.000000 +/- 0.001000
+    Chemical Potential = 13.425808  
+    Total Density = 1.178289
+    12.925808 < Chemical Potential < 13.425808
+    0.998946 < Total Density < 1.178289
+    12.925808 < Chemical Potential < 12.928747
+    0.998946 < Total Density < 1.000039
+    Chemical Potential found in 2 iterations : 
+    Total Density = 1.000039;Chemical Potential = 12.928747
+Mixing dichotomy mu with previous iteration by factor 1.000
+New chemical potential: 12.929
+
+ *** calculation of observables ***
+*** iteration finished ***
+============================================================
+summary of impurity observables:
+total occupany of impurity 0:  1.0019
+G(beta/2) occ of impurity 0:  -1.6008
+Z (simple estimate) of impurity 0 per orb:
+   up:  1.000
+ down:  1.000
+============================================================
+
+============================================================
+convergence:
+δμ:      7.9302e-03
+Impurity 0:
+δn imp : 9.7628e-04
+δn orb : 9.7628e-04
+δ Gimp : 8.3441e-02
+δ G0   : 2.4386e-01
+δ Σ    : 4.7411e-01
+============================================================
+
+
+################################################################################
+Running iteration: 4 / 10
+
+ *** Correlated Shell type #  0 : Estimated total charge of impurity problem = 1.000510
+Estimated density matrix:
+down_0, real part
+[[0.50025521]]
+up_0, real part
+[[0.50025521]]
+
+Solving the impurity problem for shell 0 ...
+
+
+Optimizing block dn index 0
+--------------------------------
+  Rough guess found 1 interval(s):
+  Interval of length 10.42: [-5.343, +5.076] 
+
+  Optimizing lower boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 26 steps with size 0.020 in [-4.802, -4.321]
+  Found lower boundary: -4.628
+
+  Optimizing upper boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 24 steps with size 0.020 in [4.368, 4.813]
+  Found upper boundary: 4.506
+Finishing orbital, auto detect optimal bath size: 55
+Ignoring site with ε = -4.376 and V = 0.0. V is too small.
+Ignoring site with ε = 4.26 and V = 0.0. V is too small.
+
+
+Optimizing block up index 0
+--------------------------------
+  Rough guess found 1 interval(s):
+  Interval of length 10.42: [-5.343, +5.076] 
+
+  Optimizing lower boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 26 steps with size 0.020 in [-4.802, -4.321]
+  Found lower boundary: -4.628
+
+  Optimizing upper boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 24 steps with size 0.020 in [4.368, 4.813]
+  Found upper boundary: 4.506
+Finishing orbital, auto detect optimal bath size: 55
+Ignoring site with ε = -4.376 and V = 0.0. V is too small.
+Ignoring site with ε = 4.26 and V = 0.0. V is too small.
+TimeStepEstimation returned 70 with given bath, "eta" = 0.2 and "dt" = 0.2
+
+
+Starting FTPS solver
+
+Solve Parameters: 
+  ------------------------------------------------------------------------------------------------------------------------------ 
+    Interaction parameters: U = 3.6 J = 0 Up = 0 including SF and PH.
+
+    GS-search is performed using 12 sweeps with method SSImp and parameters:
+      tw_I:  1e-13 maxmI:  200
+      tw_IB: 1e-13 maxmIB: 200
+      tw_B:  1e-13 maxmB:  200
+
+    Time evolution method: TDVP to perform real time evolution
+    Number of time steps: 70 with step size: 0.2
+    Use the following approximation paramters:
+      tw_I:  1e-10 maxmI:  200
+      tw_IB: 1e-10 maxmIB: 200
+      tw_B:  1e-10 maxmB:  200
+    Calcule Green's function on the following blocks/indices:
+       up 0
+    Calculate single-particle Green's function
+  ------------------------------------------------------------------------------------------------------------------------------ 
+  ------------------------------------------------------------------------------------------------------------------------------ 
+
+
+Bath Bandwidths of Block dn:
+   Orbital 0: [-4.54, 4.42]
+Bath Bandwidths of Block up:
+   Orbital 0: [-4.54, 4.42]
+
+
+Non-Interacting Impurity Hamiltonian: 
+
+Matrix of Block dn:
+[[(-1.9,0)]]
+
+Matrix of Block up:
+[[(-1.9,0)]]
+
+Component: Bra,  *c('up',0),  Time Evolution direction: 1
+Component: Ket,  *c('up',0),  Time Evolution direction: -1
+Component: Ket,  *c_dag('up',0),  Time Evolution direction: 1
+Component: Bra,  *c_dag('up',0),  Time Evolution direction: -1
+Storing states to /tmp/MPS331692753/
+Finding GS sector by doing DMRG without QNs.
+    Preparing for DMRG: 
+      Apply MPO 3 times.
+    Preparation done.
+
+    --------------------------------------------------------------------------------------------
+                                   DMRG (using subspace expansion)
+    --------------------------------------------------------------------------------------------
+    Sweep 1/5
+    Impurity Occupation:              0.57947   0.43524   
+    Dim of Impurity-Bath Links:          22        31   
+    Dim of Impurity-Impurity Links:      20   
+    Energy: -120.6328132
+    TruncErr: 9.183791183e-08
+
+
+    Sweep 2/5
+    Impurity Occupation:              0.50800   0.50865   
+    Dim of Impurity-Bath Links:          37        41   
+    Dim of Impurity-Impurity Links:      34   
+    Energy: -120.7196453
+    TruncErr: 4.459138306e-08
+
+
+    Sweep 3/5
+    Impurity Occupation:              0.50485   0.51155   
+    Dim of Impurity-Bath Links:          44        46   
+    Dim of Impurity-Impurity Links:      42   
+    Energy: -120.7340789
+    TruncErr: 7.827993314e-09
+
+
+    Sweep 4/5
+    Impurity Occupation:              0.50763   0.50874   
+    Dim of Impurity-Bath Links:          37        39   
+    Dim of Impurity-Impurity Links:      42   
+    Energy: -120.7364819
+    TruncErr: 2.544794813e-09
+
+
+    Sweep 5/5
+    Impurity Occupation:              0.50819   0.50818   
+    Dim of Impurity-Bath Links:          26        22   
+    Dim of Impurity-Impurity Links:      42   
+    Energy: -120.7366516
+    TruncErr: 2.511159599e-10
+
+
+Variance of total N: -1.789538464e-05
+Particle Sector found: 27 27
+
+
+
+--------------------------------------------------------------------------
+---------------------- Ground State Sector Found -------------------------
+--------------------------------------------------------------------------
+
+
+Start DMRG for total ground state.
+    Preparing for DMRG: 
+      Apply MPO 3 times.
+      Imaginary time evolution. Perform 5 steps using TEBD algorithm.
+    Preparation done.
+
+    --------------------------------------------------------------------------------------------
+                                   DMRG (using subspace expansion)
+    --------------------------------------------------------------------------------------------
+    Sweep 1/22
+    Impurity Occupation:              0.66705   0.33773   
+    Dim of Impurity-Bath Links:          22        22   
+    Dim of Impurity-Impurity Links:      21   
+    Energy: -120.7000858
+    TruncErr: 9.822693431e-14
+
+
+    Sweep 2/22
+    Impurity Occupation:              0.59639   0.41469   
+    Dim of Impurity-Bath Links:          26        24   
+    Dim of Impurity-Impurity Links:      21   
+    Energy: -120.7245582
+    TruncErr: 9.531057931e-14
+
+
+    Sweep 3/22
+    Impurity Occupation:              0.56303   0.45053   
+    Dim of Impurity-Bath Links:          26        26   
+    Dim of Impurity-Impurity Links:      22   
+    Energy: -120.7314612
+    TruncErr: 1.488584798e-13
+
+
+    Sweep 4/22
+    Impurity Occupation:              0.53939   0.47559   
+    Dim of Impurity-Bath Links:          29        28   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -120.73461
+    TruncErr: 9.825335839e-14
+
+
+    Sweep 5/22
+    Impurity Occupation:              0.52816   0.48741   
+    Dim of Impurity-Bath Links:          28        28   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -120.7357105
+    TruncErr: 1.40773598e-13
+
+
+    Sweep 6/22
+    Impurity Occupation:              0.52075   0.49517   
+    Dim of Impurity-Bath Links:          28        29   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -120.7362283
+    TruncErr: 9.713320402e-14
+
+
+    Sweep 7/22
+    Impurity Occupation:              0.51510   0.50105   
+    Dim of Impurity-Bath Links:          29        29   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -120.7364783
+    TruncErr: 9.741951883e-14
+
+
+    Sweep 8/22
+    Impurity Occupation:              0.51201   0.50425   
+    Dim of Impurity-Bath Links:          29        28   
+    Dim of Impurity-Impurity Links:      23   
+    Energy: -120.7365782
+    TruncErr: 8.896928175e-14
+
+
+    Sweep 9/22
+    Impurity Occupation:              0.50994   0.50639   
+    Dim of Impurity-Bath Links:          29        27   
+    Dim of Impurity-Impurity Links:      23   
+    Energy: -120.7366283
+    TruncErr: 9.51105445e-14
+
+
+    Sweep 10/22
+    Impurity Occupation:              0.50901   0.50735   
+    Dim of Impurity-Bath Links:          31        27   
+    Dim of Impurity-Impurity Links:      23   
+    Energy: -120.736648
+    TruncErr: 8.81023469e-14
+
+
+    Sweep 11/22
+    Impurity Occupation:              0.50863   0.50774   
+    Dim of Impurity-Bath Links:          31        28   
+    Dim of Impurity-Impurity Links:      23   
+    Energy: -120.7366522
+    TruncErr: 9.588902957e-14
+
+
+    Sweep 12/22
+    Impurity Occupation:              0.50845   0.50792   
+    Dim of Impurity-Bath Links:          31        30   
+    Dim of Impurity-Impurity Links:      23   
+    Energy: -120.7366529
+    TruncErr: 9.577222295e-14
+
+
+    Sweep 13/22
+    Impurity Occupation:              0.50833   0.50803   
+    Dim of Impurity-Bath Links:          32        33   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -120.7366532
+    TruncErr: 9.6890271e-14
+
+
+    Sweep 14/22
+    Impurity Occupation:              0.50821   0.50816   
+    Dim of Impurity-Bath Links:          36        33   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -120.7366535
+    TruncErr: 9.482942527e-14
+
+
+    Sweep 15/22
+    Impurity Occupation:              0.50819   0.50818   
+    Dim of Impurity-Bath Links:          35        34   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -120.7366535
+    TruncErr: 8.683764451e-14
+
+
+    Sweep 16/22
+    Impurity Occupation:              0.50819   0.50819   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -120.7366535
+    TruncErr: 8.872226581e-14
+
+
+    Sweep 17/22
+    Impurity Occupation:              0.50819   0.50819   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -120.7366535
+    TruncErr: 8.989892221e-14
+
+
+    Sweep 18/22
+    Impurity Occupation:              0.50819   0.50819   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      26   
+    Energy: -120.7366535
+    TruncErr: 9.017774759e-14
+
+
+    Sweep 19/22
+    Impurity Occupation:              0.50819   0.50819   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      26   
+    Energy: -120.7366535
+    TruncErr: 9.008521088e-14
+
+
+    Sweep 20/22
+    Impurity Occupation:              0.50819   0.50819   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      26   
+    Energy: -120.7366535
+    TruncErr: 9.006016057e-14
+
+
+    Sweep 21/22
+    Impurity Occupation:              0.50819   0.50819   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      26   
+    Energy: -120.7366535
+    TruncErr: 9.005869816e-14
+
+
+    Sweep 22/22
+    Impurity Occupation:              0.50819   0.50819   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      26   
+    Energy: -120.7366535
+    TruncErr: 9.005877172e-14
+
+
+
+
+
+--------------------------------------------------------------------------
+------------------------- Ground State Calculated ------------------------
+--------------------------------------------------------------------------
+
+Energy: -120.7366535
+Orbital resolved impurity occupation: 0.5081855794 0.5081855791
+Total impurity occupation: 1.016371158
+Ground-state convergence: 
+   <GS| H |GS> = -120.7366535
+   <GS|H^2|GS> = 14577.3395
+   <GS|H^2|GS> - <GS|H|GS>^2 = 1.748116888e-09
+
+
+
+
+--------------------------------------------------------------------------
+-------------------------- Start Time Evolution --------------------------
+--------------------------------------------------------------------------
+
+Rank 0 time evolves GF component Bra *c('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 3 time evolves GF component Bra *c_dag('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 2 time evolves GF component Ket *c_dag('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 1 time evolves GF component Ket *c('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 1 finished time evolution.
+Rank 0 finished time evolution.
+Rank 2 finished time evolution.
+Rank 3 finished time evolution.
+
+
+
+--------------------------------------------------------------------------
+-------------------------- Post Processing ...  --------------------------
+--------------------------------------------------------------------------
+
+Rank 0 calculates Green's function of type single particle greater:
+    Component: Bra,  *c_dag('up',0),  Time Evolution direction: -1
+    Component: Ket,  *c_dag('up',0),  Time Evolution direction: 1
+
+Rank 1 calculates Green's function of type single particle lesser:
+    Component: Bra,  *c('up',0),  Time Evolution direction: 1
+    Component: Ket,  *c('up',0),  Time Evolution direction: -1
+
+Collecting GFs
+mapping up-0 to down-0...
+mapping up-0 to down-0...
+mapping up-0 to down-0...
+Actual time for solver: 372.58 s
+
+Total charge of impurity problem: 1.00228
+Total charge convergency of impurity problem: 0.00177
+
+Density matrix:
+down_0, real part
+[[0.50114043]]
+eigenvalues: [0.50114043]
+up_0, real part
+[[0.50114043]]
+eigenvalues: [0.50114043]
+
+ *** Post-processing the solver output ***
+Total charge of all correlated shells : 1.002281
+
+
+sumk calc_mu: Using dichtomy adjustment to find chemical potential
+
+Dichotomy adjustment of Chemical Potential to obtain Total Density = 1.000000 +/- 0.001000
+    12.928747 < Chemical Potential < 12.928747
+    0.999440 < Total Density < 0.999440
+    Chemical Potential found in 0 iterations : 
+    Total Density = 0.999440;Chemical Potential = 12.928747
+Mixing dichotomy mu with previous iteration by factor 1.000
+New chemical potential: 12.929
+
+ *** calculation of observables ***
+*** iteration finished ***
+============================================================
+summary of impurity observables:
+total occupany of impurity 0:  1.0023
+G(beta/2) occ of impurity 0:  -1.5943
+Z (simple estimate) of impurity 0 per orb:
+   up:  1.000
+ down:  1.000
+============================================================
+
+============================================================
+convergence:
+δμ:      2.9387e-03
+Impurity 0:
+δn imp : 3.3561e-04
+δn orb : 3.3561e-04
+δ Gimp : 2.7787e-02
+δ G0   : 7.4490e-02
+δ Σ    : 1.6930e-01
+============================================================
+
+
+################################################################################
+Running iteration: 5 / 10
+
+ *** Correlated Shell type #  0 : Estimated total charge of impurity problem = 0.999916
+Estimated density matrix:
+down_0, real part
+[[0.49995782]]
+up_0, real part
+[[0.49995782]]
+
+Solving the impurity problem for shell 0 ...
+
+
+Optimizing block dn index 0
+--------------------------------
+  Rough guess found 1 interval(s):
+  Interval of length 10.42: [-5.343, +5.076] 
+
+  Optimizing lower boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 26 steps with size 0.020 in [-4.802, -4.321]
+  Found lower boundary: -4.628
+
+  Optimizing upper boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 24 steps with size 0.020 in [4.368, 4.813]
+  Found upper boundary: 4.500
+Finishing orbital, auto detect optimal bath size: 55
+Ignoring site with ε = -4.376 and V = 0.0. V is too small.
+Ignoring site with ε = 4.254 and V = 0.0. V is too small.
+
+
+Optimizing block up index 0
+--------------------------------
+  Rough guess found 1 interval(s):
+  Interval of length 10.42: [-5.343, +5.076] 
+
+  Optimizing lower boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 26 steps with size 0.020 in [-4.802, -4.321]
+  Found lower boundary: -4.628
+
+  Optimizing upper boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 24 steps with size 0.020 in [4.368, 4.813]
+  Found upper boundary: 4.500
+Finishing orbital, auto detect optimal bath size: 55
+Ignoring site with ε = -4.376 and V = 0.0. V is too small.
+Ignoring site with ε = 4.254 and V = 0.0. V is too small.
+TimeStepEstimation returned 70 with given bath, "eta" = 0.2 and "dt" = 0.2
+
+
+Starting FTPS solver
+
+Solve Parameters: 
+  ------------------------------------------------------------------------------------------------------------------------------ 
+    Interaction parameters: U = 3.6 J = 0 Up = 0 including SF and PH.
+
+    GS-search is performed using 12 sweeps with method SSImp and parameters:
+      tw_I:  1e-13 maxmI:  200
+      tw_IB: 1e-13 maxmIB: 200
+      tw_B:  1e-13 maxmB:  200
+
+    Time evolution method: TDVP to perform real time evolution
+    Number of time steps: 70 with step size: 0.2
+    Use the following approximation paramters:
+      tw_I:  1e-10 maxmI:  200
+      tw_IB: 1e-10 maxmIB: 200
+      tw_B:  1e-10 maxmB:  200
+    Calcule Green's function on the following blocks/indices:
+       up 0
+    Calculate single-particle Green's function
+  ------------------------------------------------------------------------------------------------------------------------------ 
+  ------------------------------------------------------------------------------------------------------------------------------ 
+
+
+Bath Bandwidths of Block dn:
+   Orbital 0: [-4.54, 4.42]
+Bath Bandwidths of Block up:
+   Orbital 0: [-4.54, 4.42]
+
+
+Non-Interacting Impurity Hamiltonian: 
+
+Matrix of Block dn:
+[[(-1.9,0)]]
+
+Matrix of Block up:
+[[(-1.9,0)]]
+
+Component: Bra,  *c('up',0),  Time Evolution direction: 1
+Component: Ket,  *c('up',0),  Time Evolution direction: -1
+Component: Ket,  *c_dag('up',0),  Time Evolution direction: 1
+Component: Bra,  *c_dag('up',0),  Time Evolution direction: -1
+Storing states to /tmp/MPS-809447327/
+Finding GS sector by doing DMRG without QNs.
+    Preparing for DMRG: 
+      Apply MPO 3 times.
+    Preparation done.
+
+    --------------------------------------------------------------------------------------------
+                                   DMRG (using subspace expansion)
+    --------------------------------------------------------------------------------------------
+    Sweep 1/5
+    Impurity Occupation:              0.51842   0.49771   
+    Dim of Impurity-Bath Links:          22        39   
+    Dim of Impurity-Impurity Links:      23   
+    Energy: -120.5888542
+    TruncErr: 1.742114012e-07
+
+
+    Sweep 2/5
+    Impurity Occupation:              0.49401   0.52248   
+    Dim of Impurity-Bath Links:          38        50   
+    Dim of Impurity-Impurity Links:      34   
+    Energy: -120.7191428
+    TruncErr: 3.406666543e-08
+
+
+    Sweep 3/5
+    Impurity Occupation:              0.50195   0.51442   
+    Dim of Impurity-Bath Links:          45        50   
+    Dim of Impurity-Impurity Links:      43   
+    Energy: -120.7348376
+    TruncErr: 2.903160336e-08
+
+
+    Sweep 4/5
+    Impurity Occupation:              0.50703   0.50927   
+    Dim of Impurity-Bath Links:          37        41   
+    Dim of Impurity-Impurity Links:      43   
+    Energy: -120.7371878
+    TruncErr: 2.598950437e-09
+
+
+    Sweep 5/5
+    Impurity Occupation:              0.50814   0.50815   
+    Dim of Impurity-Bath Links:          26        26   
+    Dim of Impurity-Impurity Links:      43   
+    Energy: -120.7373617
+    TruncErr: 2.772692888e-10
+
+
+Variance of total N: -1.526837514e-05
+Particle Sector found: 27 27
+
+
+
+--------------------------------------------------------------------------
+---------------------- Ground State Sector Found -------------------------
+--------------------------------------------------------------------------
+
+
+Start DMRG for total ground state.
+    Preparing for DMRG: 
+      Apply MPO 3 times.
+      Imaginary time evolution. Perform 5 steps using TEBD algorithm.
+    Preparation done.
+
+    --------------------------------------------------------------------------------------------
+                                   DMRG (using subspace expansion)
+    --------------------------------------------------------------------------------------------
+    Sweep 1/22
+    Impurity Occupation:              0.66683   0.33802   
+    Dim of Impurity-Bath Links:          22        21   
+    Dim of Impurity-Impurity Links:      19   
+    Energy: -120.70105
+    TruncErr: 1.699715559e-13
+
+
+    Sweep 2/22
+    Impurity Occupation:              0.59414   0.41691   
+    Dim of Impurity-Bath Links:          26        25   
+    Dim of Impurity-Impurity Links:      22   
+    Energy: -120.7255227
+    TruncErr: 1.477002895e-13
+
+
+    Sweep 3/22
+    Impurity Occupation:              0.55532   0.45853   
+    Dim of Impurity-Bath Links:          29        28   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -120.7334243
+    TruncErr: 9.811273956e-14
+
+
+    Sweep 4/22
+    Impurity Occupation:              0.53065   0.48466   
+    Dim of Impurity-Bath Links:          29        29   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -120.7362059
+    TruncErr: 1.587516801e-13
+
+
+    Sweep 5/22
+    Impurity Occupation:              0.52206   0.49370   
+    Dim of Impurity-Bath Links:          30        29   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -120.7369051
+    TruncErr: 1.165892463e-13
+
+
+    Sweep 6/22
+    Impurity Occupation:              0.51651   0.49951   
+    Dim of Impurity-Bath Links:          29        28   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -120.7371922
+    TruncErr: 1.496873594e-13
+
+
+    Sweep 7/22
+    Impurity Occupation:              0.51283   0.50333   
+    Dim of Impurity-Bath Links:          29        28   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -120.7373039
+    TruncErr: 9.843833864e-14
+
+
+    Sweep 8/22
+    Impurity Occupation:              0.51097   0.50526   
+    Dim of Impurity-Bath Links:          30        28   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -120.7373399
+    TruncErr: 9.577180454e-14
+
+
+    Sweep 9/22
+    Impurity Occupation:              0.50981   0.50645   
+    Dim of Impurity-Bath Links:          30        28   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -120.7373547
+    TruncErr: 9.626717439e-14
+
+
+    Sweep 10/22
+    Impurity Occupation:              0.50913   0.50715   
+    Dim of Impurity-Bath Links:          30        30   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -120.7373604
+    TruncErr: 9.159656842e-14
+
+
+    Sweep 11/22
+    Impurity Occupation:              0.50867   0.50762   
+    Dim of Impurity-Bath Links:          30        30   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -120.7373628
+    TruncErr: 8.691129444e-14
+
+
+    Sweep 12/22
+    Impurity Occupation:              0.50844   0.50785   
+    Dim of Impurity-Bath Links:          31        30   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -120.7373636
+    TruncErr: 9.337708347e-14
+
+
+    Sweep 13/22
+    Impurity Occupation:              0.50831   0.50799   
+    Dim of Impurity-Bath Links:          31        32   
+    Dim of Impurity-Impurity Links:      26   
+    Energy: -120.737364
+    TruncErr: 9.493223051e-14
+
+
+    Sweep 14/22
+    Impurity Occupation:              0.50823   0.50806   
+    Dim of Impurity-Bath Links:          32        32   
+    Dim of Impurity-Impurity Links:      26   
+    Energy: -120.7373641
+    TruncErr: 9.000867589e-14
+
+
+    Sweep 15/22
+    Impurity Occupation:              0.50817   0.50813   
+    Dim of Impurity-Bath Links:          32        34   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -120.7373642
+    TruncErr: 8.689362238e-14
+
+
+    Sweep 16/22
+    Impurity Occupation:              0.50815   0.50815   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -120.7373642
+    TruncErr: 9.034019165e-14
+
+
+    Sweep 17/22
+    Impurity Occupation:              0.50815   0.50815   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -120.7373642
+    TruncErr: 9.717706002e-14
+
+
+    Sweep 18/22
+    Impurity Occupation:              0.50815   0.50815   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      27   
+    Energy: -120.7373642
+    TruncErr: 8.758034618e-14
+
+
+    Sweep 19/22
+    Impurity Occupation:              0.50815   0.50815   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      27   
+    Energy: -120.7373642
+    TruncErr: 8.756406958e-14
+
+
+    Sweep 20/22
+    Impurity Occupation:              0.50815   0.50815   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      27   
+    Energy: -120.7373642
+    TruncErr: 8.754712436e-14
+
+
+    Sweep 21/22
+    Impurity Occupation:              0.50815   0.50815   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      27   
+    Energy: -120.7373642
+    TruncErr: 8.753691353e-14
+
+
+    Sweep 22/22
+    Impurity Occupation:              0.50815   0.50815   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      27   
+    Energy: -120.7373642
+    TruncErr: 8.753151566e-14
+
+
+
+
+
+--------------------------------------------------------------------------
+------------------------- Ground State Calculated ------------------------
+--------------------------------------------------------------------------
+
+Energy: -120.7373642
+Orbital resolved impurity occupation: 0.5081479682 0.5081479682
+Total impurity occupation: 1.016295936
+Ground-state convergence: 
+   <GS| H |GS> = -120.7373642
+   <GS|H^2|GS> = 14577.51111
+   <GS|H^2|GS> - <GS|H|GS>^2 = 1.974408443e-09
+
+
+
+
+--------------------------------------------------------------------------
+-------------------------- Start Time Evolution --------------------------
+--------------------------------------------------------------------------
+
+Rank 1 time evolves GF component Ket *c('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 0 time evolves GF component Bra *c('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 3 time evolves GF component Bra *c_dag('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 2 time evolves GF component Ket *c_dag('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 1 finished time evolution.
+Rank 0 finished time evolution.
+Rank 3 finished time evolution.
+Rank 2 finished time evolution.
+
+
+
+--------------------------------------------------------------------------
+-------------------------- Post Processing ...  --------------------------
+--------------------------------------------------------------------------
+
+Rank 1 calculates Green's function of type single particle lesser:
+    Component: Bra,  *c('up',0),  Time Evolution direction: 1
+    Component: Ket,  *c('up',0),  Time Evolution direction: -1
+
+Rank 0 calculates Green's function of type single particle greater:
+    Component: Bra,  *c_dag('up',0),  Time Evolution direction: -1
+    Component: Ket,  *c_dag('up',0),  Time Evolution direction: 1
+
+Collecting GFs
+mapping up-0 to down-0...
+mapping up-0 to down-0...
+mapping up-0 to down-0...
+Actual time for solver: 384.21 s
+
+Total charge of impurity problem: 1.00227
+Total charge convergency of impurity problem: 0.00236
+
+Density matrix:
+down_0, real part
+[[0.50113673]]
+eigenvalues: [0.50113673]
+up_0, real part
+[[0.50113673]]
+eigenvalues: [0.50113673]
+
+ *** Post-processing the solver output ***
+Total charge of all correlated shells : 1.002273
+
+
+sumk calc_mu: Using dichtomy adjustment to find chemical potential
+
+Dichotomy adjustment of Chemical Potential to obtain Total Density = 1.000000 +/- 0.001000
+    12.928747 < Chemical Potential < 12.928747
+    0.999438 < Total Density < 0.999438
+    Chemical Potential found in 0 iterations : 
+    Total Density = 0.999438;Chemical Potential = 12.928747
+Mixing dichotomy mu with previous iteration by factor 1.000
+New chemical potential: 12.929
+
+ *** calculation of observables ***
+*** iteration finished ***
+============================================================
+summary of impurity observables:
+total occupany of impurity 0:  1.0023
+G(beta/2) occ of impurity 0:  -1.5923
+Z (simple estimate) of impurity 0 per orb:
+   up:  1.000
+ down:  1.000
+============================================================
+
+============================================================
+convergence:
+δμ:      0.0000e+00
+Impurity 0:
+δn imp : 7.3998e-06
+δn orb : 7.3998e-06
+δ Gimp : 9.1184e-03
+δ G0   : 2.2993e-02
+δ Σ    : 5.8325e-02
+============================================================
+
+
+################################################################################
+Running iteration: 6 / 10
+
+ *** Correlated Shell type #  0 : Estimated total charge of impurity problem = 0.999922
+Estimated density matrix:
+down_0, real part
+[[0.49996107]]
+up_0, real part
+[[0.49996107]]
+
+Solving the impurity problem for shell 0 ...
+
+
+Optimizing block dn index 0
+--------------------------------
+  Rough guess found 1 interval(s):
+  Interval of length 10.42: [-5.343, +5.076] 
+
+  Optimizing lower boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 26 steps with size 0.020 in [-4.802, -4.321]
+  Found lower boundary: -4.601
+
+  Optimizing upper boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 24 steps with size 0.020 in [4.370, 4.814]
+  Found upper boundary: 4.499
+Finishing orbital, auto detect optimal bath size: 55
+Ignoring site with ε = -4.35 and V = 0.0. V is too small.
+Ignoring site with ε = 4.254 and V = 0.0. V is too small.
+
+
+Optimizing block up index 0
+--------------------------------
+  Rough guess found 1 interval(s):
+  Interval of length 10.42: [-5.343, +5.076] 
+
+  Optimizing lower boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 26 steps with size 0.020 in [-4.802, -4.321]
+  Found lower boundary: -4.601
+
+  Optimizing upper boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 24 steps with size 0.020 in [4.370, 4.814]
+  Found upper boundary: 4.499
+Finishing orbital, auto detect optimal bath size: 55
+Ignoring site with ε = -4.35 and V = 0.0. V is too small.
+Ignoring site with ε = 4.254 and V = 0.0. V is too small.
+TimeStepEstimation returned 70 with given bath, "eta" = 0.2 and "dt" = 0.2
+
+
+Starting FTPS solver
+
+Solve Parameters: 
+  ------------------------------------------------------------------------------------------------------------------------------ 
+    Interaction parameters: U = 3.6 J = 0 Up = 0 including SF and PH.
+
+    GS-search is performed using 12 sweeps with method SSImp and parameters:
+      tw_I:  1e-13 maxmI:  200
+      tw_IB: 1e-13 maxmIB: 200
+      tw_B:  1e-13 maxmB:  200
+
+    Time evolution method: TDVP to perform real time evolution
+    Number of time steps: 70 with step size: 0.2
+    Use the following approximation paramters:
+      tw_I:  1e-10 maxmI:  200
+      tw_IB: 1e-10 maxmIB: 200
+      tw_B:  1e-10 maxmB:  200
+    Calcule Green's function on the following blocks/indices:
+       up 0
+    Calculate single-particle Green's function
+  ------------------------------------------------------------------------------------------------------------------------------ 
+  ------------------------------------------------------------------------------------------------------------------------------ 
+
+
+Bath Bandwidths of Block dn:
+   Orbital 0: [-4.52, 4.42]
+Bath Bandwidths of Block up:
+   Orbital 0: [-4.52, 4.42]
+
+
+Non-Interacting Impurity Hamiltonian: 
+
+Matrix of Block dn:
+[[(-1.9,0)]]
+
+Matrix of Block up:
+[[(-1.9,0)]]
+
+Component: Bra,  *c('up',0),  Time Evolution direction: 1
+Component: Ket,  *c('up',0),  Time Evolution direction: -1
+Component: Ket,  *c_dag('up',0),  Time Evolution direction: 1
+Component: Bra,  *c_dag('up',0),  Time Evolution direction: -1
+Storing states to /tmp/MPS351643581/
+Finding GS sector by doing DMRG without QNs.
+    Preparing for DMRG: 
+      Apply MPO 3 times.
+    Preparation done.
+
+    --------------------------------------------------------------------------------------------
+                                   DMRG (using subspace expansion)
+    --------------------------------------------------------------------------------------------
+    Sweep 1/5
+    Impurity Occupation:              0.73387   0.27928   
+    Dim of Impurity-Bath Links:          12        22   
+    Dim of Impurity-Impurity Links:      11   
+    Energy: -119.9584781
+    TruncErr: 1.009693171e-07
+
+
+    Sweep 2/5
+    Impurity Occupation:              0.52780   0.48945   
+    Dim of Impurity-Bath Links:          22        33   
+    Dim of Impurity-Impurity Links:      20   
+    Energy: -120.0379048
+    TruncErr: 3.436492442e-08
+
+
+    Sweep 3/5
+    Impurity Occupation:              0.50377   0.51255   
+    Dim of Impurity-Bath Links:          28        31   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -120.0522553
+    TruncErr: 1.059119957e-07
+
+
+    Sweep 4/5
+    Impurity Occupation:              0.50787   0.50840   
+    Dim of Impurity-Bath Links:          21        26   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -120.0534862
+    TruncErr: 1.767729392e-09
+
+
+    Sweep 5/5
+    Impurity Occupation:              0.50814   0.50814   
+    Dim of Impurity-Bath Links:          18        17   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -120.0535581
+    TruncErr: 2.107340639e-10
+
+
+Variance of total N: -9.702378065e-06
+Particle Sector found: 27 27
+
+
+
+--------------------------------------------------------------------------
+---------------------- Ground State Sector Found -------------------------
+--------------------------------------------------------------------------
+
+
+Start DMRG for total ground state.
+    Preparing for DMRG: 
+      Apply MPO 3 times.
+      Imaginary time evolution. Perform 5 steps using TEBD algorithm.
+    Preparation done.
+
+    --------------------------------------------------------------------------------------------
+                                   DMRG (using subspace expansion)
+    --------------------------------------------------------------------------------------------
+    Sweep 1/22
+    Impurity Occupation:              0.67137   0.33503   
+    Dim of Impurity-Bath Links:          22        20   
+    Dim of Impurity-Impurity Links:      18   
+    Energy: -120.0202116
+    TruncErr: 9.393881046e-14
+
+
+    Sweep 2/22
+    Impurity Occupation:              0.58942   0.42215   
+    Dim of Impurity-Bath Links:          24        24   
+    Dim of Impurity-Impurity Links:      22   
+    Energy: -120.043058
+    TruncErr: 9.480761738e-14
+
+
+    Sweep 3/22
+    Impurity Occupation:              0.55221   0.46180   
+    Dim of Impurity-Bath Links:          25        27   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -120.0498829
+    TruncErr: 1.452874728e-13
+
+
+    Sweep 4/22
+    Impurity Occupation:              0.53216   0.48304   
+    Dim of Impurity-Bath Links:          27        27   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -120.0522111
+    TruncErr: 8.461954005e-14
+
+
+    Sweep 5/22
+    Impurity Occupation:              0.52200   0.49371   
+    Dim of Impurity-Bath Links:          28        28   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -120.0530322
+    TruncErr: 1.130654942e-13
+
+
+    Sweep 6/22
+    Impurity Occupation:              0.51659   0.49938   
+    Dim of Impurity-Bath Links:          28        28   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -120.0533291
+    TruncErr: 9.409461276e-14
+
+
+    Sweep 7/22
+    Impurity Occupation:              0.51180   0.50436   
+    Dim of Impurity-Bath Links:          28        28   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -120.0534926
+    TruncErr: 9.672328283e-14
+
+
+    Sweep 8/22
+    Impurity Occupation:              0.50953   0.50670   
+    Dim of Impurity-Bath Links:          30        27   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -120.0535492
+    TruncErr: 9.858964262e-14
+
+
+    Sweep 9/22
+    Impurity Occupation:              0.50880   0.50746   
+    Dim of Impurity-Bath Links:          32        29   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -120.0535571
+    TruncErr: 9.517448228e-14
+
+
+    Sweep 10/22
+    Impurity Occupation:              0.50851   0.50775   
+    Dim of Impurity-Bath Links:          31        30   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -120.0535584
+    TruncErr: 9.799273291e-14
+
+
+    Sweep 11/22
+    Impurity Occupation:              0.50832   0.50795   
+    Dim of Impurity-Bath Links:          32        31   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -120.0535589
+    TruncErr: 9.445608502e-14
+
+
+    Sweep 12/22
+    Impurity Occupation:              0.50818   0.50810   
+    Dim of Impurity-Bath Links:          38        33   
+    Dim of Impurity-Impurity Links:      23   
+    Energy: -120.0535591
+    TruncErr: 9.761448364e-14
+
+
+    Sweep 13/22
+    Impurity Occupation:              0.50814   0.50813   
+    Dim of Impurity-Bath Links:          33        34   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -120.0535592
+    TruncErr: 9.699627731e-14
+
+
+    Sweep 14/22
+    Impurity Occupation:              0.50814   0.50814   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -120.0535592
+    TruncErr: 9.793134329e-14
+
+
+    Sweep 15/22
+    Impurity Occupation:              0.50814   0.50814   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -120.0535592
+    TruncErr: 9.686638879e-14
+
+
+    Sweep 16/22
+    Impurity Occupation:              0.50814   0.50814   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -120.0535592
+    TruncErr: 9.129633669e-14
+
+
+    Sweep 17/22
+    Impurity Occupation:              0.50814   0.50814   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -120.0535592
+    TruncErr: 9.12810698e-14
+
+
+    Sweep 18/22
+    Impurity Occupation:              0.50814   0.50814   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      27   
+    Energy: -120.0535592
+    TruncErr: 9.126008078e-14
+
+
+    Sweep 19/22
+    Impurity Occupation:              0.50814   0.50814   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      27   
+    Energy: -120.0535592
+    TruncErr: 9.125136362e-14
+
+
+    Sweep 20/22
+    Impurity Occupation:              0.50814   0.50814   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      27   
+    Energy: -120.0535592
+    TruncErr: 9.124965083e-14
+
+
+    Sweep 21/22
+    Impurity Occupation:              0.50814   0.50814   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      27   
+    Energy: -120.0535592
+    TruncErr: 9.124927601e-14
+
+
+    Sweep 22/22
+    Impurity Occupation:              0.50814   0.50814   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      27   
+    Energy: -120.0535592
+    TruncErr: 9.124928945e-14
+
+
+
+
+
+--------------------------------------------------------------------------
+------------------------- Ground State Calculated ------------------------
+--------------------------------------------------------------------------
+
+Energy: -120.0535592
+Orbital resolved impurity occupation: 0.5081360812 0.5081360813
+Total impurity occupation: 1.016272163
+Ground-state convergence: 
+   <GS| H |GS> = -120.0535592
+   <GS|H^2|GS> = 14412.85708
+   <GS|H^2|GS> - <GS|H|GS>^2 = 1.684680328e-09
+
+
+
+
+--------------------------------------------------------------------------
+-------------------------- Start Time Evolution --------------------------
+--------------------------------------------------------------------------
+
+Rank 1 time evolves GF component Ket *c('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 3 time evolves GF component Bra *c_dag('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 0 time evolves GF component Bra *c('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 2 time evolves GF component Ket *c_dag('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 0 finished time evolution.
+Rank 1 finished time evolution.
+Rank 3 finished time evolution.
+Rank 2 finished time evolution.
+
+
+
+--------------------------------------------------------------------------
+-------------------------- Post Processing ...  --------------------------
+--------------------------------------------------------------------------
+
+Rank 0 calculates Green's function of type single particle greater:
+    Component: Bra,  *c_dag('up',0),  Time Evolution direction: -1
+    Component: Ket,  *c_dag('up',0),  Time Evolution direction: 1
+
+Rank 1 calculates Green's function of type single particle lesser:
+    Component: Bra,  *c('up',0),  Time Evolution direction: 1
+    Component: Ket,  *c('up',0),  Time Evolution direction: -1
+
+Collecting GFs
+mapping up-0 to down-0...
+mapping up-0 to down-0...
+mapping up-0 to down-0...
+Actual time for solver: 371.63 s
+
+Total charge of impurity problem: 1.00227
+Total charge convergency of impurity problem: 0.00235
+
+Density matrix:
+down_0, real part
+[[0.50113629]]
+eigenvalues: [0.50113629]
+up_0, real part
+[[0.50113629]]
+eigenvalues: [0.50113629]
+
+ *** Post-processing the solver output ***
+Total charge of all correlated shells : 1.002273
+
+
+sumk calc_mu: Using dichtomy adjustment to find chemical potential
+
+Dichotomy adjustment of Chemical Potential to obtain Total Density = 1.000000 +/- 0.001000
+    12.928747 < Chemical Potential < 12.928747
+    0.999448 < Total Density < 0.999448
+    Chemical Potential found in 0 iterations : 
+    Total Density = 0.999448;Chemical Potential = 12.928747
+Mixing dichotomy mu with previous iteration by factor 1.000
+New chemical potential: 12.929
+
+ *** calculation of observables ***
+*** iteration finished ***
+============================================================
+summary of impurity observables:
+total occupany of impurity 0:  1.0023
+G(beta/2) occ of impurity 0:  -1.5915
+Z (simple estimate) of impurity 0 per orb:
+   up:  1.000
+ down:  1.000
+============================================================
+
+============================================================
+convergence:
+δμ:      0.0000e+00
+Impurity 0:
+δn imp : 8.6336e-07
+δn orb : 8.6336e-07
+δ Gimp : 3.4239e-03
+δ G0   : 7.2130e-03
+δ Σ    : 1.9215e-02
+============================================================
+
+
+################################################################################
+Running iteration: 7 / 10
+
+ *** Correlated Shell type #  0 : Estimated total charge of impurity problem = 0.999936
+Estimated density matrix:
+down_0, real part
+[[0.49996785]]
+up_0, real part
+[[0.49996785]]
+
+Solving the impurity problem for shell 0 ...
+
+
+Optimizing block dn index 0
+--------------------------------
+  Rough guess found 1 interval(s):
+  Interval of length 10.42: [-5.343, +5.076] 
+
+  Optimizing lower boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 26 steps with size 0.020 in [-4.802, -4.321]
+  Found lower boundary: -4.597
+
+  Optimizing upper boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 24 steps with size 0.020 in [4.370, 4.814]
+  Found upper boundary: 4.502
+Finishing orbital, auto detect optimal bath size: 53
+Ignoring site with ε = -4.336 and V = 0.0. V is too small.
+Ignoring site with ε = 4.248 and V = 0.0. V is too small.
+
+
+Optimizing block up index 0
+--------------------------------
+  Rough guess found 1 interval(s):
+  Interval of length 10.42: [-5.343, +5.076] 
+
+  Optimizing lower boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 26 steps with size 0.020 in [-4.802, -4.321]
+  Found lower boundary: -4.597
+
+  Optimizing upper boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 24 steps with size 0.020 in [4.370, 4.814]
+  Found upper boundary: 4.502
+Finishing orbital, auto detect optimal bath size: 53
+Ignoring site with ε = -4.336 and V = 0.0. V is too small.
+Ignoring site with ε = 4.248 and V = 0.0. V is too small.
+TimeStepEstimation returned 70 with given bath, "eta" = 0.2 and "dt" = 0.2
+
+
+Starting FTPS solver
+
+Solve Parameters: 
+  ------------------------------------------------------------------------------------------------------------------------------ 
+    Interaction parameters: U = 3.6 J = 0 Up = 0 including SF and PH.
+
+    GS-search is performed using 12 sweeps with method SSImp and parameters:
+      tw_I:  1e-13 maxmI:  200
+      tw_IB: 1e-13 maxmIB: 200
+      tw_B:  1e-13 maxmB:  200
+
+    Time evolution method: TDVP to perform real time evolution
+    Number of time steps: 70 with step size: 0.2
+    Use the following approximation paramters:
+      tw_I:  1e-10 maxmI:  200
+      tw_IB: 1e-10 maxmIB: 200
+      tw_B:  1e-10 maxmB:  200
+    Calcule Green's function on the following blocks/indices:
+       up 0
+    Calculate single-particle Green's function
+  ------------------------------------------------------------------------------------------------------------------------------ 
+  ------------------------------------------------------------------------------------------------------------------------------ 
+
+
+Bath Bandwidths of Block dn:
+   Orbital 0: [-4.51, 4.42]
+Bath Bandwidths of Block up:
+   Orbital 0: [-4.51, 4.42]
+
+
+Non-Interacting Impurity Hamiltonian: 
+
+Matrix of Block dn:
+[[(-1.9,0)]]
+
+Matrix of Block up:
+[[(-1.9,0)]]
+
+Component: Bra,  *c('up',0),  Time Evolution direction: 1
+Component: Ket,  *c('up',0),  Time Evolution direction: -1
+Component: Ket,  *c_dag('up',0),  Time Evolution direction: 1
+Component: Bra,  *c_dag('up',0),  Time Evolution direction: -1
+Storing states to /tmp/MPS-1013624942/
+Finding GS sector by doing DMRG without QNs.
+    Preparing for DMRG: 
+      Apply MPO 3 times.
+    Preparation done.
+
+    --------------------------------------------------------------------------------------------
+                                   DMRG (using subspace expansion)
+    --------------------------------------------------------------------------------------------
+    Sweep 1/5
+    Impurity Occupation:              0.67995   0.33719   
+    Dim of Impurity-Bath Links:          20        36   
+    Dim of Impurity-Impurity Links:      21   
+    Energy: -115.2256064
+    TruncErr: 2.003554323e-07
+
+
+    Sweep 2/5
+    Impurity Occupation:              0.50887   0.50764   
+    Dim of Impurity-Bath Links:          39        47   
+    Dim of Impurity-Impurity Links:      35   
+    Energy: -115.3380423
+    TruncErr: 1.750283872e-08
+
+
+    Sweep 3/5
+    Impurity Occupation:              0.50404   0.51227   
+    Dim of Impurity-Bath Links:          48        46   
+    Dim of Impurity-Impurity Links:      46   
+    Energy: -115.3540664
+    TruncErr: 6.136660446e-09
+
+
+    Sweep 4/5
+    Impurity Occupation:              0.50782   0.50846   
+    Dim of Impurity-Bath Links:          37        39   
+    Dim of Impurity-Impurity Links:      46   
+    Energy: -115.3560873
+    TruncErr: 1.534634529e-09
+
+
+    Sweep 5/5
+    Impurity Occupation:              0.50814   0.50814   
+    Dim of Impurity-Bath Links:          26        23   
+    Dim of Impurity-Impurity Links:      46   
+    Energy: -115.3562005
+    TruncErr: 9.3765921e-11
+
+
+Variance of total N: -1.700839675e-05
+Particle Sector found: 26 26
+
+
+
+--------------------------------------------------------------------------
+---------------------- Ground State Sector Found -------------------------
+--------------------------------------------------------------------------
+
+
+Start DMRG for total ground state.
+    Preparing for DMRG: 
+      Apply MPO 3 times.
+      Imaginary time evolution. Perform 5 steps using TEBD algorithm.
+    Preparation done.
+
+    --------------------------------------------------------------------------------------------
+                                   DMRG (using subspace expansion)
+    --------------------------------------------------------------------------------------------
+    Sweep 1/22
+    Impurity Occupation:              0.66492   0.34055   
+    Dim of Impurity-Bath Links:          22        23   
+    Dim of Impurity-Impurity Links:      19   
+    Energy: -115.322904
+    TruncErr: 9.940043436e-14
+
+
+    Sweep 2/22
+    Impurity Occupation:              0.59207   0.41935   
+    Dim of Impurity-Bath Links:          28        27   
+    Dim of Impurity-Impurity Links:      23   
+    Energy: -115.3454103
+    TruncErr: 1.455836941e-13
+
+
+    Sweep 3/22
+    Impurity Occupation:              0.55628   0.45770   
+    Dim of Impurity-Bath Links:          27        27   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -115.3523118
+    TruncErr: 1.281468825e-13
+
+
+    Sweep 4/22
+    Impurity Occupation:              0.54029   0.47468   
+    Dim of Impurity-Bath Links:          25        26   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -115.3543876
+    TruncErr: 1.170684649e-13
+
+
+    Sweep 5/22
+    Impurity Occupation:              0.52993   0.48556   
+    Dim of Impurity-Bath Links:          25        27   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -115.3553291
+    TruncErr: 9.423353192e-14
+
+
+    Sweep 6/22
+    Impurity Occupation:              0.52239   0.49343   
+    Dim of Impurity-Bath Links:          27        28   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -115.3558097
+    TruncErr: 1.572731902e-13
+
+
+    Sweep 7/22
+    Impurity Occupation:              0.51674   0.49930   
+    Dim of Impurity-Bath Links:          29        30   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -115.3560444
+    TruncErr: 9.49803558e-14
+
+
+    Sweep 8/22
+    Impurity Occupation:              0.51278   0.50339   
+    Dim of Impurity-Bath Links:          31        30   
+    Dim of Impurity-Impurity Links:      23   
+    Energy: -115.3561391
+    TruncErr: 9.825518658e-14
+
+
+    Sweep 9/22
+    Impurity Occupation:              0.51042   0.50581   
+    Dim of Impurity-Bath Links:          32        29   
+    Dim of Impurity-Impurity Links:      23   
+    Energy: -115.3561789
+    TruncErr: 9.878890972e-14
+
+
+    Sweep 10/22
+    Impurity Occupation:              0.50947   0.50678   
+    Dim of Impurity-Bath Links:          31        30   
+    Dim of Impurity-Impurity Links:      23   
+    Energy: -115.3561927
+    TruncErr: 9.776234636e-14
+
+
+    Sweep 11/22
+    Impurity Occupation:              0.50898   0.50728   
+    Dim of Impurity-Bath Links:          31        30   
+    Dim of Impurity-Impurity Links:      23   
+    Energy: -115.3561987
+    TruncErr: 9.823396047e-14
+
+
+    Sweep 12/22
+    Impurity Occupation:              0.50867   0.50759   
+    Dim of Impurity-Bath Links:          31        30   
+    Dim of Impurity-Impurity Links:      23   
+    Energy: -115.356201
+    TruncErr: 9.179386073e-14
+
+
+    Sweep 13/22
+    Impurity Occupation:              0.50846   0.50781   
+    Dim of Impurity-Bath Links:          33        32   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -115.356202
+    TruncErr: 9.052086451e-14
+
+
+    Sweep 14/22
+    Impurity Occupation:              0.50833   0.50794   
+    Dim of Impurity-Bath Links:          33        33   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -115.3562025
+    TruncErr: 9.449441939e-14
+
+
+    Sweep 15/22
+    Impurity Occupation:              0.50817   0.50811   
+    Dim of Impurity-Bath Links:          36        33   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -115.3562029
+    TruncErr: 9.184094892e-14
+
+
+    Sweep 16/22
+    Impurity Occupation:              0.50814   0.50813   
+    Dim of Impurity-Bath Links:          35        34   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -115.3562029
+    TruncErr: 9.309324869e-14
+
+
+    Sweep 17/22
+    Impurity Occupation:              0.50814   0.50814   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -115.3562029
+    TruncErr: 9.486614441e-14
+
+
+    Sweep 18/22
+    Impurity Occupation:              0.50814   0.50814   
+    Dim of Impurity-Bath Links:          34        33   
+    Dim of Impurity-Impurity Links:      26   
+    Energy: -115.3562029
+    TruncErr: 9.251812976e-14
+
+
+    Sweep 19/22
+    Impurity Occupation:              0.50814   0.50814   
+    Dim of Impurity-Bath Links:          33        33   
+    Dim of Impurity-Impurity Links:      26   
+    Energy: -115.3562029
+    TruncErr: 9.629486823e-14
+
+
+    Sweep 20/22
+    Impurity Occupation:              0.50814   0.50814   
+    Dim of Impurity-Bath Links:          33        33   
+    Dim of Impurity-Impurity Links:      26   
+    Energy: -115.3562029
+    TruncErr: 9.252089131e-14
+
+
+    Sweep 21/22
+    Impurity Occupation:              0.50814   0.50814   
+    Dim of Impurity-Bath Links:          33        33   
+    Dim of Impurity-Impurity Links:      26   
+    Energy: -115.3562029
+    TruncErr: 9.252839078e-14
+
+
+    Sweep 22/22
+    Impurity Occupation:              0.50814   0.50814   
+    Dim of Impurity-Bath Links:          33        33   
+    Dim of Impurity-Impurity Links:      26   
+    Energy: -115.3562029
+    TruncErr: 9.253020311e-14
+
+
+
+
+
+--------------------------------------------------------------------------
+------------------------- Ground State Calculated ------------------------
+--------------------------------------------------------------------------
+
+Energy: -115.3562029
+Orbital resolved impurity occupation: 0.508136947 0.5081369442
+Total impurity occupation: 1.016273891
+Ground-state convergence: 
+   <GS| H |GS> = -115.3562029
+   <GS|H^2|GS> = 13307.05354
+   <GS|H^2|GS> - <GS|H|GS>^2 = 1.605840551e-09
+
+
+
+
+--------------------------------------------------------------------------
+-------------------------- Start Time Evolution --------------------------
+--------------------------------------------------------------------------
+
+Rank 0 time evolves GF component Bra *c('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 3 time evolves GF component Bra *c_dag('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 1 time evolves GF component Ket *c('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 2 time evolves GF component Ket *c_dag('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 0 finished time evolution.
+Rank 2 finished time evolution.
+Rank 1 finished time evolution.
+Rank 3 finished time evolution.
+
+
+
+--------------------------------------------------------------------------
+-------------------------- Post Processing ...  --------------------------
+--------------------------------------------------------------------------
+
+Rank 1 calculates Green's function of type single particle lesser:
+    Component: Bra,  *c('up',0),  Time Evolution direction: 1
+    Component: Ket,  *c('up',0),  Time Evolution direction: -1
+
+Rank 0 calculates Green's function of type single particle greater:
+    Component: Bra,  *c_dag('up',0),  Time Evolution direction: -1
+    Component: Ket,  *c_dag('up',0),  Time Evolution direction: 1
+
+Collecting GFs
+mapping up-0 to down-0...
+mapping up-0 to down-0...
+mapping up-0 to down-0...
+Actual time for solver: 378.40 s
+
+Total charge of impurity problem: 1.00238
+Total charge convergency of impurity problem: 0.00244
+
+Density matrix:
+down_0, real part
+[[0.5011881]]
+eigenvalues: [0.5011881]
+up_0, real part
+[[0.5011881]]
+eigenvalues: [0.5011881]
+
+ *** Post-processing the solver output ***
+Total charge of all correlated shells : 1.002376
+
+
+sumk calc_mu: Using dichtomy adjustment to find chemical potential
+
+Dichotomy adjustment of Chemical Potential to obtain Total Density = 1.000000 +/- 0.001000
+    12.928747 < Chemical Potential < 12.928747
+    0.999499 < Total Density < 0.999499
+    Chemical Potential found in 0 iterations : 
+    Total Density = 0.999499;Chemical Potential = 12.928747
+Mixing dichotomy mu with previous iteration by factor 1.000
+New chemical potential: 12.929
+
+ *** calculation of observables ***
+*** iteration finished ***
+============================================================
+summary of impurity observables:
+total occupany of impurity 0:  1.0024
+G(beta/2) occ of impurity 0:  -1.5947
+Z (simple estimate) of impurity 0 per orb:
+   up:  1.000
+ down:  1.000
+============================================================
+
+============================================================
+convergence:
+δμ:      0.0000e+00
+Impurity 0:
+δn imp : 1.0361e-04
+δn orb : 1.0361e-04
+δ Gimp : 2.2429e-03
+δ G0   : 2.2176e-03
+δ Σ    : 4.9191e-03
+============================================================
+
+
+################################################################################
+Running iteration: 8 / 10
+
+ *** Correlated Shell type #  0 : Estimated total charge of impurity problem = 1.000050
+Estimated density matrix:
+down_0, real part
+[[0.50002512]]
+up_0, real part
+[[0.50002512]]
+
+Solving the impurity problem for shell 0 ...
+
+
+Optimizing block dn index 0
+--------------------------------
+  Rough guess found 1 interval(s):
+  Interval of length 10.42: [-5.343, +5.076] 
+
+  Optimizing lower boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 26 steps with size 0.020 in [-4.802, -4.321]
+  Found lower boundary: -4.596
+
+  Optimizing upper boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 24 steps with size 0.020 in [4.370, 4.814]
+  Found upper boundary: 4.500
+Finishing orbital, auto detect optimal bath size: 53
+Ignoring site with ε = -4.336 and V = 0.0. V is too small.
+Ignoring site with ε = 4.246 and V = 0.0. V is too small.
+
+
+Optimizing block up index 0
+--------------------------------
+  Rough guess found 1 interval(s):
+  Interval of length 10.42: [-5.343, +5.076] 
+
+  Optimizing lower boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 26 steps with size 0.020 in [-4.802, -4.321]
+  Found lower boundary: -4.596
+
+  Optimizing upper boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 24 steps with size 0.020 in [4.370, 4.814]
+  Found upper boundary: 4.500
+Finishing orbital, auto detect optimal bath size: 53
+Ignoring site with ε = -4.336 and V = 0.0. V is too small.
+Ignoring site with ε = 4.246 and V = 0.0. V is too small.
+TimeStepEstimation returned 70 with given bath, "eta" = 0.2 and "dt" = 0.2
+
+
+Starting FTPS solver
+
+Solve Parameters: 
+  ------------------------------------------------------------------------------------------------------------------------------ 
+    Interaction parameters: U = 3.6 J = 0 Up = 0 including SF and PH.
+
+    GS-search is performed using 12 sweeps with method SSImp and parameters:
+      tw_I:  1e-13 maxmI:  200
+      tw_IB: 1e-13 maxmIB: 200
+      tw_B:  1e-13 maxmB:  200
+
+    Time evolution method: TDVP to perform real time evolution
+    Number of time steps: 70 with step size: 0.2
+    Use the following approximation paramters:
+      tw_I:  1e-10 maxmI:  200
+      tw_IB: 1e-10 maxmIB: 200
+      tw_B:  1e-10 maxmB:  200
+    Calcule Green's function on the following blocks/indices:
+       up 0
+    Calculate single-particle Green's function
+  ------------------------------------------------------------------------------------------------------------------------------ 
+  ------------------------------------------------------------------------------------------------------------------------------ 
+
+
+Bath Bandwidths of Block dn:
+   Orbital 0: [-4.51, 4.42]
+Bath Bandwidths of Block up:
+   Orbital 0: [-4.51, 4.42]
+
+
+Non-Interacting Impurity Hamiltonian: 
+
+Matrix of Block dn:
+[[(-1.9,0)]]
+
+Matrix of Block up:
+[[(-1.9,0)]]
+
+Component: Bra,  *c('up',0),  Time Evolution direction: 1
+Component: Ket,  *c('up',0),  Time Evolution direction: -1
+Component: Ket,  *c_dag('up',0),  Time Evolution direction: 1
+Component: Bra,  *c_dag('up',0),  Time Evolution direction: -1
+Storing states to /tmp/MPS-57120019/
+Finding GS sector by doing DMRG without QNs.
+    Preparing for DMRG: 
+      Apply MPO 3 times.
+    Preparation done.
+
+    --------------------------------------------------------------------------------------------
+                                   DMRG (using subspace expansion)
+    --------------------------------------------------------------------------------------------
+    Sweep 1/5
+    Impurity Occupation:              0.74783   0.26499   
+    Dim of Impurity-Bath Links:          16        27   
+    Dim of Impurity-Impurity Links:      14   
+    Energy: -115.2488115
+    TruncErr: 3.581134176e-07
+
+
+    Sweep 2/5
+    Impurity Occupation:              0.51033   0.50635   
+    Dim of Impurity-Bath Links:          25        37   
+    Dim of Impurity-Impurity Links:      23   
+    Energy: -115.3315728
+    TruncErr: 4.424021241e-08
+
+
+    Sweep 3/5
+    Impurity Occupation:              0.50428   0.51204   
+    Dim of Impurity-Bath Links:          26        36   
+    Dim of Impurity-Impurity Links:      26   
+    Energy: -115.3407284
+    TruncErr: 1.112556747e-08
+
+
+    Sweep 4/5
+    Impurity Occupation:              0.50806   0.50822   
+    Dim of Impurity-Bath Links:          21        25   
+    Dim of Impurity-Impurity Links:      26   
+    Energy: -115.3418085
+    TruncErr: 8.633319308e-10
+
+
+    Sweep 5/5
+    Impurity Occupation:              0.50814   0.50814   
+    Dim of Impurity-Bath Links:          16        18   
+    Dim of Impurity-Impurity Links:      26   
+    Energy: -115.341873
+    TruncErr: 9.809167709e-11
+
+
+Variance of total N: -1.234118872e-05
+Particle Sector found: 26 26
+
+
+
+--------------------------------------------------------------------------
+---------------------- Ground State Sector Found -------------------------
+--------------------------------------------------------------------------
+
+
+Start DMRG for total ground state.
+    Preparing for DMRG: 
+      Apply MPO 3 times.
+      Imaginary time evolution. Perform 5 steps using TEBD algorithm.
+    Preparation done.
+
+    --------------------------------------------------------------------------------------------
+                                   DMRG (using subspace expansion)
+    --------------------------------------------------------------------------------------------
+    Sweep 1/22
+    Impurity Occupation:              0.66488   0.34068   
+    Dim of Impurity-Bath Links:          22        24   
+    Dim of Impurity-Impurity Links:      19   
+    Energy: -115.3088224
+    TruncErr: 9.531038058e-14
+
+
+    Sweep 2/22
+    Impurity Occupation:              0.59168   0.41979   
+    Dim of Impurity-Bath Links:          28        26   
+    Dim of Impurity-Impurity Links:      22   
+    Energy: -115.3313038
+    TruncErr: 9.823088993e-14
+
+
+    Sweep 3/22
+    Impurity Occupation:              0.55617   0.45786   
+    Dim of Impurity-Bath Links:          25        25   
+    Dim of Impurity-Impurity Links:      23   
+    Energy: -115.3380725
+    TruncErr: 9.801136819e-14
+
+
+    Sweep 4/22
+    Impurity Occupation:              0.53715   0.47802   
+    Dim of Impurity-Bath Links:          25        25   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -115.3403586
+    TruncErr: 9.556749794e-14
+
+
+    Sweep 5/22
+    Impurity Occupation:              0.52709   0.48858   
+    Dim of Impurity-Bath Links:          27        27   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -115.3411839
+    TruncErr: 8.883506613e-14
+
+
+    Sweep 6/22
+    Impurity Occupation:              0.51940   0.49658   
+    Dim of Impurity-Bath Links:          31        29   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -115.3415814
+    TruncErr: 9.808992733e-14
+
+
+    Sweep 7/22
+    Impurity Occupation:              0.51460   0.50154   
+    Dim of Impurity-Bath Links:          30        29   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -115.3417555
+    TruncErr: 1.570823635e-13
+
+
+    Sweep 8/22
+    Impurity Occupation:              0.51124   0.50499   
+    Dim of Impurity-Bath Links:          31        30   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -115.3418459
+    TruncErr: 9.79517467e-14
+
+
+    Sweep 9/22
+    Impurity Occupation:              0.50980   0.50646   
+    Dim of Impurity-Bath Links:          30        30   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -115.3418635
+    TruncErr: 9.796049558e-14
+
+
+    Sweep 10/22
+    Impurity Occupation:              0.50906   0.50722   
+    Dim of Impurity-Bath Links:          32        30   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -115.3418698
+    TruncErr: 9.590954293e-14
+
+
+    Sweep 11/22
+    Impurity Occupation:              0.50873   0.50755   
+    Dim of Impurity-Bath Links:          31        30   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -115.3418723
+    TruncErr: 9.909015197e-14
+
+
+    Sweep 12/22
+    Impurity Occupation:              0.50847   0.50781   
+    Dim of Impurity-Bath Links:          31        30   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -115.341874
+    TruncErr: 9.913539756e-14
+
+
+    Sweep 13/22
+    Impurity Occupation:              0.50830   0.50798   
+    Dim of Impurity-Bath Links:          32        32   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -115.3418743
+    TruncErr: 9.161229144e-14
+
+
+    Sweep 14/22
+    Impurity Occupation:              0.50817   0.50812   
+    Dim of Impurity-Bath Links:          35        33   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -115.3418743
+    TruncErr: 9.401713636e-14
+
+
+    Sweep 15/22
+    Impurity Occupation:              0.50815   0.50814   
+    Dim of Impurity-Bath Links:          35        34   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -115.3418744
+    TruncErr: 9.56539998e-14
+
+
+    Sweep 16/22
+    Impurity Occupation:              0.50814   0.50814   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -115.3418744
+    TruncErr: 9.267395548e-14
+
+
+    Sweep 17/22
+    Impurity Occupation:              0.50814   0.50814   
+    Dim of Impurity-Bath Links:          33        34   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -115.3418744
+    TruncErr: 9.268234949e-14
+
+
+    Sweep 18/22
+    Impurity Occupation:              0.50814   0.50814   
+    Dim of Impurity-Bath Links:          33        34   
+    Dim of Impurity-Impurity Links:      26   
+    Energy: -115.3418744
+    TruncErr: 9.267283306e-14
+
+
+    Sweep 19/22
+    Impurity Occupation:              0.50814   0.50814   
+    Dim of Impurity-Bath Links:          33        34   
+    Dim of Impurity-Impurity Links:      26   
+    Energy: -115.3418744
+    TruncErr: 9.268380115e-14
+
+
+    Sweep 20/22
+    Impurity Occupation:              0.50814   0.50814   
+    Dim of Impurity-Bath Links:          33        34   
+    Dim of Impurity-Impurity Links:      26   
+    Energy: -115.3418744
+    TruncErr: 9.26859453e-14
+
+
+    Sweep 21/22
+    Impurity Occupation:              0.50814   0.50814   
+    Dim of Impurity-Bath Links:          33        34   
+    Dim of Impurity-Impurity Links:      26   
+    Energy: -115.3418744
+    TruncErr: 9.268808528e-14
+
+
+    Sweep 22/22
+    Impurity Occupation:              0.50814   0.50814   
+    Dim of Impurity-Bath Links:          33        34   
+    Dim of Impurity-Impurity Links:      26   
+    Energy: -115.3418744
+    TruncErr: 9.268918772e-14
+
+
+
+
+
+--------------------------------------------------------------------------
+------------------------- Ground State Calculated ------------------------
+--------------------------------------------------------------------------
+
+Energy: -115.3418744
+Orbital resolved impurity occupation: 0.5081435231 0.5081435225
+Total impurity occupation: 1.016287046
+Ground-state convergence: 
+   <GS| H |GS> = -115.3418744
+   <GS|H^2|GS> = 13303.74798
+   <GS|H^2|GS> - <GS|H|GS>^2 = 1.366183124e-09
+
+
+
+
+--------------------------------------------------------------------------
+-------------------------- Start Time Evolution --------------------------
+--------------------------------------------------------------------------
+
+Rank 3 time evolves GF component Bra *c_dag('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 0 time evolves GF component Bra *c('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 1 time evolves GF component Ket *c('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 2 time evolves GF component Ket *c_dag('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 1 finished time evolution.
+Rank 0 finished time evolution.
+Rank 3 finished time evolution.
+Rank 2 finished time evolution.
+
+
+
+--------------------------------------------------------------------------
+-------------------------- Post Processing ...  --------------------------
+--------------------------------------------------------------------------
+
+Rank 0 calculates Green's function of type single particle greater:
+    Component: Bra,  *c_dag('up',0),  Time Evolution direction: -1
+    Component: Ket,  *c_dag('up',0),  Time Evolution direction: 1
+
+Rank 1 calculates Green's function of type single particle lesser:
+    Component: Bra,  *c('up',0),  Time Evolution direction: 1
+    Component: Ket,  *c('up',0),  Time Evolution direction: -1
+
+Collecting GFs
+mapping up-0 to down-0...
+mapping up-0 to down-0...
+mapping up-0 to down-0...
+Actual time for solver: 388.43 s
+
+Total charge of impurity problem: 1.00238
+Total charge convergency of impurity problem: 0.00233
+
+Density matrix:
+down_0, real part
+[[0.50119097]]
+eigenvalues: [0.50119097]
+up_0, real part
+[[0.50119097]]
+eigenvalues: [0.50119097]
+
+ *** Post-processing the solver output ***
+Total charge of all correlated shells : 1.002382
+
+
+sumk calc_mu: Using dichtomy adjustment to find chemical potential
+
+Dichotomy adjustment of Chemical Potential to obtain Total Density = 1.000000 +/- 0.001000
+    12.928747 < Chemical Potential < 12.928747
+    0.999501 < Total Density < 0.999501
+    Chemical Potential found in 0 iterations : 
+    Total Density = 0.999501;Chemical Potential = 12.928747
+Mixing dichotomy mu with previous iteration by factor 1.000
+New chemical potential: 12.929
+
+ *** calculation of observables ***
+*** iteration finished ***
+============================================================
+summary of impurity observables:
+total occupany of impurity 0:  1.0024
+G(beta/2) occ of impurity 0:  -1.5951
+Z (simple estimate) of impurity 0 per orb:
+   up:  1.000
+ down:  1.000
+============================================================
+
+============================================================
+convergence:
+δμ:      0.0000e+00
+Impurity 0:
+δn imp : 5.7392e-06
+δn orb : 5.7392e-06
+δ Gimp : 2.1296e-03
+δ G0   : 7.0733e-04
+δ Σ    : 2.2784e-03
+============================================================
+
+
+################################################################################
+Running iteration: 9 / 10
+
+ *** Correlated Shell type #  0 : Estimated total charge of impurity problem = 1.000063
+Estimated density matrix:
+down_0, real part
+[[0.50003175]]
+up_0, real part
+[[0.50003175]]
+
+Solving the impurity problem for shell 0 ...
+
+
+Optimizing block dn index 0
+--------------------------------
+  Rough guess found 1 interval(s):
+  Interval of length 10.42: [-5.343, +5.076] 
+
+  Optimizing lower boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 26 steps with size 0.020 in [-4.802, -4.321]
+  Found lower boundary: -4.599
+
+  Optimizing upper boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 24 steps with size 0.020 in [4.370, 4.814]
+  Found upper boundary: 4.501
+Finishing orbital, auto detect optimal bath size: 53
+Ignoring site with ε = -4.338 and V = 0.0. V is too small.
+Ignoring site with ε = 4.246 and V = 0.0. V is too small.
+
+
+Optimizing block up index 0
+--------------------------------
+  Rough guess found 1 interval(s):
+  Interval of length 10.42: [-5.343, +5.076] 
+
+  Optimizing lower boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 26 steps with size 0.020 in [-4.802, -4.321]
+  Found lower boundary: -4.599
+
+  Optimizing upper boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 24 steps with size 0.020 in [4.370, 4.814]
+  Found upper boundary: 4.501
+Finishing orbital, auto detect optimal bath size: 53
+Ignoring site with ε = -4.338 and V = 0.0. V is too small.
+Ignoring site with ε = 4.246 and V = 0.0. V is too small.
+TimeStepEstimation returned 70 with given bath, "eta" = 0.2 and "dt" = 0.2
+
+
+Starting FTPS solver
+
+Solve Parameters: 
+  ------------------------------------------------------------------------------------------------------------------------------ 
+    Interaction parameters: U = 3.6 J = 0 Up = 0 including SF and PH.
+
+    GS-search is performed using 12 sweeps with method SSImp and parameters:
+      tw_I:  1e-13 maxmI:  200
+      tw_IB: 1e-13 maxmIB: 200
+      tw_B:  1e-13 maxmB:  200
+
+    Time evolution method: TDVP to perform real time evolution
+    Number of time steps: 70 with step size: 0.2
+    Use the following approximation paramters:
+      tw_I:  1e-10 maxmI:  200
+      tw_IB: 1e-10 maxmIB: 200
+      tw_B:  1e-10 maxmB:  200
+    Calcule Green's function on the following blocks/indices:
+       up 0
+    Calculate single-particle Green's function
+  ------------------------------------------------------------------------------------------------------------------------------ 
+  ------------------------------------------------------------------------------------------------------------------------------ 
+
+
+Bath Bandwidths of Block dn:
+   Orbital 0: [-4.51, 4.42]
+Bath Bandwidths of Block up:
+   Orbital 0: [-4.51, 4.42]
+
+
+Non-Interacting Impurity Hamiltonian: 
+
+Matrix of Block dn:
+[[(-1.9,0)]]
+
+Matrix of Block up:
+[[(-1.9,0)]]
+
+Component: Bra,  *c('up',0),  Time Evolution direction: 1
+Component: Ket,  *c('up',0),  Time Evolution direction: -1
+Component: Ket,  *c_dag('up',0),  Time Evolution direction: 1
+Component: Bra,  *c_dag('up',0),  Time Evolution direction: -1
+Storing states to /tmp/MPS1876405462/
+Finding GS sector by doing DMRG without QNs.
+    Preparing for DMRG: 
+      Apply MPO 3 times.
+    Preparation done.
+
+    --------------------------------------------------------------------------------------------
+                                   DMRG (using subspace expansion)
+    --------------------------------------------------------------------------------------------
+    Sweep 1/5
+    Impurity Occupation:              0.78141   0.23971   
+    Dim of Impurity-Bath Links:          22        38   
+    Dim of Impurity-Impurity Links:      22   
+    Energy: -115.1876402
+    TruncErr: 1.21601346e-07
+
+
+    Sweep 2/5
+    Impurity Occupation:              0.52044   0.49591   
+    Dim of Impurity-Bath Links:          42        48   
+    Dim of Impurity-Impurity Links:      37   
+    Energy: -115.381273
+    TruncErr: 1.69601876e-08
+
+
+    Sweep 3/5
+    Impurity Occupation:              0.50380   0.51249   
+    Dim of Impurity-Bath Links:          50        46   
+    Dim of Impurity-Impurity Links:      46   
+    Energy: -115.4019506
+    TruncErr: 2.63544935e-08
+
+
+    Sweep 4/5
+    Impurity Occupation:              0.50801   0.50829   
+    Dim of Impurity-Bath Links:          39        33   
+    Dim of Impurity-Impurity Links:      46   
+    Energy: -115.4036913
+    TruncErr: 1.775518579e-09
+
+
+    Sweep 5/5
+    Impurity Occupation:              0.50815   0.50815   
+    Dim of Impurity-Bath Links:          27        20   
+    Dim of Impurity-Impurity Links:      40   
+    Energy: -115.4037992
+    TruncErr: 1.287943112e-10
+
+
+Variance of total N: -1.153809217e-05
+Particle Sector found: 26 26
+
+
+
+--------------------------------------------------------------------------
+---------------------- Ground State Sector Found -------------------------
+--------------------------------------------------------------------------
+
+
+Start DMRG for total ground state.
+    Preparing for DMRG: 
+      Apply MPO 3 times.
+      Imaginary time evolution. Perform 5 steps using TEBD algorithm.
+    Preparation done.
+
+    --------------------------------------------------------------------------------------------
+                                   DMRG (using subspace expansion)
+    --------------------------------------------------------------------------------------------
+    Sweep 1/22
+    Impurity Occupation:              0.66475   0.34080   
+    Dim of Impurity-Bath Links:          22        24   
+    Dim of Impurity-Impurity Links:      19   
+    Energy: -115.3707175
+    TruncErr: 9.504396548e-14
+
+
+    Sweep 2/22
+    Impurity Occupation:              0.59168   0.41978   
+    Dim of Impurity-Bath Links:          27        27   
+    Dim of Impurity-Impurity Links:      22   
+    Energy: -115.3932422
+    TruncErr: 9.60653019e-14
+
+
+    Sweep 3/22
+    Impurity Occupation:              0.55566   0.45843   
+    Dim of Impurity-Bath Links:          26        24   
+    Dim of Impurity-Impurity Links:      23   
+    Energy: -115.4000377
+    TruncErr: 9.906541676e-14
+
+
+    Sweep 4/22
+    Impurity Occupation:              0.53816   0.47697   
+    Dim of Impurity-Bath Links:          25        25   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -115.4021392
+    TruncErr: 8.759556322e-14
+
+
+    Sweep 5/22
+    Impurity Occupation:              0.52820   0.48740   
+    Dim of Impurity-Bath Links:          26        27   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -115.4030642
+    TruncErr: 1.147615471e-13
+
+
+    Sweep 6/22
+    Impurity Occupation:              0.52070   0.49522   
+    Dim of Impurity-Bath Links:          28        28   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -115.403504
+    TruncErr: 9.816506457e-14
+
+
+    Sweep 7/22
+    Impurity Occupation:              0.51564   0.50047   
+    Dim of Impurity-Bath Links:          30        29   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -115.4036815
+    TruncErr: 1.160352453e-13
+
+
+    Sweep 8/22
+    Impurity Occupation:              0.51226   0.50395   
+    Dim of Impurity-Bath Links:          31        30   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -115.4037549
+    TruncErr: 9.518501193e-14
+
+
+    Sweep 9/22
+    Impurity Occupation:              0.51071   0.50553   
+    Dim of Impurity-Bath Links:          31        30   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -115.4037812
+    TruncErr: 9.807066058e-14
+
+
+    Sweep 10/22
+    Impurity Occupation:              0.50948   0.50679   
+    Dim of Impurity-Bath Links:          32        30   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -115.4037934
+    TruncErr: 9.765458241e-14
+
+
+    Sweep 11/22
+    Impurity Occupation:              0.50893   0.50735   
+    Dim of Impurity-Bath Links:          31        30   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -115.4037978
+    TruncErr: 9.557468786e-14
+
+
+    Sweep 12/22
+    Impurity Occupation:              0.50863   0.50766   
+    Dim of Impurity-Bath Links:          31        30   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -115.4037995
+    TruncErr: 9.201769714e-14
+
+
+    Sweep 13/22
+    Impurity Occupation:              0.50837   0.50792   
+    Dim of Impurity-Bath Links:          32        33   
+    Dim of Impurity-Impurity Links:      26   
+    Energy: -115.4038006
+    TruncErr: 9.036684623e-14
+
+
+    Sweep 14/22
+    Impurity Occupation:              0.50824   0.50805   
+    Dim of Impurity-Bath Links:          32        33   
+    Dim of Impurity-Impurity Links:      26   
+    Energy: -115.4038008
+    TruncErr: 9.218638647e-14
+
+
+    Sweep 15/22
+    Impurity Occupation:              0.50818   0.50811   
+    Dim of Impurity-Bath Links:          32        35   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -115.4038009
+    TruncErr: 9.187571988e-14
+
+
+    Sweep 16/22
+    Impurity Occupation:              0.50815   0.50814   
+    Dim of Impurity-Bath Links:          32        34   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -115.4038009
+    TruncErr: 9.199576346e-14
+
+
+    Sweep 17/22
+    Impurity Occupation:              0.50815   0.50815   
+    Dim of Impurity-Bath Links:          33        33   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -115.4038009
+    TruncErr: 9.801665697e-14
+
+
+    Sweep 18/22
+    Impurity Occupation:              0.50815   0.50815   
+    Dim of Impurity-Bath Links:          33        33   
+    Dim of Impurity-Impurity Links:      27   
+    Energy: -115.4038009
+    TruncErr: 9.279438289e-14
+
+
+    Sweep 19/22
+    Impurity Occupation:              0.50815   0.50815   
+    Dim of Impurity-Bath Links:          34        33   
+    Dim of Impurity-Impurity Links:      27   
+    Energy: -115.4038009
+    TruncErr: 9.334560241e-14
+
+
+    Sweep 20/22
+    Impurity Occupation:              0.50815   0.50815   
+    Dim of Impurity-Bath Links:          33        33   
+    Dim of Impurity-Impurity Links:      27   
+    Energy: -115.4038009
+    TruncErr: 9.211500038e-14
+
+
+    Sweep 21/22
+    Impurity Occupation:              0.50815   0.50815   
+    Dim of Impurity-Bath Links:          33        33   
+    Dim of Impurity-Impurity Links:      27   
+    Energy: -115.4038009
+    TruncErr: 9.212024041e-14
+
+
+    Sweep 22/22
+    Impurity Occupation:              0.50815   0.50815   
+    Dim of Impurity-Bath Links:          33        33   
+    Dim of Impurity-Impurity Links:      27   
+    Energy: -115.4038009
+    TruncErr: 9.212194792e-14
+
+
+
+
+
+--------------------------------------------------------------------------
+------------------------- Ground State Calculated ------------------------
+--------------------------------------------------------------------------
+
+Energy: -115.4038009
+Orbital resolved impurity occupation: 0.5081460925 0.5081460931
+Total impurity occupation: 1.016292186
+Ground-state convergence: 
+   <GS| H |GS> = -115.4038009
+   <GS|H^2|GS> = 13318.03727
+   <GS|H^2|GS> - <GS|H|GS>^2 = 1.719119218e-09
+
+
+
+
+--------------------------------------------------------------------------
+-------------------------- Start Time Evolution --------------------------
+--------------------------------------------------------------------------
+
+Rank 0 time evolves GF component Bra *c('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 2 time evolves GF component Ket *c_dag('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 1 time evolves GF component Ket *c('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 3 time evolves GF component Bra *c_dag('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 1 finished time evolution.
+Rank 0 finished time evolution.
+Rank 2 finished time evolution.
+Rank 3 finished time evolution.
+
+
+
+--------------------------------------------------------------------------
+-------------------------- Post Processing ...  --------------------------
+--------------------------------------------------------------------------
+
+Rank 0 calculates Green's function of type single particle greater:
+    Component: Bra,  *c_dag('up',0),  Time Evolution direction: -1
+    Component: Ket,  *c_dag('up',0),  Time Evolution direction: 1
+
+Rank 1 calculates Green's function of type single particle lesser:
+    Component: Bra,  *c('up',0),  Time Evolution direction: 1
+    Component: Ket,  *c('up',0),  Time Evolution direction: -1
+
+Collecting GFs
+mapping up-0 to down-0...
+mapping up-0 to down-0...
+mapping up-0 to down-0...
+Actual time for solver: 429.35 s
+
+Total charge of impurity problem: 1.00238
+Total charge convergency of impurity problem: 0.00232
+
+Density matrix:
+down_0, real part
+[[0.50119074]]
+eigenvalues: [0.50119074]
+up_0, real part
+[[0.50119074]]
+eigenvalues: [0.50119074]
+
+ *** Post-processing the solver output ***
+Total charge of all correlated shells : 1.002381
+
+
+sumk calc_mu: Using dichtomy adjustment to find chemical potential
+
+Dichotomy adjustment of Chemical Potential to obtain Total Density = 1.000000 +/- 0.001000
+    12.928747 < Chemical Potential < 12.928747
+    0.999499 < Total Density < 0.999499
+    Chemical Potential found in 0 iterations : 
+    Total Density = 0.999499;Chemical Potential = 12.928747
+Mixing dichotomy mu with previous iteration by factor 1.000
+New chemical potential: 12.929
+
+ *** calculation of observables ***
+*** iteration finished ***
+============================================================
+summary of impurity observables:
+total occupany of impurity 0:  1.0024
+G(beta/2) occ of impurity 0:  -1.5952
+Z (simple estimate) of impurity 0 per orb:
+   up:  1.000
+ down:  1.000
+============================================================
+
+============================================================
+convergence:
+δμ:      0.0000e+00
+Impurity 0:
+δn imp : 4.7085e-07
+δn orb : 4.7085e-07
+δ Gimp : 2.1009e-03
+δ G0   : 2.6147e-04
+δ Σ    : 1.2371e-03
+============================================================
+
+
+################################################################################
+Running iteration: 10 / 10
+
+ *** Correlated Shell type #  0 : Estimated total charge of impurity problem = 1.000062
+Estimated density matrix:
+down_0, real part
+[[0.50003102]]
+up_0, real part
+[[0.50003102]]
+
+Solving the impurity problem for shell 0 ...
+
+
+Optimizing block dn index 0
+--------------------------------
+  Rough guess found 1 interval(s):
+  Interval of length 10.42: [-5.343, +5.076] 
+
+  Optimizing lower boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 26 steps with size 0.020 in [-4.802, -4.321]
+  Found lower boundary: -4.599
+
+  Optimizing upper boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 24 steps with size 0.020 in [4.370, 4.814]
+  Found upper boundary: 4.501
+Finishing orbital, auto detect optimal bath size: 55
+Ignoring site with ε = -4.348 and V = 0.0. V is too small.
+Ignoring site with ε = 4.256 and V = 0.0. V is too small.
+
+
+Optimizing block up index 0
+--------------------------------
+  Rough guess found 1 interval(s):
+  Interval of length 10.42: [-5.343, +5.076] 
+
+  Optimizing lower boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 26 steps with size 0.020 in [-4.802, -4.321]
+  Found lower boundary: -4.599
+
+  Optimizing upper boundary of interval 1:
+  Evaluating Fit on a fine grid, doing 24 steps with size 0.020 in [4.370, 4.814]
+  Found upper boundary: 4.501
+Finishing orbital, auto detect optimal bath size: 55
+Ignoring site with ε = -4.348 and V = 0.0. V is too small.
+Ignoring site with ε = 4.256 and V = 0.0. V is too small.
+TimeStepEstimation returned 70 with given bath, "eta" = 0.2 and "dt" = 0.2
+
+
+Starting FTPS solver
+
+Solve Parameters: 
+  ------------------------------------------------------------------------------------------------------------------------------ 
+    Interaction parameters: U = 3.6 J = 0 Up = 0 including SF and PH.
+
+    GS-search is performed using 12 sweeps with method SSImp and parameters:
+      tw_I:  1e-13 maxmI:  200
+      tw_IB: 1e-13 maxmIB: 200
+      tw_B:  1e-13 maxmB:  200
+
+    Time evolution method: TDVP to perform real time evolution
+    Number of time steps: 70 with step size: 0.2
+    Use the following approximation paramters:
+      tw_I:  1e-10 maxmI:  200
+      tw_IB: 1e-10 maxmIB: 200
+      tw_B:  1e-10 maxmB:  200
+    Calcule Green's function on the following blocks/indices:
+       up 0
+    Calculate single-particle Green's function
+  ------------------------------------------------------------------------------------------------------------------------------ 
+  ------------------------------------------------------------------------------------------------------------------------------ 
+
+
+Bath Bandwidths of Block dn:
+   Orbital 0: [-4.52, 4.42]
+Bath Bandwidths of Block up:
+   Orbital 0: [-4.52, 4.42]
+
+
+Non-Interacting Impurity Hamiltonian: 
+
+Matrix of Block dn:
+[[(-1.9,0)]]
+
+Matrix of Block up:
+[[(-1.9,0)]]
+
+Component: Bra,  *c('up',0),  Time Evolution direction: 1
+Component: Ket,  *c('up',0),  Time Evolution direction: -1
+Component: Ket,  *c_dag('up',0),  Time Evolution direction: 1
+Component: Bra,  *c_dag('up',0),  Time Evolution direction: -1
+Storing states to /tmp/MPS676290908/
+Finding GS sector by doing DMRG without QNs.
+    Preparing for DMRG: 
+      Apply MPO 3 times.
+    Preparation done.
+
+    --------------------------------------------------------------------------------------------
+                                   DMRG (using subspace expansion)
+    --------------------------------------------------------------------------------------------
+    Sweep 1/5
+    Impurity Occupation:              0.70244   0.31447   
+    Dim of Impurity-Bath Links:          22        33   
+    Dim of Impurity-Impurity Links:      20   
+    Energy: -119.890604
+    TruncErr: 1.68413907e-07
+
+
+    Sweep 2/5
+    Impurity Occupation:              0.50094   0.51565   
+    Dim of Impurity-Bath Links:          38        40   
+    Dim of Impurity-Impurity Links:      34   
+    Energy: -119.9913785
+    TruncErr: 7.725384283e-08
+
+
+    Sweep 3/5
+    Impurity Occupation:              0.50660   0.50968   
+    Dim of Impurity-Bath Links:          45        35   
+    Dim of Impurity-Impurity Links:      41   
+    Energy: -120.002757
+    TruncErr: 2.030161166e-08
+
+
+    Sweep 4/5
+    Impurity Occupation:              0.50815   0.50813   
+    Dim of Impurity-Bath Links:          33        24   
+    Dim of Impurity-Impurity Links:      41   
+    Energy: -120.0033964
+    TruncErr: 3.572792769e-10
+
+
+    Sweep 5/5
+    Impurity Occupation:              0.50814   0.50814   
+    Dim of Impurity-Bath Links:          20        19   
+    Dim of Impurity-Impurity Links:      37   
+    Energy: -120.0034254
+    TruncErr: 9.301719424e-11
+
+
+Variance of total N: -3.797526915e-07
+Particle Sector found: 27 27
+
+
+
+--------------------------------------------------------------------------
+---------------------- Ground State Sector Found -------------------------
+--------------------------------------------------------------------------
+
+
+Start DMRG for total ground state.
+    Preparing for DMRG: 
+      Apply MPO 3 times.
+      Imaginary time evolution. Perform 5 steps using TEBD algorithm.
+    Preparation done.
+
+    --------------------------------------------------------------------------------------------
+                                   DMRG (using subspace expansion)
+    --------------------------------------------------------------------------------------------
+    Sweep 1/22
+    Impurity Occupation:              0.67281   0.33370   
+    Dim of Impurity-Bath Links:          22        20   
+    Dim of Impurity-Impurity Links:      18   
+    Energy: -119.9713184
+    TruncErr: 9.963078041e-14
+
+
+    Sweep 2/22
+    Impurity Occupation:              0.58540   0.42679   
+    Dim of Impurity-Bath Links:          25        23   
+    Dim of Impurity-Impurity Links:      22   
+    Energy: -119.9948351
+    TruncErr: 9.361190567e-14
+
+
+    Sweep 3/22
+    Impurity Occupation:              0.54496   0.46965   
+    Dim of Impurity-Bath Links:          27        28   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -120.0008565
+    TruncErr: 9.691838194e-14
+
+
+    Sweep 4/22
+    Impurity Occupation:              0.52750   0.48800   
+    Dim of Impurity-Bath Links:          28        27   
+    Dim of Impurity-Impurity Links:      24   
+    Energy: -120.002496
+    TruncErr: 9.722417216e-14
+
+
+    Sweep 5/22
+    Impurity Occupation:              0.51931   0.49655   
+    Dim of Impurity-Bath Links:          28        27   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -120.0030597
+    TruncErr: 1.540011922e-13
+
+
+    Sweep 6/22
+    Impurity Occupation:              0.51478   0.50128   
+    Dim of Impurity-Bath Links:          28        27   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -120.0032772
+    TruncErr: 9.451221965e-14
+
+
+    Sweep 7/22
+    Impurity Occupation:              0.51203   0.50414   
+    Dim of Impurity-Bath Links:          28        28   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -120.0033671
+    TruncErr: 8.887624584e-14
+
+
+    Sweep 8/22
+    Impurity Occupation:              0.51029   0.50594   
+    Dim of Impurity-Bath Links:          29        28   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -120.0034046
+    TruncErr: 9.843328857e-14
+
+
+    Sweep 9/22
+    Impurity Occupation:              0.50936   0.50689   
+    Dim of Impurity-Bath Links:          31        29   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -120.003418
+    TruncErr: 9.873780964e-14
+
+
+    Sweep 10/22
+    Impurity Occupation:              0.50887   0.50740   
+    Dim of Impurity-Bath Links:          31        29   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -120.0034225
+    TruncErr: 9.837458217e-14
+
+
+    Sweep 11/22
+    Impurity Occupation:              0.50858   0.50770   
+    Dim of Impurity-Bath Links:          30        29   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -120.0034243
+    TruncErr: 8.842690534e-14
+
+
+    Sweep 12/22
+    Impurity Occupation:              0.50837   0.50791   
+    Dim of Impurity-Bath Links:          31        31   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -120.0034251
+    TruncErr: 9.701056773e-14
+
+
+    Sweep 13/22
+    Impurity Occupation:              0.50827   0.50802   
+    Dim of Impurity-Bath Links:          32        32   
+    Dim of Impurity-Impurity Links:      26   
+    Energy: -120.0034254
+    TruncErr: 9.060696287e-14
+
+
+    Sweep 14/22
+    Impurity Occupation:              0.50817   0.50812   
+    Dim of Impurity-Bath Links:          32        34   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -120.0034256
+    TruncErr: 9.104130711e-14
+
+
+    Sweep 15/22
+    Impurity Occupation:              0.50815   0.50814   
+    Dim of Impurity-Bath Links:          33        33   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -120.0034256
+    TruncErr: 9.157807689e-14
+
+
+    Sweep 16/22
+    Impurity Occupation:              0.50814   0.50814   
+    Dim of Impurity-Bath Links:          34        33   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -120.0034256
+    TruncErr: 9.163821902e-14
+
+
+    Sweep 17/22
+    Impurity Occupation:              0.50814   0.50814   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      25   
+    Energy: -120.0034256
+    TruncErr: 9.712310091e-14
+
+
+    Sweep 18/22
+    Impurity Occupation:              0.50814   0.50814   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      27   
+    Energy: -120.0034256
+    TruncErr: 9.163262866e-14
+
+
+    Sweep 19/22
+    Impurity Occupation:              0.50814   0.50814   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      27   
+    Energy: -120.0034256
+    TruncErr: 9.160649427e-14
+
+
+    Sweep 20/22
+    Impurity Occupation:              0.50814   0.50814   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      27   
+    Energy: -120.0034256
+    TruncErr: 9.15882545e-14
+
+
+    Sweep 21/22
+    Impurity Occupation:              0.50814   0.50814   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      27   
+    Energy: -120.0034256
+    TruncErr: 9.158207573e-14
+
+
+    Sweep 22/22
+    Impurity Occupation:              0.50814   0.50814   
+    Dim of Impurity-Bath Links:          34        34   
+    Dim of Impurity-Impurity Links:      27   
+    Energy: -120.0034256
+    TruncErr: 9.157953091e-14
+
+
+
+
+
+--------------------------------------------------------------------------
+------------------------- Ground State Calculated ------------------------
+--------------------------------------------------------------------------
+
+Energy: -120.0034256
+Orbital resolved impurity occupation: 0.5081426797 0.5081426797
+Total impurity occupation: 1.016285359
+Ground-state convergence: 
+   <GS| H |GS> = -120.0034256
+   <GS|H^2|GS> = 14400.82216
+   <GS|H^2|GS> - <GS|H|GS>^2 = 1.600141307e-09
+
+
+
+
+--------------------------------------------------------------------------
+-------------------------- Start Time Evolution --------------------------
+--------------------------------------------------------------------------
+
+Rank 2 time evolves GF component Ket *c_dag('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 0 time evolves GF component Bra *c('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 3 time evolves GF component Bra *c_dag('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 1 time evolves GF component Ket *c('up',0) with TDVP: 70 steps, dt = 0.2
+Rank 0 finished time evolution.
+Rank 2 finished time evolution.
+Rank 3 finished time evolution.
+Rank 1 finished time evolution.
+
+
+
+--------------------------------------------------------------------------
+-------------------------- Post Processing ...  --------------------------
+--------------------------------------------------------------------------
+
+Rank 1 calculates Green's function of type single particle lesser:
+    Component: Bra,  *c('up',0),  Time Evolution direction: 1
+    Component: Ket,  *c('up',0),  Time Evolution direction: -1
+
+Rank 0 calculates Green's function of type single particle greater:
+    Component: Bra,  *c_dag('up',0),  Time Evolution direction: -1
+    Component: Ket,  *c_dag('up',0),  Time Evolution direction: 1
+
+Collecting GFs
+mapping up-0 to down-0...
+mapping up-0 to down-0...
+mapping up-0 to down-0...
+Actual time for solver: 464.86 s
+
+Total charge of impurity problem: 1.00228
+Total charge convergency of impurity problem: 0.00222
+
+Density matrix:
+down_0, real part
+[[0.50113957]]
+eigenvalues: [0.50113957]
+up_0, real part
+[[0.50113957]]
+eigenvalues: [0.50113957]
+
+ *** Post-processing the solver output ***
+Total charge of all correlated shells : 1.002279
+
+
+sumk calc_mu: Using dichtomy adjustment to find chemical potential
+
+Dichotomy adjustment of Chemical Potential to obtain Total Density = 1.000000 +/- 0.001000
+    12.928747 < Chemical Potential < 12.928747
+    0.999452 < Total Density < 0.999452
+    Chemical Potential found in 0 iterations : 
+    Total Density = 0.999452;Chemical Potential = 12.928747
+Mixing dichotomy mu with previous iteration by factor 1.000
+New chemical potential: 12.929
+
+ *** calculation of observables ***
+*** iteration finished ***
+============================================================
+summary of impurity observables:
+total occupany of impurity 0:  1.0023
+G(beta/2) occ of impurity 0:  -1.5920
+Z (simple estimate) of impurity 0 per orb:
+   up:  1.000
+ down:  1.000
+============================================================
+
+============================================================
+convergence:
+δμ:      0.0000e+00
+Impurity 0:
+δn imp : 1.0233e-04
+δn orb : 1.0233e-04
+δ Gimp : 2.2262e-03
+δ G0   : 1.1171e-04
+δ Σ    : 3.8801e-03
+============================================================
+
+
+** All requested iterations finished ***
+################################################################################
+-------------------------------
+overall elapsed time:  3839.3097 seconds
