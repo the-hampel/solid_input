@@ -1,0 +1,58 @@
+SYSTEM = SVO
+ISMEAR =  -1
+VCUTOFF=800
+ENCUT=450
+SIGMA =  0.025
+EDIFF = 1E-8
+NBANDS =128
+LWAVE = .FALSE.
+NCSHMEM=1 
+
+PRECFOCK = Fast
+
+ALGO = CRPAR
+LFINITE_TEMPERATURE = TRUE
+NTARGET_STATES = 1 2 3
+NOMEGA = 20
+ENCUTGWSOFT = 300
+
+LWRITE_MMN_AMN = FALSE
+LWANNIER90 = TRUE
+LWANNIER90_RUN = TRUE
+# do not use WANPROJ file, leads to random results as of 6.4
+LWRITE_WANPROJ = False
+NUM_WANN = 3
+
+WANNIER90_WIN = "
+num_iter = 1000
+conv_window = 5
+conv_tol = 1e-15
+conv_noise_amp = 1
+
+dis_win_min = 6.5
+dis_win_max = 9.5
+dis_froz_min =  6.6
+dis_froz_max = 8.6
+dis_num_iter = 10000
+dis_conv_tol = 1e-14
+dis_conv_window = 3
+
+guiding_centres = T
+begin projections
+V:dxy;dxz;dyz
+end projections
+
+iprint                = 1
+
+write_hr               = T
+translate_home_cell = T
+
+bands_plot      =  True
+begin kpoint_path
+G  .0  .0  .0   X  .0  .5  .0
+X  .0  .5  .0   M  .5  .5  .0
+M  .5  .5  .0   G  .0  .0  .0
+end kpoint_path
+bands_num_points 50
+
+"
