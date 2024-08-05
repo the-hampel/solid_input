@@ -1,43 +1,42 @@
 [general]
-seedname = lco
-jobname = U3.6-ftps-dt0.2-eta0.2
+seedname = 'lco'
+jobname = 'U3.6-ftps-dt0.2-eta0.2'
 
 # solver ftps
-solver_type = ftps
 # freq range of all objects
-w_range = -10,10
+w_range = [-10,10]
 n_w = 3001
 # broadening for k sum and discretization of hyb function
 eta=0.2
-# only relevant for multiorbital
-diag_delta = True
 
-n_iter_dmft = 8
+n_iter_dmft = 1
 
 prec_mu = 0.001
 mu_initial_guess = 12.8
 
-h_int_type = kanamori
+h_int_type = 'kanamori'
 U = 3.6
 J = 0.0
 
 dc_type = 0
-dc_dmft = False
+dc_dmft = false
 
 h5_save_freq = 1
+store_solver = true
 
 [solver]
-store_solver = True
+type = 'ftps'
+diag_delta = true
 # time step sizes, larger less accurant
 dt = 0.2
 # automatic bath fit
-bath_fit = True
+bath_fit = true
 # small bath fit weights are ignored
 ignore_weight = 0.1
 # where the MPS states are stored, fast r/w important
-state_storage = /tmp/ 
+state_storage = '/tmp/'
 # use symmetries of sumk block struc
-calc_me = True
+calc_me = true
 # time evo bond dim and cutoff
 tw = 1e-10
 maxmI = 200
